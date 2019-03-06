@@ -1,0 +1,407 @@
+no_type;empty_string;""
+no_type;newline;"\\n"
+no_type;string;"test";
+no_type;string_and_newline;"test\\n"
+no_type;string_of_digits;"1234"
+no_type;percent_only;"%"
+no_type;2_percent_signs;"%%"
+no_type;3_percent_signs;"%%%"
+no_type;4_percent_signs;"%%%%"
+no_type;percent_and_space;"% "
+no_type;percent_and_space_and_length_modifier_without_type;"% h"
+no_type;percent_and_space_and_lenght_modifier_wrong_type;"% hZ"
+no_type;percent_5_width_percent;"%5%"
+no_type;percent_minus_flag_5_width_percent;"%-5%"
+no_type;percent_minus_zero_flags_5_width_percent;"%-05%"
+conv_d;zero;"%d", 0
+conv_d;zero_and_dot_precision;"%.d", 0
+conv_d;zero_and_dot_3_precision;"%.3d", 0
+conv_d;negative_zero;"%d", -0
+conv_d;negative_zero_and_dot_precision;"%.d", -0
+conv_d;negative_zero_and_3_precision;"%.3d", -0
+conv_d;negative_int;"%d", -42
+conv_d;negative_int_and_dot_precision;"%.d", -42
+conv_d;negative_int_and_3_precision;"%.3d", -42
+conv_d;random_int;"%d", 42
+conv_d;int_max;"%d", 2147483647
+conv_d;int_max_plus_1;"%d", 2147483648
+conv_d;int_min;"%d", -2147483648
+conv_d;unsigned_int_max;"%d", 4294967295
+conv_d;random_int_and_1_precision;"%.1d", 42
+conv_d;random_int_and_4_precision;"%.4d", 42
+conv_d;random_int_and_3_width_and_5_precision;"%3.5d", 42
+conv_d;random_int_and_5_width_and_3_precision;"%5.3d", 42
+conv_d;random_int_and_0_flag;"%0d", 42
+conv_d;random_int_and_0_flag_and_5_width;"%05d", 42
+conv_d;random_int_and_multiple_0_flags_and_5_width;"%00005d", 42
+conv_d;random_int_and_plus_flag;"%+d", 42
+conv_d;random_int_and_multiple_plus_flags;"%++++d", 42
+conv_d;random_int_and_space_flag_and_0_flag_and_5_width;"% 05d", 42
+conv_d;random_int_and_plus_flag_and_0_flag_and_5_width;"%+05d", 42
+conv_d;random_int_and_multiple_plus_flags_and_multiple_0_flags_and_5_width;"%+++++000005d", 42
+conv_d;random_int_and_space_flag;"% d", 42
+conv_d;random_int_and_multiple_space_flags;"%     d", 42
+conv_d;random_int_and_5_width;"%5d", 42
+conv_d;random_int_and_plus_flag_and_5_width;"%+5d", 42
+conv_d;random_int_and_1_width;"%1d", 42
+conv_d;random_int_and_minus_flag_and_5_width;"%-5d", 42
+conv_d;random_int_and_multiple_minus_flags;"%------5d", 42
+conv_d;random_int_and_minus_flag_and_plus_flag_and_5_width;"%-+5d", 42
+conv_d;random_int_and_multiple_minus_flag_and_plus_flag_and_5_width;"%---++++---5d", 42
+conv_d;random_int_and_minus_flag_and_flag_and_5_width;"%- 5d", 42
+conv_d;random_int_and_minus_flag_and_1_width;"%-1d", 42
+conv_d;random_char_and_hh_modifier;"%hhd", 42
+conv_d;short_max_and_h_modifier;"%hd", 32767
+conv_d;short_max_and_1_and_h_modifier;"%hd", 32767
+conv_d;long_max_and_l_modifier;"%ld", 9223372036854775807
+conv_d;long_long_max_and_ll_modifier;"%lld", 9223372036854775807
+conv_d;long_long_max_and_l_length_modifier;"%ld", 9223372036854775807
+conv_d;random_int_with_string;"before %d after", 42
+conv_d;only_multiple_ints;"%d%d%d%d", 42, -42, 0, -0
+conv_d;multiple_ints_with_string;"first%dsecond%dthird%dfourth%d", 42, -42, 0, -0
+conv_i;zero;"%i", 0
+conv_i;zero_and_dot_precision;"%.i", 0
+conv_i;zero_and_dot_3_precision;"%.3i", 0
+conv_i;negative_zero;"%i", -0
+conv_i;negative_zero_and_dot_precision;"%.i", -0
+conv_i;negative_zero_and_3_precision;"%.3i", -0
+conv_i;negative_int;"%i", -42
+conv_i;negative_int_and_dot_precision;"%.i", -42
+conv_i;negative_int_and_3_precision;"%.3i", -42
+conv_i;random_int;"%i", 42
+conv_i;int_max;"%i", 2147483647
+conv_i;int_max_plus_1;"%i", 2147483648
+conv_i;int_min;"%i", -2147483648
+conv_i;unsigned_int_max;"%i", 4294967295
+conv_i;random_int_and_1_precision;"%.1i", 42
+conv_i;random_int_and_4_precision;"%.4i", 42
+conv_i;random_int_and_3_width_and_5_precision;"%3.5i", 42
+conv_i;random_int_and_5_width_and_3_precision;"%5.3i", 42
+conv_i;random_int_and_0_flag;"%0i", 42
+conv_i;random_int_and_0_flag_and_5_width;"%05i", 42
+conv_i;random_int_and_multiple_0_flags_and_5_width;"%00005i", 42
+conv_i;random_int_and_plus_flag;"%+i", 42
+conv_i;random_int_and_multiple_plus_flags;"%++++i", 42
+conv_i;random_int_and_space_flag_and_0_flag_and_5_width;"% 05i", 42
+conv_i;random_int_and_plus_flag_and_0_flag_and_5_width;"%+05i", 42
+conv_i;random_int_and_multiple_plus_flags_and_multiple_0_flags_and_5_width;"%+++++000005i", 42
+conv_i;random_int_and_space_flag;"% i", 42
+conv_i;random_int_and_multiple_space_flags;"%     i", 42
+conv_i;random_int_and_5_width;"%5i", 42
+conv_i;random_int_and_plus_flag_and_5_width;"%+5i", 42
+conv_i;random_int_and_1_width;"%1i", 42
+conv_i;random_int_and_minus_flag_and_5_width;"%-5i", 42
+conv_i;random_int_and_multiple_minus_flags;"%------5i", 42
+conv_i;random_int_and_minus_flag_and_plus_flag_and_5_width;"%-+5i", 42
+conv_i;random_int_and_multiple_minus_flag_and_plus_flag_and_5_width;"%---++++---5i", 42
+conv_i;random_int_and_minus_flag_and_flag_and_5_width;"%- 5i", 42
+conv_i;random_int_and_minus_flag_and_1_width;"%-1i", 42
+conv_i;random_char_and_hh_modifier;"%hhi", 42
+conv_i;short_max_and_h_modifier;"%hi", 32767
+conv_i;short_max_and_1_and_h_modifier;"%hi", 32767
+conv_i;long_max_and_l_modifier;"%li", 9223372036854775807
+conv_i;long_long_max_and_ll_modifier;"%lli", 9223372036854775807
+conv_i;long_long_max_and_l_length_modifier;"%li", 9223372036854775807
+conv_i;random_int_with_string;"before %i after", 42
+conv_i;only_multiple_ints;"%i%i%i%i", 42, -42, 0, -0
+conv_i;multiple_ints_with_string;"first%isecond%ithird%ifourth%i", 42, -42, 0, -0
+conv_o;zero;"%o", 0U
+conv_o;zero_and_dot;"%.o", 0U
+conv_o;zero_and_3_precision;"%.3o", 0U
+conv_o;random_unsigned_int;"%o", 42U
+conv_o;unsigned_int_max;"%o", 4294967295
+conv_o;unsigned_int_max_and_1;"%o", 4294967296
+conv_o;random_unsigned_int_and_1_precision;"%.1o", 42U
+conv_o;random_unsigned_int_and_4_precision;"%.4o", 42U
+conv_o;random_unsigned_int_and_3_width_and_5_precision;"%3.5o", 42U
+conv_o;random_unsigned_int_and_5_width_and_3_precision;"%5.3o", 42U
+conv_o;random_unsigned_int_and_0_flag;"%0o", 42U
+conv_o;random_unsigned_int_and_0_flag_and_5_width;"%05o", 42U
+conv_o;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005o", 42U
+conv_o;random_unsigned_int_and_5_width;"%5o", 42U
+conv_o;random_unsigned_int_and_1_width;"%1o", 42U
+conv_o;random_unsigned_int_and_minus_flag_and_5 width;"%-5o", 42U
+conv_o;random_unsigned_int_and_multiple_minus_flags;"%------5o", 42U
+conv_o;random_unsigned_int_and_hash_flag_and_5_width;"%#5o", 42U
+conv_o;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4o", 42U
+conv_o;random_unsigned_char_and_hh_modifier;"%hho", (unsigned char)42u
+conv_o;unsigned_short_max_and_h_modifier;"%ho", (unsigned short)USHRT_MAX
+conv_o;unsigned_short_max_and_1_and_h_modifier;"%ho", (unsigned short)(USHRT_MAX + 1)
+conv_o;unsigned_long_max_and_l_modifier;"%lo", (unsigned long)ULONG_MAX
+conv_o;unsigned_long_long_max_and_ll_modifier;"%llo", (unsigned long long)ULLONG_MAX
+conv_u;zero;"%u", 0U
+conv_u;zero_and_dot;"%.u", 0U
+conv_u;zero_and_3_precision;"%.3u", 0U
+conv_u;random_unsigned_int;"%u", 42U
+conv_u;unsigned_int_max;"%u", 4294967295
+conv_u;unsigned_int_max_and_1;"%u", 4294967296
+conv_u;random_unsigned_int_and_1_precision;"%.1u", 42U
+conv_u;random_unsigned_int_and_4_precision;"%.4u", 42U
+conv_u;random_unsigned_int_and_3_width_and_5_precision;"%3.5u", 42U
+conv_u;random_unsigned_int_and_5_width_and_3_precision;"%5.3u", 42U
+conv_u;random_unsigned_int_and_0_flag;"%0u", 42U
+conv_u;random_unsigned_int_and_0_flag_and_5_width;"%05u", 42U
+conv_u;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005u", 42U
+conv_u;random_unsigned_int_and_5_width;"%5u", 42U
+conv_u;random_unsigned_int_and_1_width;"%1u", 42U
+conv_u;random_unsigned_int_and_minus_flag_and_5 width;"%-5u", 42U
+conv_u;random_unsigned_int_and_multiple_minus_flags;"%------5u", 42U
+conv_u;random_unsigned_char_and_hh_modifier;"%hhu", (unsigned char)42u
+conv_u;unsigned_short_max_and_h_modifier;"%hu", (unsigned short)USHRT_MAX
+conv_u;unsigned_short_max_and_1_and_h_modifier;"%hu", (unsigned short)(USHRT_MAX + 1)
+conv_u;unsigned_long_max_and_l_modifier;"%lu", (unsigned long)ULONG_MAX
+conv_u;unsigned_long_long_max_and_ll_modifier;"%llu", (unsigned long long)ULLONG_MAX
+conv_x;zero;"%x", 0U
+conv_x;zero_and_dot;"%.x", 0U
+conv_x;zero_and_3_precision;"%.3x", 0U
+conv_x;random_unsigned_int;"%x", 42U
+conv_x;unsigned_int_max;"%x", 4294967295
+conv_x;unsigned_int_max_and_1;"%x", 4294967296
+conv_x;random_unsigned_int_and_1_precision;"%.1x", 42U
+conv_x;random_unsigned_int_and_4_precision;"%.4x", 42U
+conv_x;random_unsigned_int_and_3_width_and_5_precision;"%3.5x", 42U
+conv_x;random_unsigned_int_and_5_width_and_3_precision;"%5.3x", 42U
+conv_x;random_unsigned_int_and_0_flag;"%0x", 42U
+conv_x;random_unsigned_int_and_0_flag_and_5_width;"%05x", 42U
+conv_x;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005x", 42U
+conv_x;random_unsigned_int_and_5_width;"%5x", 42U
+conv_x;random_unsigned_int_and_1_width;"%1x", 42U
+conv_x;random_unsigned_int_and_minus_flag_and_5 width;"%-5x", 42U
+conv_x;random_unsigned_int_and_multiple_minus_flags;"%------5x", 42U
+conv_x;random_unsigned_int_and_hash_flag_and_5_width;"%#5x", 42U
+conv_x;random_unsigned_int_and_hash_and_zero_flag_and_5_width;"%#05x", 42U
+conv_x;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4x", 42U
+conv_x;random_unsigned_char_and_hh_modifier;"%hhx", (unsigned char)42u
+conv_x;unsigned_short_max_and_h_modifier;"%hx", (unsigned short)USHRT_MAX
+conv_x;unsigned_short_max_and_1_and_h_modifier;"%hx", (unsigned short)(USHRT_MAX + 1)
+conv_x;unsigned_long_max_and_l_modifier;"%lx", (unsigned long)ULONG_MAX
+conv_x;unsigned_long_long_max_and_ll_modifier;"%llx", (unsigned long long)ULLONG_MAX
+conv_cap_X;zero;"%X", 0U
+conv_cap_X;zero_and_dot;"%.X", 0U
+conv_cap_X;zero_and_3_precision;"%.3X", 0U
+conv_cap_X;random_unsigned_int;"%X", 42U
+conv_cap_X;unsigned_int_max;"%X", 4294967295
+conv_cap_X;unsigned_int_max_and_1;"%X", 4294967296
+conv_cap_X;random_unsigned_int_and_1_precision;"%.1X", 42U
+conv_cap_X;random_unsigned_int_and_4_precision;"%.4X", 42U
+conv_cap_X;random_unsigned_int_and_3_width_and_5_precision;"%3.5X", 42U
+conv_cap_X;random_unsigned_int_and_5_width_and_3_precision;"%5.3X", 42U
+conv_cap_X;random_unsigned_int_and_0_flag;"%0X", 42U
+conv_cap_X;random_unsigned_int_and_0_flag_and_5_width;"%05X", 42U
+conv_cap_X;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005X", 42U
+conv_cap_X;random_unsigned_int_and_5_width;"%5X", 42U
+conv_cap_X;random_unsigned_int_and_1_width;"%1X", 42U
+conv_cap_X;random_unsigned_int_and_minus_flag_and_5 width;"%-5X", 42U
+conv_cap_X;random_unsigned_int_and_multiple_minus_flags;"%------5X", 42U
+conv_cap_X;random_unsigned_int_and_hash_flag_and_5_width;"%#5X", 42U
+conv_cap_X;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4X", 42U
+conv_cap_X;random_unsigned_char_and_hh_modifier;"%hhX", (unsigned char)42u
+conv_cap_X;unsigned_short_max_and_h_modifier;"%hX", (unsigned short)USHRT_MAX
+conv_cap_X;unsigned_short_max_and_1_and_h_modifier;"%hX", (unsigned short)(USHRT_MAX + 1)
+conv_cap_X;unsigned_long_max_and_l_modifier;"%lX", (unsigned long)ULONG_MAX
+conv_cap_X;unsigned_long_long_max_and_ll_modifier;"%llX", (unsigned long long)ULLONG_MAX
+conv_c;non_printable_ascii_char_nul;"%c", 0
+conv_c;char_null_and_4_width;"%4c", 0
+conv_c;char_null_and_minus_flag_and_4_width;"%-4c", 0
+conv_c;non_printable_ascii_char_horizontal_tab;"%c", 9
+conv_c;non_printable_ascii_char_vertical_tab;"%c", 11
+conv_c;digit_ascii_char_3;"%c", '3'
+conv_c;capital_letter_ascii_char_z;"%c", 'z'
+conv_c;small_letter_ascii_char_a;"%c", 'a'
+conv_c;symbol_ascii_char_asterisk;"%c", 42
+conv_c;non_printable_ascii_char_del;"%c", 127
+conv_c;int_greater_than_127_128;"%c", 128
+conv_c;int_greater_than_127_298;"%c", 298
+conv_c;negative_number_minus_1;"%c", -1
+conv_c;negative_number_minus_42;"%c", -42
+conv_c;negative_number_minus_159;"%c", -159
+conv_c;small_letter_ascii_char_a_and_10_width;"%10c", 'a'
+conv_c;small_letter_ascii_char_a_and_minus_flag_and_10_width;"%-10c", 'a'
+conv_c;small_letter_ascii_char_a_and_multiple_minus_flags_and_10_width;"%-----10c", 'a'
+conv_c;multiple_chars;"%c%c%c%c", 'a', 'b', 'c', 'd'
+conv_c;multiple_chars_and_string;"a%c b%c c%c d%c", 'a', 'b', 'c', 'd'
+conv_c;only_zeros_char;"%c%c%c", 0, 0, 0
+conv_c;hard;"hello ca%----4c %c va %10c%-c ??", '\0', '\\n', (char)110, 0
+conv_s;null_pointer;"%s", NULL
+conv_s;null_pointer_10_width;"%10s", NULL
+conv_s;null_pointer_2_precision;"%.2s", NULL
+conv_s;random_string;"%s", "Random string"
+conv_s;random_string_and_dot;"%.s", "Random string"
+conv_s;random_string_and_10_precision;"%.10s", "Random string"
+conv_s;random_string_and_15_width;"%15s", "Random string"
+conv_s;random_string_and_minus_flag_and_15_width;"%-15s", "Random string"
+conv_s;emoticone;"%s", "😁"
+conv_s;emoticone_utf8_encoded;"%s", "\xF0\x9F\x98\x84"
+conv_s;emoticone_and_3_precision;"%.3s", "😁"
+conv_s;emoticone_and_4_precision;"%.4s", "😁"
+conv_s;emoticone_and_5_precision;"%.5s", "😁"
+conv_s;emoticone_and_10_precision;"%.10s", "😁"
+conv_s;emoticone_and_1_width;"%1s", "😁"
+conv_s;emoticone_and_minus_flag_and_5_width;"%-5s", "😁"
+conv_s;latin_extended_a;"%s", "ă"
+conv_s;string_format_and_random_string;"This is a %s", "random string"
+conv_s;string_format_and_random_string_and_width;"This is a %10s", "random string"
+conv_s;string_format_and_random_string_and_precision;"This is a %.5s", "random string"
+conv_s;multiple_random_strings;"%s %s - %s %s", "string1", "string2", "string3", "string4"
+conv_s;only_string_conv;"%s%s%s%s", "string1", "string2", "string3", "string4"
+conv_p;null_pointer;"%p", NULL
+conv_p;random_string;"%p", "Random string"
+conv_p;random_string_and_5_width;"%5p", "Random string"
+conv_p;random_string_and_30_width;"%30p", "Random string"
+conv_p;random_string_and_minus_flag_and_30_width;"%-30p", "Random string"
+conv_p;function_pointer;"%p", \&printf
+mix;simple_mix;"first:%s second:%d%d third:%c last:%p", "string", 42, -42, 0, "other"
+conv_f;zero_double;"%f", 0.
+conv_f;minus_zero_double;"%f", -0.
+conv_f;zero_double_and_dot_precision;"%.f", 0.
+conv_f;minus_zero_double_and_dot_precision;"%.f", -0.
+conv_f;nan;"%f", 0. \/ 0.
+conv_f;nan_and_5_width;"%5f", 0. \/ 0.
+conv_f;infinity;"%f", INFINITY
+conv_f;1_divided_by_infinity;"%f", 1. \/ INFINITY
+conv_f;0_multiplied_by_infinity;"%f", 0. \* INFINITY
+conv_f;random_double_41;"%f", .1
+conv_f;random_double_and_30_precision_1;"%.30f", .1
+conv_f;random_double_and_30_precision_2;"%.30f", .2
+conv_f;random_double_42;"%f", 42.
+conv_f;random_double_and_12_width;"%12f", 42.
+conv_f;random_double_and_minus_flag_and_12_width;"%-12f", 42.
+conv_f;random_double_and_minus_plus_flags_and_12_width;"%-+12f", 42.
+conv_f;random_double_and_minus_space_flags_and_12_width;"%- 12f", 42.
+conv_f;random_double_and_zero_flag_and_12_width;"%012f", 42.
+conv_f;random_double_and_plus_zero_flags_and_12_width;"%+012f", 42.
+conv_f;random_double_and_space_zero_flags_and_12_width;"% 012f", 42.
+conv_f;random_double_and_dot_precision;"%.f", 42.
+conv_f;random_double_and_hash_flag_and_dot;"%#.f", 42.
+conv_f;random_double_and_2_precision;"%.2f", 42.
+conv_f;random_double_and_30_precision;"%.30f", 42.
+conv_f;power_of_10_22;"%f", 1e22
+conv_f;power_of_10_23;"%f", 1e23
+conv_f;double_max;"%f", DBL_MAX
+conv_f;long_double_max;"%Lf", LDBL_MAX
+conv_f;double_min_and_1025_precision;"%.1025f", DBL_MIN
+conv_f;negative_number;"%f", -42.
+conv_f;number_with_null_integer_part_and_3_digits_decimal_part;"%f", .123
+conv_f;number_with_null_integer_part_and_7_digits_decimal_part;"%f", .1234567
+conv_f;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%f", 1.1234567
+conv_f;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%f", 12.1234567
+conv_f;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%f", 123.1234567
+conv_f;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%f", 1234.1234567
+conv_e;zero_double;"%e", 0.
+conv_e;minus_zero_double;"%e", -0.
+conv_e;zero_double_and_dot_precision;"%.e", 0.
+conv_e;minus_zero_double_and_dot_precision;"%.e", -0.
+conv_e;nan;"%e", 0. \/ 0.
+conv_e;nan_and_5_width;"%5e", 0. \/ 0.
+conv_e;infinity;"%e", INFINITY
+conv_e;1_divided_by_infinity;"%e", 1. \/ INFINITY
+conv_e;0_multiplied_by_infinity;"%e", 0. \* INFINITY
+conv_e;random_double_41;"%e", .1
+conv_e;random_double_and_30_precision_1;"%.30e", .1
+conv_e;random_double_and_30_precision_2;"%.30e", .2
+conv_e;random_double_42;"%e", 42.
+conv_e;random_double_and_12_width;"%12e", 42.
+conv_e;random_double_and_minus_flag_and_12_width;"%-12e", 42.
+conv_e;random_double_and_minus_plus_flags_and_12_width;"%-+12e", 42.
+conv_e;random_double_and_minus_space_flags_and_12_width;"%- 12e", 42.
+conv_e;random_double_and_zero_flag_and_12_width;"%012e", 42.
+conv_e;random_double_and_plus_zero_flags_and_12_width;"%+012e", 42.
+conv_e;random_double_and_space_zero_flags_and_12_width;"% 012e", 42.
+conv_e;random_double_and_dot_precision_42;"%.e", 42.
+conv_e;random_double_and_dot_precision_46;"%.e", 46.
+conv_e;random_double_and_dot_precision_55;"%.e", 55.
+conv_e;random_double_and_hash_flag_and_dot;"%#.e", 42.
+conv_e;random_double_and_2_precision;"%.2e", 42.
+conv_e;random_double_and_30_precision;"%.30e", 42.
+conv_e;power_of_10_22;"%e", 1e22
+conv_e;power_of_10_23;"%e", 1e23
+conv_e;double_max;"%e", DBL_MAX
+conv_e;long_double_max;"%Le", LDBL_MAX
+conv_e;double_min_and_1025_precision;"%.1025e", DBL_MIN
+conv_e;negative_number;"%e", -42.
+conv_e;number_with_null_integer_part_and_3_digits_decimal_part;"%e", .123
+conv_e;number_with_null_integer_part_and_7_digits_decimal_part;"%e", .1234567
+conv_e;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%e", 1.1234567
+conv_e;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%e", 12.1234567
+conv_e;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%e", 123.1234567
+conv_e;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%e", 1234.1234567
+conv_g;zero_double;"%g", 0.
+conv_g;minus_zero_double;"%g", -0.
+conv_g;zero_double_and_dot_precision;"%.g", 0.
+conv_g;minus_zero_double_and_dot_precision;"%.g", -0.
+conv_g;nan;"%g", 0. \/ 0.
+conv_g;nan_and_5_width;"%5g", 0. \/ 0.
+conv_g;infinity;"%g", INFINITY
+conv_g;1_divided_by_infinity;"%g", 1. \/ INFINITY
+conv_g;0_multiplied_by_infinity;"%g", 0. \* INFINITY
+conv_g;random_double_41;"%g", .1
+conv_g;random_double_and_30_precision_1;"%.30g", .1
+conv_g;random_double_and_30_precision_2;"%.30g", .2
+conv_g;random_double_42;"%g", 42.
+conv_g;random_double_and_12_width;"%12g", 42.
+conv_g;random_double_and_minus_flag_and_12_width;"%-12g", 42.
+conv_g;random_double_and_minus_plus_flags_and_12_width;"%-+12g", 42.
+conv_g;random_double_and_minus_space_flags_and_12_width;"%- 12g", 42.
+conv_g;random_double_and_zero_flag_and_12_width;"%012g", 42.
+conv_g;random_double_and_plus_zero_flags_and_12_width;"%+012g", 42.
+conv_g;random_double_and_space_zero_flags_and_12_width;"% 012g", 42.
+conv_g;random_double_and_dot_precision;"%.g", 42.
+conv_g;random_double_and_hash_flag_and_dot;"%#.g", 42.
+conv_g;random_double_and_2_precision;"%.2g", 42.
+conv_g;random_double_and_30_precision;"%.30g", 42.
+conv_g;power_of_10_22;"%g", 1e22
+conv_g;power_of_10_23;"%g", 1e23
+conv_g;double_max;"%g", DBL_MAX
+conv_g;long_double_max;"%Lg", LDBL_MAX
+conv_g;double_min_and_1025_precision;"%.1025g", DBL_MIN
+conv_g;negative_number;"%g", -42.
+conv_g;number_with_null_integer_part_and_3_digits_decimal_part;"%g", .123
+conv_g;number_with_null_integer_part_and_7_digits_decimal_part;"%g", .1234567
+conv_g;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%g", 1.1234567
+conv_g;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%g", 12.1234567
+conv_g;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%g", 123.1234567
+conv_g;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%g", 1234.1234567
+conv_a;zero_double;"%a", 0.
+conv_a;minus_zero_double;"%a", -0.
+conv_a;zero_double_and_dot_precision;"%.a", 0.
+conv_a;minus_zero_double_and_dot_precision;"%.a", -0.
+conv_a;nan;"%a", 0. \/ 0.
+conv_a;nan_and_5_width;"%5a", 0. \/ 0.
+conv_a;infinity;"%a", INFINITY
+conv_a;1_divided_by_infinity;"%a", 1. \/ INFINITY
+conv_a;0_multiplied_by_infinity;"%a", 0. \* INFINITY
+conv_a;random_double_41;"%a", .1
+conv_a;random_double_and_30_precision_1;"%.30a", .1
+conv_a;random_double_and_30_precision_2;"%.30a", .2
+conv_a;random_double_42;"%a", 42.
+conv_a;random_double_and_12_width;"%12a", 42.
+conv_a;random_double_and_minus_flag_and_12_width;"%-12a", 42.
+conv_a;random_double_and_minus_plus_flags_and_12_width;"%-+12a", 42.
+conv_a;random_double_and_minus_space_flags_and_12_width;"%- 12a", 42.
+conv_a;random_double_and_zero_flag_and_12_width;"%012a", 42.
+conv_a;random_double_and_plus_zero_flags_and_12_width;"%+012a", 42.
+conv_a;random_double_and_space_zero_flags_and_12_width;"% 012a", 42.
+conv_a;random_double_and_dot_precision_42;"%.a", 42.
+conv_a;random_double_and_dot_precision_46;"%.a", 46.
+conv_a;random_double_and_dot_precision_55;"%.a", 55.
+conv_a;random_double_and_hash_flag_and_dot;"%#.a", 42.
+conv_a;random_double_and_2_precision;"%.2a", 42.
+conv_a;random_double_and_30_precision;"%.30a", 42.
+conv_a;power_of_10_default_precision_minus_5;"%a", 1e-5
+conv_a;power_of_10_default_precision_minus_4;"%a", 1e-4
+conv_a;power_of_10_default_precision_5;"%a", 1e5
+conv_a;power_of_10_default_precision_6;"%a", 1e6
+conv_a;power_of_10_and_21_precision;"%.21a", 1e22
+conv_a;power_of_10_and_23_precision;"%.23a", 1e23
+conv_a;power_of_10_22;"%a", 1e22
+conv_a;power_of_10_23;"%a", 1e23
+conv_a;double_max;"%a", DBL_MAX
+conv_a;long_double_max;"%La", LDBL_MAX
+conv_a;double_min_and_1025_precision;"%.1025a", DBL_MIN
+conv_a;negative_number;"%a", -42.
+conv_a;number_with_null_integer_part_and_3_digits_decimal_part;"%a", .123
+conv_a;number_with_null_integer_part_and_7_digits_decimal_part;"%a", .1234567
+conv_a;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%a", 1.1234567
+conv_a;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%a", 12.1234567
+conv_a;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%a", 123.1234567
+conv_a;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%a", 1234.1234567
