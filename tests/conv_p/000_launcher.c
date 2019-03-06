@@ -24,7 +24,6 @@ int					conv_p_launcher(void)
 	print_fct_name_fd(fct_name, fd);
 	if (fd_trace != fd)
 		print_fct_name_trace_fd(fct_name, fd_trace);
-
 	if ((err = load_test(&test_list, "\"%p\", NULL",
 			&conv_p_null_pointer, SUCCESS)))
 		return (err);
@@ -44,6 +43,5 @@ int					conv_p_launcher(void)
 			&conv_p_function_pointer, SUCCESS)))
 		return (err);
 	/*LOAD_TEST_HERE*/
-
 	return (launch_tests(&test_list, fd));
 }

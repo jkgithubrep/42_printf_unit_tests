@@ -24,7 +24,6 @@ int					conv_o_launcher(void)
 	print_fct_name_fd(fct_name, fd);
 	if (fd_trace != fd)
 		print_fct_name_trace_fd(fct_name, fd_trace);
-
 	if ((err = load_test(&test_list, "\"%o\", 0U",
 			&conv_o_zero, SUCCESS)))
 		return (err);
@@ -101,6 +100,5 @@ int					conv_o_launcher(void)
 			&conv_o_unsigned_long_long_max_and_ll_modifier, SUCCESS)))
 		return (err);
 	/*LOAD_TEST_HERE*/
-
 	return (launch_tests(&test_list, fd));
 }
