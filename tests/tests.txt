@@ -262,6 +262,7 @@ conv_f;1_divided_by_infinity;"%f", 1. \/ INFINITY
 conv_f;0_multiplied_by_infinity;"%f", 0. \* INFINITY
 conv_f;round_number_1;"%.2f", 1.2651
 conv_f;round_number_2;"%.2f", 1.2650
+conv_f;round_number_3;"%.2f", 1.26500000000000000001
 conv_f;random_double_41;"%f", .1
 conv_f;random_double_and_30_precision_1;"%.30f", .1
 conv_f;random_double_and_30_precision_2;"%.30f", .2
@@ -290,6 +291,10 @@ conv_f;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%f", 1.123456
 conv_f;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%f", 12.1234567
 conv_f;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%f", 123.1234567
 conv_f;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%f", 1234.1234567
+conv_f;only_nines_1;"%.1f", 9.9999
+conv_f;only_nines_2;"%.2f", 9.9999
+conv_f;only_nines_3;"%.1f", 0.0099999
+conv_f;power_of_10_1;"%f", 1000
 conv_e;zero_double;"%e", 0.
 conv_e;minus_zero_double;"%e", -0.
 conv_e;zero_double_and_dot_precision;"%.e", 0.
