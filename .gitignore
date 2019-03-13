@@ -2,3 +2,4 @@
 *.dSYM*
 conv_*
 backup
+tests/tests
