@@ -282,6 +282,9 @@ parse_args(){
 		if [ "$1" = "all" ]; then
 			ALL=true
 			return 0
+		elif [ "$1" = "mandatory" ]; then
+			MANDATORY=true
+			return 0
 		else
 			TESTS_LIST=`echo $TESTS_LIST $1`
 		fi
@@ -328,6 +331,10 @@ if $ERR; then
 	exit
 fi
 
+if $MANDATORY; then
+	TESTS_LIST="conv_d conv_i conv_u conv_o conv_x conv_cap_X conv_c conv_s conv_p conv_f"
+fi
+
 check_test_file
 
 is_test_list_ok $TESTS_LIST
@@ -335,6 +342,10 @@ if [ "$TEST_LIST_ERRORS" != "" ]; then
 	echo "The following tests could not be found in ${BLUE}${TESTS_FILE}${NC}:"
 	echo $TEST_LIST_ERRORS
 	exit
+fi
+
+if $UPDATE; then
+	make fclean
 fi
 
 if $CREATE || $UPDATE; then

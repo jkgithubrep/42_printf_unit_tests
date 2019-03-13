@@ -8,7 +8,7 @@
 #include <float.h>
 #include <math.h>
 
-# define ARGS "%-4c", '\0'
+# define ARGS "%-4c", 0
 
 int		conv_c_char_null_and_minus_flag_and_4_width(void)
 {

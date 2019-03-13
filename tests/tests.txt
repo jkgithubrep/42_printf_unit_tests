@@ -260,6 +260,8 @@ conv_f;nan_and_5_width;"%5f", 0. \/ 0.
 conv_f;infinity;"%f", INFINITY
 conv_f;1_divided_by_infinity;"%f", 1. \/ INFINITY
 conv_f;0_multiplied_by_infinity;"%f", 0. \* INFINITY
+conv_f;round_number_1;"%.2f", 1.2651
+conv_f;round_number_2;"%.2f", 1.2650
 conv_f;random_double_41;"%f", .1
 conv_f;random_double_and_30_precision_1;"%.30f", .1
 conv_f;random_double_and_30_precision_2;"%.30f", .2
@@ -278,6 +280,7 @@ conv_f;random_double_and_30_precision;"%.30f", 42.
 conv_f;power_of_10_22;"%f", 1e22
 conv_f;power_of_10_23;"%f", 1e23
 conv_f;double_max;"%f", DBL_MAX
+conv_f;double_max_and_L_len_modifier;"%Lf", DBL_MAX
 conv_f;long_double_max;"%Lf", LDBL_MAX
 conv_f;double_min_and_1025_precision;"%.1025f", DBL_MIN
 conv_f;negative_number;"%f", -42.
