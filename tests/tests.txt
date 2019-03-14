@@ -1,18 +1,11 @@
 no_type;empty_string;""
 no_type;newline;"\\n"
-no_type;string;"test";
-no_type;string_and_newline;"test\\n"
-no_type;string_of_digits;"1234"
-no_type;percent_only;"%"
-no_type;2_percent_signs;"%%"
-no_type;3_percent_signs;"%%%"
-no_type;4_percent_signs;"%%%%"
-no_type;percent_and_space;"% "
-no_type;percent_and_space_and_length_modifier_without_type;"% h"
-no_type;percent_and_space_and_lenght_modifier_wrong_type;"% hZ"
-no_type;percent_5_width_percent;"%5%"
-no_type;percent_minus_flag_5_width_percent;"%-5%"
-no_type;percent_minus_zero_flags_5_width_percent;"%-05%"
+no_type;normal_string;"test12345678";
+no_type;normal_string_and_newline;"test\\n"
+no_type;very_long_string;"WwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqp"
+invalid;percent_signs;"%|%%|%%%|%%%%"
+invalid;percent_and_wrong_type;"% |% h|% hZ"
+invalid;percent_and_flags_and_percent;"%%-%|%%+%|%% %|%%#%"
 conv_d;zero;"%d", 0
 conv_d;zero_and_dot_precision;"%.d", 0
 conv_d;zero_and_dot_3_precision;"%.3d", 0

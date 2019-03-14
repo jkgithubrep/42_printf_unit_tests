@@ -1,5 +1,10 @@
 .obj
 *.dSYM*
 conv_*
+no_type
+invalid
 backup
 tests/tests
+tests/file_paths
+*.sw*
+trace.txt
