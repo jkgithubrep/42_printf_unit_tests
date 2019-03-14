@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/06 11:44:22 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/14 16:59:31 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OK_COLOR =              \x1b[32;01m
 ERR_COLOR =             \x1b[31;01m
 WARN_COLOR =            \x1b[34;01m
 QUIET :=                @
-ECHO :=                 @echo
+ECHO :=                 @true
 ifneq ($(QUIET),@)
 ECHO :=                 @true
 endif
@@ -28,7 +28,7 @@ RMDIR =                 rmdir -p
 AR =                    ar
 ARFLAGS =               -rcs
 CC =                    gcc
-CFLAGS =                -g3 -Wall -Wextra #-Werror
+CFLAGS =                -g3 #-Wall -Wextra #-Werror
 NAME =                  tests
 TRACE =                 trace.txt
 SRC_PATH =              .

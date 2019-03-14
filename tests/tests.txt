@@ -251,165 +251,108 @@ conv_p;random_string_and_30_width;"%30p", "Random string"
 conv_p;random_string_and_minus_flag_and_30_width;"%-30p", "Random string"
 conv_p;function_pointer;"%p", \&printf
 mix;simple_mix;"first:%s second:%d%d third:%c last:%p", "string", 42, -42, 0, "other"
-conv_f;zero_double;"%f", 0.
-conv_f;minus_zero_double;"%f", -0.
-conv_f;zero_double_and_dot_precision;"%.f", 0.
-conv_f;minus_zero_double_and_dot_precision;"%.f", -0.
-conv_f;nan;"%f", 0. \/ 0.
-conv_f;nan_and_5_width;"%5f", 0. \/ 0.
-conv_f;infinity;"%f", INFINITY
-conv_f;1_divided_by_infinity;"%f", 1. \/ INFINITY
-conv_f;0_multiplied_by_infinity;"%f", 0. \* INFINITY
-conv_f;round_number_1;"%.2f", 1.2651
-conv_f;round_number_2;"%.2f", 1.2650
-conv_f;round_number_3;"%.2f", 1.26500000000000000001
-conv_f;random_double_41;"%f", .1
-conv_f;random_double_and_30_precision_1;"%.30f", .1
-conv_f;random_double_and_30_precision_2;"%.30f", .2
-conv_f;random_double_42;"%f", 42.
-conv_f;random_double_and_12_width;"%12f", 42.
-conv_f;random_double_and_minus_flag_and_12_width;"%-12f", 42.
-conv_f;random_double_and_minus_plus_flags_and_12_width;"%-+12f", 42.
-conv_f;random_double_and_minus_space_flags_and_12_width;"%- 12f", 42.
-conv_f;random_double_and_zero_flag_and_12_width;"%012f", 42.
-conv_f;random_double_and_plus_zero_flags_and_12_width;"%+012f", 42.
-conv_f;random_double_and_space_zero_flags_and_12_width;"% 012f", 42.
-conv_f;random_double_and_dot_precision;"%.f", 42.
-conv_f;random_double_and_hash_flag_and_dot;"%#.f", 42.
-conv_f;random_double_and_2_precision;"%.2f", 42.
-conv_f;random_double_and_30_precision;"%.30f", 42.
-conv_f;power_of_10_22;"%f", 1e22
-conv_f;power_of_10_23;"%f", 1e23
-conv_f;double_max;"%f", DBL_MAX
-conv_f;double_max_and_L_len_modifier;"%Lf", DBL_MAX
-conv_f;long_double_max;"%Lf", LDBL_MAX
-conv_f;double_min_and_1025_precision;"%.1025f", DBL_MIN
-conv_f;negative_number;"%f", -42.
-conv_f;number_with_null_integer_part_and_3_digits_decimal_part;"%f", .123
-conv_f;number_with_null_integer_part_and_7_digits_decimal_part;"%f", .1234567
-conv_f;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%f", 1.1234567
-conv_f;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%f", 12.1234567
-conv_f;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%f", 123.1234567
-conv_f;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%f", 1234.1234567
-conv_f;only_nines_1;"%.1f", 9.9999
-conv_f;only_nines_2;"%.2f", 9.9999
-conv_f;only_nines_3;"%.1f", 0.0099999
-conv_f;power_of_10_1;"%f", 1000
-conv_e;zero_double;"%e", 0.
-conv_e;minus_zero_double;"%e", -0.
-conv_e;zero_double_and_dot_precision;"%.e", 0.
-conv_e;minus_zero_double_and_dot_precision;"%.e", -0.
-conv_e;nan;"%e", 0. \/ 0.
-conv_e;nan_and_5_width;"%5e", 0. \/ 0.
-conv_e;infinity;"%e", INFINITY
-conv_e;1_divided_by_infinity;"%e", 1. \/ INFINITY
-conv_e;0_multiplied_by_infinity;"%e", 0. \* INFINITY
-conv_e;random_double_41;"%e", .1
-conv_e;random_double_and_30_precision_1;"%.30e", .1
-conv_e;random_double_and_30_precision_2;"%.30e", .2
-conv_e;random_double_42;"%e", 42.
-conv_e;random_double_and_12_width;"%12e", 42.
-conv_e;random_double_and_minus_flag_and_12_width;"%-12e", 42.
-conv_e;random_double_and_minus_plus_flags_and_12_width;"%-+12e", 42.
-conv_e;random_double_and_minus_space_flags_and_12_width;"%- 12e", 42.
-conv_e;random_double_and_zero_flag_and_12_width;"%012e", 42.
-conv_e;random_double_and_plus_zero_flags_and_12_width;"%+012e", 42.
-conv_e;random_double_and_space_zero_flags_and_12_width;"% 012e", 42.
-conv_e;random_double_and_dot_precision_42;"%.e", 42.
-conv_e;random_double_and_dot_precision_46;"%.e", 46.
-conv_e;random_double_and_dot_precision_55;"%.e", 55.
-conv_e;random_double_and_hash_flag_and_dot;"%#.e", 42.
-conv_e;random_double_and_2_precision;"%.2e", 42.
-conv_e;random_double_and_30_precision;"%.30e", 42.
-conv_e;power_of_10_22;"%e", 1e22
-conv_e;power_of_10_23;"%e", 1e23
-conv_e;double_max;"%e", DBL_MAX
-conv_e;long_double_max;"%Le", LDBL_MAX
-conv_e;double_min_and_1025_precision;"%.1025e", DBL_MIN
-conv_e;negative_number;"%e", -42.
-conv_e;number_with_null_integer_part_and_3_digits_decimal_part;"%e", .123
-conv_e;number_with_null_integer_part_and_7_digits_decimal_part;"%e", .1234567
-conv_e;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%e", 1.1234567
-conv_e;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%e", 12.1234567
-conv_e;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%e", 123.1234567
-conv_e;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%e", 1234.1234567
-conv_g;zero_double;"%g", 0.
-conv_g;minus_zero_double;"%g", -0.
-conv_g;zero_double_and_dot_precision;"%.g", 0.
-conv_g;minus_zero_double_and_dot_precision;"%.g", -0.
-conv_g;nan;"%g", 0. \/ 0.
-conv_g;nan_and_5_width;"%5g", 0. \/ 0.
-conv_g;infinity;"%g", INFINITY
-conv_g;1_divided_by_infinity;"%g", 1. \/ INFINITY
-conv_g;0_multiplied_by_infinity;"%g", 0. \* INFINITY
-conv_g;random_double_41;"%g", .1
-conv_g;random_double_and_30_precision_1;"%.30g", .1
-conv_g;random_double_and_30_precision_2;"%.30g", .2
-conv_g;random_double_42;"%g", 42.
-conv_g;random_double_and_12_width;"%12g", 42.
-conv_g;random_double_and_minus_flag_and_12_width;"%-12g", 42.
-conv_g;random_double_and_minus_plus_flags_and_12_width;"%-+12g", 42.
-conv_g;random_double_and_minus_space_flags_and_12_width;"%- 12g", 42.
-conv_g;random_double_and_zero_flag_and_12_width;"%012g", 42.
-conv_g;random_double_and_plus_zero_flags_and_12_width;"%+012g", 42.
-conv_g;random_double_and_space_zero_flags_and_12_width;"% 012g", 42.
-conv_g;random_double_and_dot_precision;"%.g", 42.
-conv_g;random_double_and_hash_flag_and_dot;"%#.g", 42.
-conv_g;random_double_and_2_precision;"%.2g", 42.
-conv_g;random_double_and_30_precision;"%.30g", 42.
-conv_g;power_of_10_22;"%g", 1e22
-conv_g;power_of_10_23;"%g", 1e23
-conv_g;double_max;"%g", DBL_MAX
-conv_g;long_double_max;"%Lg", LDBL_MAX
-conv_g;double_min_and_1025_precision;"%.1025g", DBL_MIN
-conv_g;negative_number;"%g", -42.
-conv_g;number_with_null_integer_part_and_3_digits_decimal_part;"%g", .123
-conv_g;number_with_null_integer_part_and_7_digits_decimal_part;"%g", .1234567
-conv_g;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%g", 1.1234567
-conv_g;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%g", 12.1234567
-conv_g;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%g", 123.1234567
-conv_g;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%g", 1234.1234567
-conv_a;zero_double;"%a", 0.
-conv_a;minus_zero_double;"%a", -0.
-conv_a;zero_double_and_dot_precision;"%.a", 0.
-conv_a;minus_zero_double_and_dot_precision;"%.a", -0.
-conv_a;nan;"%a", 0. \/ 0.
-conv_a;nan_and_5_width;"%5a", 0. \/ 0.
-conv_a;infinity;"%a", INFINITY
-conv_a;1_divided_by_infinity;"%a", 1. \/ INFINITY
-conv_a;0_multiplied_by_infinity;"%a", 0. \* INFINITY
-conv_a;random_double_41;"%a", .1
-conv_a;random_double_and_30_precision_1;"%.30a", .1
-conv_a;random_double_and_30_precision_2;"%.30a", .2
-conv_a;random_double_42;"%a", 42.
-conv_a;random_double_and_12_width;"%12a", 42.
-conv_a;random_double_and_minus_flag_and_12_width;"%-12a", 42.
-conv_a;random_double_and_minus_plus_flags_and_12_width;"%-+12a", 42.
-conv_a;random_double_and_minus_space_flags_and_12_width;"%- 12a", 42.
-conv_a;random_double_and_zero_flag_and_12_width;"%012a", 42.
-conv_a;random_double_and_plus_zero_flags_and_12_width;"%+012a", 42.
-conv_a;random_double_and_space_zero_flags_and_12_width;"% 012a", 42.
-conv_a;random_double_and_dot_precision_42;"%.a", 42.
-conv_a;random_double_and_dot_precision_46;"%.a", 46.
-conv_a;random_double_and_dot_precision_55;"%.a", 55.
-conv_a;random_double_and_hash_flag_and_dot;"%#.a", 42.
-conv_a;random_double_and_2_precision;"%.2a", 42.
-conv_a;random_double_and_30_precision;"%.30a", 42.
-conv_a;power_of_10_default_precision_minus_5;"%a", 1e-5
-conv_a;power_of_10_default_precision_minus_4;"%a", 1e-4
-conv_a;power_of_10_default_precision_5;"%a", 1e5
-conv_a;power_of_10_default_precision_6;"%a", 1e6
-conv_a;power_of_10_and_21_precision;"%.21a", 1e22
-conv_a;power_of_10_and_23_precision;"%.23a", 1e23
-conv_a;power_of_10_22;"%a", 1e22
-conv_a;power_of_10_23;"%a", 1e23
-conv_a;double_max;"%a", DBL_MAX
-conv_a;long_double_max;"%La", LDBL_MAX
-conv_a;double_min_and_1025_precision;"%.1025a", DBL_MIN
-conv_a;negative_number;"%a", -42.
-conv_a;number_with_null_integer_part_and_3_digits_decimal_part;"%a", .123
-conv_a;number_with_null_integer_part_and_7_digits_decimal_part;"%a", .1234567
-conv_a;number_with_1_digit_integer_part_and_7_digits_decimal_part;"%a", 1.1234567
-conv_a;number_with_2_digits_integer_part_and_7_digits_decimal_part;"%a", 12.1234567
-conv_a;number_with_3_digits_integer_part_and_7_digits_decimal_part;"%a", 123.1234567
-conv_a;number_with_4_digits_integer_part_and_7_digits_decimal_part;"%a", 1234.1234567
+conv_f;zero_double_various_flags;"%f|%-f|%+f|% f|%#f|%0f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", 0., 0., 0., 0., 0., 0.
+conv_f;zero_double_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", 0., 0., 0., 0., 0., 0.
+conv_f;minus_zero_double_various_flags;"%f|%-f|%+f|% f|%#f|%0f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", -0., -0., -0., -0., -0., -0.
+conv_f;minus_zero_double_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", -0., -0., -0., -0., -0., -0.
+conv_f;nan_various_flags;"%f|%-f|%+f|% f|%#f|%0f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;nan_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0., 0. \/ 0.
+conv_f;infinity_various_flags;"%f|%-f|%+f|% f|%#f|%0f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;infinity_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", INFINITY, INFINITY, INFINITY, INFINITY, INFINITY, INFINITY
+conv_f;minus_infinity_various_flags;"%f|%-f|%+f|% f|%#f|%0f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;minus_infinity_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY, -INFINITY
+conv_f;double_various_flags;"%f|%-f|%+f|% f|%#f|%0f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", 42., 42., 42., 42., 42., 42.
+conv_f;negative_double_various_flags;"%f|%-f|%+f|% f|%#f|%0f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", -42., -42., -42., -42., -42., -42.
+conv_f;negative_double_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", -42., -42., -42., -42., -42., -42.
+conv_f;double_max_various_flags;"%f|%-f|%+f|% f|%#f|%0f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_max_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX, DBL_MAX
+conv_f;double_min_various_flags;"%f|%-f|%+f|% f|%#f|%0f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_dot_precision;"%.f|%-.f|%+.f|% .f|%#.f|%0.f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_8_precision;"%.8f|%-.8f|%+.8f|% .8f|%#.8f|%0.8f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5.8f|%#5.8f|%05.8f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;double_min_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN, DBL_MIN
+conv_f;long_double_various_flags;"%Lf|%-Lf|%+Lf|% Lf|%#Lf|%0Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_5_width;"%5Lf|%-5Lf|%+5Lf|% 5Lf|%#5Lf|%05Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_1_width;"%1Lf|%-1Lf|%+1Lf|% 1Lf|%#1Lf|%01Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_dot_precision;"%.Lf|%-.Lf|%+.Lf|% .Lf|%#.Lf|%0.Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_8_precision;"%.8Lf|%-.8Lf|%+.8Lf|% .8Lf|%#.8Lf|%0.8Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_5_width_and_8_precision;"%5.8Lf|%-5.8Lf|%+5.8Lf|% 5.8Lf|%#5.8Lf|%05.8Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_and_15_width_and_8_precision;"%15.8Lf|%-15.8Lf|%+15.8Lf|% 15.8Lf|%#15.8Lf|%015.8Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_combined_with_minus;"%-+8.14Lf|%- 8.14Lf|%-#8.14Lf|%-08.14Lf|%-+#8.14Lf|%-+ #08.14Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_various_flags_combined_with_plus;"%+8.14Lf|%+ 8.14Lf|%+-8.14Lf|%+#8.14Lf|%+08.14Lf|%+ -#08.14Lf", 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L, 12.847e451L
+conv_f;long_double_max;"%Lf", LDBL_MAX;
+conv_f;long_double_min;"%Lf", LDBL_MIN;
+conv_f;rounding_only_nines_1;"%.f|%.1f|%.2f|%.5f|%.12f", 0.000099, 0.000099, 0.000099, 0.000099, 0.000099
+conv_f;rounding_only_nines_2;"%.f|%.1f|%.2f|%.5f|%.12f", 999.99999, 999.99999, 999.99999, 999.99999, 999.99999
+conv_f;rounding_not_only_nines;"%.f|%.1f|%.2f|%.5f|%.12f", 989.9999999, 989.9999999, 989.9999999, 989.9999999, 989.9999999
+conv_f;rounding_not_only_nines_2;"%.f|%.1f|%.2f|%.5f|%.12f", 899.9999999, 899.9999999, 899.9999999, 899.9999999, 899.9999999
+conv_f;rounding_normal;"%.f|%.1f|%.2f|%.5f|%.12f", 42.974234687, 42.974234687, 42.974234687, 42.974234687, 42.974234687
+conv_f;rounding_only_nines_width_small;"%2.f|%2.1f|%2.2f|%2.5f|%2.12f", 999.99999, 999.99999, 999.99999, 999.99999, 999.99999
+conv_f;rounding_only_nines_width_large;"%15.f|%15.1f|%15.2f|%15.5f|%15.12f", 999.99999, 999.99999, 999.99999, 999.99999, 999.99999
+conv_f;rounding_middle_down;"%.f|%.f|%.f|%.f|%.f", 44.5, 44.4, 44.6, 44.50001, 44.5 + 1e-52
+conv_f;rounding_middle_up;"%.f|%.f|%.f|%.f|%.f", 45.5, 45.4, 45.6, 45.50001, 45.5 + 1e-52
+conv_f;powers_of_10;"%f|%f|%f|%f|%f", 1.e1, 1.e2, 1.e18, 1.e57, 1.e201
+conv_f;negative_powers_of_10;"%.350f|%.350f|%.350f|%.350f|%.350f", 1.e-1, 1.e-2, 1.e-18, 1.e-57, 1.e-201
+conv_f;denormalized_numbers;"%.1150f|%.1150f|%.1150f|%.1150f", 0x1p-1074, 0x1.ffffffffffffep-1023, 0x1.4e46p-1058, 0x1.59a8b0c3dp-1037
+conv_f;errors;"%.2147483649f|%2147483649f", 1.0, 1.0

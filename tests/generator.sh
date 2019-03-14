@@ -44,7 +44,7 @@ folder_exists(){
 
 # Save folder content in the backup folder
 save_folder(){
-	echo "Saving ${BLUE}$1${NC} folder in ${BLUE}$BAK_FOLDER${NC} folder..."
+#	echo "Saving ${BLUE}$1${NC} folder in ${BLUE}$BAK_FOLDER${NC} folder..."
 	cp -R $1 $BAK_FOLDER
 	if [ $? -ne 0 ]; then
 		print_err "Error: could not save $1 folder."
@@ -53,7 +53,7 @@ save_folder(){
 }
 
 create_folder(){
-	echo "Making ${BLUE}$1${NC} folder..."
+#	echo "Making ${BLUE}$1${NC} folder..."
 	mkdir $1
 	folder_exists $1
 	if [ "$?" -eq 1 ]; then
@@ -79,7 +79,7 @@ remove_folder(){
 }
 
 remove_all(){
-	echo "Removing all folders..."
+#	echo "Removing all folders..."
 	create_folder $BAK_FOLDER
 	[ "$?" -ne 0 ] && return -1
 	for fct in "$@"
@@ -111,7 +111,7 @@ load_test(){
 
 add_template_to_folder(){
 	local fct_name=$1
-	echo "Adding 000_launcher.c template to ${BLUE}$fct_name${NC} folder..."
+#	echo "Adding 000_launcher.c template to ${BLUE}$fct_name${NC} folder..."
 	cp $TMPL_LAUNCHER $fct_name/000_launcher.c
 }
 
@@ -121,7 +121,7 @@ create_test(){
 	local args="$3"
 	local index="$4"
 
-	echo "Creating test file ${BLUE}${index}_${test_fct}.c${NC} in ${BLUE}${fct_name}${NC} folder..."
+#	echo "Creating test file ${BLUE}${index}_${test_fct}.c${NC} in ${BLUE}${fct_name}${NC} folder..."
 	cp ${TMPL_TEST} ${fct_name}/${index}_${test_fct}.c
 	sed -e "s/TMPL_FCT_NAME/${fct_name}/" -e "s/TMPL_TEST_FCT_NAME/${test_fct}/" -e "s/TMPL_ARGS/${args}/" ${fct_name}/${index}_${test_fct}.c > ${fct_name}/${index}_${test_fct}_tmp.c
 	rm -f ${fct_name}/${index}_${test_fct}.c
@@ -133,13 +133,13 @@ add_prototypes(){
 	local test_fct="$2"
 
 	if [ ! -f ${fct_name}/${fct_name}.h ]; then
-		echo "Adding ${BLUE}${fct_name}.h${NC} from template file..."
+#		echo "Adding ${BLUE}${fct_name}.h${NC} from template file..."
 		cp ${TMPL_HEADER} ${fct_name}/${fct_name}.h
 		sed "s/TMPL_FCT_NAME/${fct_name}/" ${fct_name}/${fct_name}.h > ${fct_name}/${fct_name}_tmp.h
 		rm -rf ${fct_name}/${fct_name}.h
 		mv ${fct_name}/${fct_name}_tmp.h ${fct_name}/${fct_name}.h
 	fi
-	echo "Adding prototype for ${BLUE}${test_fct}${NC} test in ${BLUE}${fct_name}.h${NC}..."
+#	echo "Adding prototype for ${BLUE}${test_fct}${NC} test in ${BLUE}${fct_name}.h${NC}..."
 	sed "s/\/\*PROTOTYPES_HERE\*\//int"$'\\\t'"${fct_name}_${test_fct}(void);"$'\\\n'"&/" ${fct_name}/${fct_name}.h > ${fct_name}/${fct_name}_tmp.h
 	rm -f ${fct_name}/${fct_name}.h
 	mv ${fct_name}/${fct_name}_tmp.h ${fct_name}/${fct_name}.h
@@ -148,7 +148,7 @@ add_prototypes(){
 save_file_path(){
 	local fct_name="$1"
 	local file_name="$2"
-	echo "Adding ${BLUE}${fct_name}/${file_name}${NC} to ${BLUE}${MAKEFILE_FILE}${NC}..."
+#	echo "Adding ${BLUE}${fct_name}/${file_name}${NC} to ${BLUE}${MAKEFILE_FILE}${NC}..."
 	echo "${fct_name}/${file_name} \\" >> $MAKEFILE_FILE
 }
 
@@ -249,10 +249,10 @@ clean_tests(){
 	else
 		local fcts="$@"
 	fi
-	echo "Removing ${BLUE}$BAK_FOLDER${NC}..."
+#	echo "Removing ${BLUE}$BAK_FOLDER${NC}..."
 	rm -rf $BAK_FOLDER
 	remove_all $fcts
-	echo "Removing ${BLUE}${MAKEFILE_FILE}${NC}"
+#	echo "Removing ${BLUE}${MAKEFILE_FILE}${NC}"
 	rm -f ${MAKEFILE_FILE}
 }
 

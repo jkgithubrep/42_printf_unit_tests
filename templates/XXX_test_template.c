@@ -39,6 +39,9 @@ int		TMPL_FCT_NAME_TMPL_TEST_FCT_NAME(void)
 		ret_value = -1;
 	}
 	else
+	{
+		print_test_result_values_trace(&test_rslt, fd_trace);
 		ret_value = 0;
+	}
 	return (free_result(&test_rslt, ret_value));
 }

@@ -6,7 +6,7 @@
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 16:37:08 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/04 19:13:54 by jkettani         ###   ########.fr       */
+/*   Updated: 2019/03/14 15:16:50 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void		print_header_fd(int fd)
 
 void		print_test_result_values_trace(t_test_rslt *test_rslt, int fd_trace)
 {
-	dprintf(fd_trace, "  > expected: |%s|, ret = %d\n", test_rslt->ref_str,
-				test_rslt->ref_ret);
-	dprintf(fd_trace, "  > actual: |%s|, ret = %d\n", test_rslt->user_str,
-				test_rslt->user_ret);
+	dprintf(fd_trace, "  > %8s: |%s|, ret = %d\n", "expected",
+								test_rslt->ref_str, test_rslt->ref_ret);
+	dprintf(fd_trace, "  > %8s: |%s|, ret = %d\n", "actual",
+								test_rslt->user_str, test_rslt->user_ret);
 }
 
 int			free_result(t_test_rslt *test_rslt, int ret_value)
