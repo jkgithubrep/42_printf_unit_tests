@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/14 16:59:31 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/15 10:25:46 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ CFLAGS =                -g3 #-Wall -Wextra #-Werror
 NAME =                  tests
 TRACE =                 trace.txt
 SRC_PATH =              .
-INCLUDE_PATH =          .
+INCLUDE_PATH =          includes
 OBJ_PATH =              .obj
 
 LIBFT_PATH =            ../../ft_printf/srcs/libft
@@ -55,7 +55,7 @@ COMPILE.c =             $(CC) $(CFLAGS) $(CPPFLAGS) $(DEPFLAGS) -c
 DEPFLAGS =              -MT $@ -MMD -MP -MF $(OBJ_PATH)/$*.Td
 POSTCOMPILE =           @mv -f $(OBJ_PATH)/$*.Td $(OBJ_PATH)/$*.d && touch $@
 PRINTF_SRC_NAME =       00_launcher 01_basic_test
-SRC_NAME =              main tests
+SRC_NAME =              srcs/main srcs/tests
 -include file_paths
 #                        $(addprefix printf/, $(PRINTF_SRC_NAME))
 SRC =                   $(addprefix $(SRC_PATH)/, $(addsuffix .c, $(SRC_NAME)))

@@ -18,6 +18,7 @@ TMPL_HEADER_FILE_NAME=header_template.h
 TMPL_HEADER=$TMPL_FOLDER_PATH/$TMPL_HEADER_FILE_NAME
 TMPL_MAIN_FILE_NAME=main_template.h
 TMPL_MAIN=$TMPL_FOLDER_PATH/$TMPL_MAIN_FILE_NAME
+INCLUDES_PATH=includes
 MAKEFILE_FILE=file_paths;
 TESTS_FILE=tests.txt
 BAK_FOLDER=backup
@@ -154,9 +155,9 @@ save_file_path(){
 
 add_fct_in_main(){
 	local fct_name="$1"
-	sed -e "s/\/\*FCTS_HERE\*\//{\"${fct_name}\", ${fct_name}_launcher},"$'\\\n\\\t'"&/" -e "s/\/\*PROTOTYPES_HERE\*\//int"$'\\\t'"${fct_name}_launcher(void);"$'\\\n'"&/" main.h > main_tmp.h
-	rm -f main.h
-	mv main_tmp.h main.h
+	sed -e "s/\/\*FCTS_HERE\*\//{\"${fct_name}\", ${fct_name}_launcher},"$'\\\n\\\t'"&/" -e "s/\/\*PROTOTYPES_HERE\*\//int"$'\\\t'"${fct_name}_launcher(void);"$'\\\n'"&/" $INCLUDES_PATH/main.h > $INCLUDES_PATH/main_tmp.h
+	rm -f $INCLUDES_PATH/main.h
+	mv $INCLUDES_PATH/main_tmp.h $INCLUDES_PATH/main.h
 }
 
 test_exists(){
@@ -199,7 +200,7 @@ generate_tests(){
 	if $CREATE || [ ! -f ${MAKEFILE_FILE} ]; then
 		no_makefile=true
 		printf "" > ${MAKEFILE_FILE}
-		cp ${TMPL_MAIN} ./main.h
+		cp ${TMPL_MAIN} ./$INCLUDES_PATH/main.h
 	else
 		sed '$ s/$/ \\/' ${MAKEFILE_FILE} > ${MAKEFILE_FILE}_tmp
 		rm -rf ${MAKEFILE_FILE}
