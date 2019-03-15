@@ -333,7 +333,7 @@ if $ERR; then
 fi
 
 if $MANDATORY; then
-	TESTS_LIST="no_type conv_d conv_i conv_u conv_o conv_x conv_cap_X conv_c conv_s conv_p conv_f"
+	TESTS_LIST="no_type conv_d conv_i conv_u conv_o conv_x conv_cap_x conv_c conv_s conv_p conv_f"
 fi
 
 check_test_file
