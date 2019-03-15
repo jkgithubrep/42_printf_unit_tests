@@ -350,6 +350,7 @@ if $UPDATE; then
 fi
 
 if $CREATE || $UPDATE; then
+	make fclean
 	generate_tests $TESTS_LIST
 	launch_tests
 fi

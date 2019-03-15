@@ -1,198 +1,1201 @@
 no_type;empty_string;""
 no_type;newline;"\\n"
 no_type;normal_string;"test12345678";
+no_type;normal_string_with_non_printable;"test12345678\\t\\v\\n";
 no_type;normal_string_and_newline;"test\\n"
+no_type;valid_percent_sign;"%%|%%%%|%%%%%%|%%abc%%def%%ghi%%"
 no_type;very_long_string;"WwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqpWwyAlxbZGYIJZGzkjomuMGJgEuAZPbUAUimRUBeAAyoSGmhJCGmBOguEdCViaCsqohhsuRGLkoFQNmTZEZQFLEwvHAEctloDFOpLZGQyDDexpPllnNXympcKOxDyygGcWpdzqp"
 invalid;percent_signs;"%|%%|%%%|%%%%"
 invalid;percent_and_wrong_type;"% |% h|% hZ"
 invalid;percent_and_flags_and_percent;"%%-%|%%+%|%% %|%%#%"
-conv_d;zero;"%d", 0
-conv_d;zero_and_dot_precision;"%.d", 0
-conv_d;zero_and_dot_3_precision;"%.3d", 0
-conv_d;negative_zero;"%d", -0
-conv_d;negative_zero_and_dot_precision;"%.d", -0
-conv_d;negative_zero_and_3_precision;"%.3d", -0
-conv_d;negative_int;"%d", -42
-conv_d;negative_int_and_dot_precision;"%.d", -42
-conv_d;negative_int_and_3_precision;"%.3d", -42
-conv_d;random_int;"%d", 42
-conv_d;int_max;"%d", 2147483647
-conv_d;int_max_plus_1;"%d", 2147483648
-conv_d;int_min;"%d", -2147483648
-conv_d;unsigned_int_max;"%d", 4294967295
-conv_d;random_int_and_1_precision;"%.1d", 42
-conv_d;random_int_and_4_precision;"%.4d", 42
-conv_d;random_int_and_3_width_and_5_precision;"%3.5d", 42
-conv_d;random_int_and_5_width_and_3_precision;"%5.3d", 42
-conv_d;random_int_and_0_flag;"%0d", 42
-conv_d;random_int_and_0_flag_and_5_width;"%05d", 42
-conv_d;random_int_and_multiple_0_flags_and_5_width;"%00005d", 42
-conv_d;random_int_and_plus_flag;"%+d", 42
-conv_d;random_int_and_multiple_plus_flags;"%++++d", 42
-conv_d;random_int_and_space_flag_and_0_flag_and_5_width;"% 05d", 42
-conv_d;random_int_and_plus_flag_and_0_flag_and_5_width;"%+05d", 42
-conv_d;random_int_and_multiple_plus_flags_and_multiple_0_flags_and_5_width;"%+++++000005d", 42
-conv_d;random_int_and_space_flag;"% d", 42
-conv_d;random_int_and_multiple_space_flags;"%     d", 42
-conv_d;random_int_and_5_width;"%5d", 42
-conv_d;random_int_and_plus_flag_and_5_width;"%+5d", 42
-conv_d;random_int_and_1_width;"%1d", 42
-conv_d;random_int_and_minus_flag_and_5_width;"%-5d", 42
-conv_d;random_int_and_multiple_minus_flags;"%------5d", 42
-conv_d;random_int_and_minus_flag_and_plus_flag_and_5_width;"%-+5d", 42
-conv_d;random_int_and_multiple_minus_flag_and_plus_flag_and_5_width;"%---++++---5d", 42
-conv_d;random_int_and_minus_flag_and_flag_and_5_width;"%- 5d", 42
-conv_d;random_int_and_minus_flag_and_1_width;"%-1d", 42
-conv_d;random_char_and_hh_modifier;"%hhd", 42
-conv_d;short_max_and_h_modifier;"%hd", 32767
-conv_d;short_max_and_1_and_h_modifier;"%hd", 32767
-conv_d;long_max_and_l_modifier;"%ld", 9223372036854775807
-conv_d;long_long_max_and_ll_modifier;"%lld", 9223372036854775807
-conv_d;long_long_max_and_l_length_modifier;"%ld", 9223372036854775807
-conv_d;random_int_with_string;"before %d after", 42
-conv_d;only_multiple_ints;"%d%d%d%d", 42, -42, 0, -0
-conv_d;multiple_ints_with_string;"first%dsecond%dthird%dfourth%d", 42, -42, 0, -0
-conv_i;zero;"%i", 0
-conv_i;zero_and_dot_precision;"%.i", 0
-conv_i;zero_and_dot_3_precision;"%.3i", 0
-conv_i;negative_zero;"%i", -0
-conv_i;negative_zero_and_dot_precision;"%.i", -0
-conv_i;negative_zero_and_3_precision;"%.3i", -0
-conv_i;negative_int;"%i", -42
-conv_i;negative_int_and_dot_precision;"%.i", -42
-conv_i;negative_int_and_3_precision;"%.3i", -42
-conv_i;random_int;"%i", 42
-conv_i;int_max;"%i", 2147483647
-conv_i;int_max_plus_1;"%i", 2147483648
-conv_i;int_min;"%i", -2147483648
-conv_i;unsigned_int_max;"%i", 4294967295
-conv_i;random_int_and_1_precision;"%.1i", 42
-conv_i;random_int_and_4_precision;"%.4i", 42
-conv_i;random_int_and_3_width_and_5_precision;"%3.5i", 42
-conv_i;random_int_and_5_width_and_3_precision;"%5.3i", 42
-conv_i;random_int_and_0_flag;"%0i", 42
-conv_i;random_int_and_0_flag_and_5_width;"%05i", 42
-conv_i;random_int_and_multiple_0_flags_and_5_width;"%00005i", 42
-conv_i;random_int_and_plus_flag;"%+i", 42
-conv_i;random_int_and_multiple_plus_flags;"%++++i", 42
-conv_i;random_int_and_space_flag_and_0_flag_and_5_width;"% 05i", 42
-conv_i;random_int_and_plus_flag_and_0_flag_and_5_width;"%+05i", 42
-conv_i;random_int_and_multiple_plus_flags_and_multiple_0_flags_and_5_width;"%+++++000005i", 42
-conv_i;random_int_and_space_flag;"% i", 42
-conv_i;random_int_and_multiple_space_flags;"%     i", 42
-conv_i;random_int_and_5_width;"%5i", 42
-conv_i;random_int_and_plus_flag_and_5_width;"%+5i", 42
-conv_i;random_int_and_1_width;"%1i", 42
-conv_i;random_int_and_minus_flag_and_5_width;"%-5i", 42
-conv_i;random_int_and_multiple_minus_flags;"%------5i", 42
-conv_i;random_int_and_minus_flag_and_plus_flag_and_5_width;"%-+5i", 42
-conv_i;random_int_and_multiple_minus_flag_and_plus_flag_and_5_width;"%---++++---5i", 42
-conv_i;random_int_and_minus_flag_and_flag_and_5_width;"%- 5i", 42
-conv_i;random_int_and_minus_flag_and_1_width;"%-1i", 42
-conv_i;random_char_and_hh_modifier;"%hhi", 42
-conv_i;short_max_and_h_modifier;"%hi", 32767
-conv_i;short_max_and_1_and_h_modifier;"%hi", 32767
-conv_i;long_max_and_l_modifier;"%li", 9223372036854775807
-conv_i;long_long_max_and_ll_modifier;"%lli", 9223372036854775807
-conv_i;long_long_max_and_l_length_modifier;"%li", 9223372036854775807
-conv_i;random_int_with_string;"before %i after", 42
-conv_i;only_multiple_ints;"%i%i%i%i", 42, -42, 0, -0
-conv_i;multiple_ints_with_string;"first%isecond%ithird%ifourth%i", 42, -42, 0, -0
-conv_o;zero;"%o", 0U
-conv_o;zero_and_dot;"%.o", 0U
-conv_o;zero_and_3_precision;"%.3o", 0U
-conv_o;random_unsigned_int;"%o", 42U
-conv_o;unsigned_int_max;"%o", 4294967295
-conv_o;unsigned_int_max_and_1;"%o", 4294967296
-conv_o;random_unsigned_int_and_1_precision;"%.1o", 42U
-conv_o;random_unsigned_int_and_4_precision;"%.4o", 42U
-conv_o;random_unsigned_int_and_3_width_and_5_precision;"%3.5o", 42U
-conv_o;random_unsigned_int_and_5_width_and_3_precision;"%5.3o", 42U
-conv_o;random_unsigned_int_and_0_flag;"%0o", 42U
-conv_o;random_unsigned_int_and_0_flag_and_5_width;"%05o", 42U
-conv_o;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005o", 42U
-conv_o;random_unsigned_int_and_5_width;"%5o", 42U
-conv_o;random_unsigned_int_and_1_width;"%1o", 42U
-conv_o;random_unsigned_int_and_minus_flag_and_5 width;"%-5o", 42U
-conv_o;random_unsigned_int_and_multiple_minus_flags;"%------5o", 42U
-conv_o;random_unsigned_int_and_hash_flag_and_5_width;"%#5o", 42U
-conv_o;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4o", 42U
-conv_o;random_unsigned_char_and_hh_modifier;"%hho", (unsigned char)42u
-conv_o;unsigned_short_max_and_h_modifier;"%ho", (unsigned short)USHRT_MAX
-conv_o;unsigned_short_max_and_1_and_h_modifier;"%ho", (unsigned short)(USHRT_MAX + 1)
-conv_o;unsigned_long_max_and_l_modifier;"%lo", (unsigned long)ULONG_MAX
-conv_o;unsigned_long_long_max_and_ll_modifier;"%llo", (unsigned long long)ULLONG_MAX
-conv_u;zero;"%u", 0U
-conv_u;zero_and_dot;"%.u", 0U
-conv_u;zero_and_3_precision;"%.3u", 0U
-conv_u;random_unsigned_int;"%u", 42U
-conv_u;unsigned_int_max;"%u", 4294967295
-conv_u;unsigned_int_max_and_1;"%u", 4294967296
-conv_u;random_unsigned_int_and_1_precision;"%.1u", 42U
-conv_u;random_unsigned_int_and_4_precision;"%.4u", 42U
-conv_u;random_unsigned_int_and_3_width_and_5_precision;"%3.5u", 42U
-conv_u;random_unsigned_int_and_5_width_and_3_precision;"%5.3u", 42U
-conv_u;random_unsigned_int_and_0_flag;"%0u", 42U
-conv_u;random_unsigned_int_and_0_flag_and_5_width;"%05u", 42U
-conv_u;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005u", 42U
-conv_u;random_unsigned_int_and_5_width;"%5u", 42U
-conv_u;random_unsigned_int_and_1_width;"%1u", 42U
-conv_u;random_unsigned_int_and_minus_flag_and_5 width;"%-5u", 42U
-conv_u;random_unsigned_int_and_multiple_minus_flags;"%------5u", 42U
-conv_u;random_unsigned_char_and_hh_modifier;"%hhu", (unsigned char)42u
-conv_u;unsigned_short_max_and_h_modifier;"%hu", (unsigned short)USHRT_MAX
-conv_u;unsigned_short_max_and_1_and_h_modifier;"%hu", (unsigned short)(USHRT_MAX + 1)
-conv_u;unsigned_long_max_and_l_modifier;"%lu", (unsigned long)ULONG_MAX
-conv_u;unsigned_long_long_max_and_ll_modifier;"%llu", (unsigned long long)ULLONG_MAX
-conv_x;zero;"%x", 0U
-conv_x;zero_and_dot;"%.x", 0U
-conv_x;zero_and_3_precision;"%.3x", 0U
-conv_x;random_unsigned_int;"%x", 42U
-conv_x;unsigned_int_max;"%x", 4294967295
-conv_x;unsigned_int_max_and_1;"%x", 4294967296
-conv_x;random_unsigned_int_and_1_precision;"%.1x", 42U
-conv_x;random_unsigned_int_and_4_precision;"%.4x", 42U
-conv_x;random_unsigned_int_and_3_width_and_5_precision;"%3.5x", 42U
-conv_x;random_unsigned_int_and_5_width_and_3_precision;"%5.3x", 42U
-conv_x;random_unsigned_int_and_0_flag;"%0x", 42U
-conv_x;random_unsigned_int_and_0_flag_and_5_width;"%05x", 42U
-conv_x;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005x", 42U
-conv_x;random_unsigned_int_and_5_width;"%5x", 42U
-conv_x;random_unsigned_int_and_1_width;"%1x", 42U
-conv_x;random_unsigned_int_and_minus_flag_and_5 width;"%-5x", 42U
-conv_x;random_unsigned_int_and_multiple_minus_flags;"%------5x", 42U
-conv_x;random_unsigned_int_and_hash_flag_and_5_width;"%#5x", 42U
-conv_x;random_unsigned_int_and_hash_and_zero_flag_and_5_width;"%#05x", 42U
-conv_x;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4x", 42U
-conv_x;random_unsigned_char_and_hh_modifier;"%hhx", (unsigned char)42u
-conv_x;unsigned_short_max_and_h_modifier;"%hx", (unsigned short)USHRT_MAX
-conv_x;unsigned_short_max_and_1_and_h_modifier;"%hx", (unsigned short)(USHRT_MAX + 1)
-conv_x;unsigned_long_max_and_l_modifier;"%lx", (unsigned long)ULONG_MAX
-conv_x;unsigned_long_long_max_and_ll_modifier;"%llx", (unsigned long long)ULLONG_MAX
-conv_cap_X;zero;"%X", 0U
-conv_cap_X;zero_and_dot;"%.X", 0U
-conv_cap_X;zero_and_3_precision;"%.3X", 0U
-conv_cap_X;random_unsigned_int;"%X", 42U
-conv_cap_X;unsigned_int_max;"%X", 4294967295
-conv_cap_X;unsigned_int_max_and_1;"%X", 4294967296
-conv_cap_X;random_unsigned_int_and_1_precision;"%.1X", 42U
-conv_cap_X;random_unsigned_int_and_4_precision;"%.4X", 42U
-conv_cap_X;random_unsigned_int_and_3_width_and_5_precision;"%3.5X", 42U
-conv_cap_X;random_unsigned_int_and_5_width_and_3_precision;"%5.3X", 42U
-conv_cap_X;random_unsigned_int_and_0_flag;"%0X", 42U
-conv_cap_X;random_unsigned_int_and_0_flag_and_5_width;"%05X", 42U
-conv_cap_X;random_unsigned_int_and_multiple_0_flags_and_5_width;"%00005X", 42U
-conv_cap_X;random_unsigned_int_and_5_width;"%5X", 42U
-conv_cap_X;random_unsigned_int_and_1_width;"%1X", 42U
-conv_cap_X;random_unsigned_int_and_minus_flag_and_5 width;"%-5X", 42U
-conv_cap_X;random_unsigned_int_and_multiple_minus_flags;"%------5X", 42U
-conv_cap_X;random_unsigned_int_and_hash_flag_and_5_width;"%#5X", 42U
-conv_cap_X;random_unsigned_int_and_hash_flag_and_5_width_and_4_precision;"%#5.4X", 42U
-conv_cap_X;random_unsigned_char_and_hh_modifier;"%hhX", (unsigned char)42u
-conv_cap_X;unsigned_short_max_and_h_modifier;"%hX", (unsigned short)USHRT_MAX
-conv_cap_X;unsigned_short_max_and_1_and_h_modifier;"%hX", (unsigned short)(USHRT_MAX + 1)
-conv_cap_X;unsigned_long_max_and_l_modifier;"%lX", (unsigned long)ULONG_MAX
-conv_cap_X;unsigned_long_long_max_and_ll_modifier;"%llX", (unsigned long long)ULLONG_MAX
+conv_d;zero_and_various_flags;"%d|%-d|%+d|% d|%0d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", 0, 0, 0, 0, 0, 0, 0
+conv_d;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", 0, 0, 0, 0, 0, 0, 0
+conv_d;minus_zero_and_various_flags;"%d|%-d|%+d|% d|%0d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", -0, -0, -0, -0, -0, -0, -0
+conv_d;minus_zero_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", -0, -0, -0, -0, -0, -0, -0
+conv_d;int_max_and_various_flags;"%d|%-d|%+d|% d|%0d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_d;int_min_and_various_flags;"%d|%-d|%+d|% d|%0d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;int_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_d;uint_max_and_various_flags;"%d|%-d|%+d|% d|%0d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_d;long_max_and_various_flags;"%d|%-d|%+d|% d|%0d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_d;long_min_and_various_flags;"%d|%-d|%+d|% d|%0d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_d;long_long_max_and_various_flags;"%d|%-d|%+d|% d|%0d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_hh_modifier;"%hhd|%-hhd|%+hhd|% hhd|%0hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_hh_modifier;"%1hhd|%-1hhd|%+1hhd|% 1hhd|%01hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_hh_modifier;"%23hhd|%-23hhd|%+23hhd|% 23hhd|%023hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_dot_precision_and_hh_modifier;"%.hhd|%-.hhd|%+.hhd|% .hhd|%0.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_5_precision_and_hh_modifier;"%.5hhd|%-.5hhd|%+.5hhd|% .5hhd|%0.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_hh_modifier;"%1.hhd|%-1.hhd|%+1.hhd|% 1.hhd|%01.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_hh_modifier;"%23.hhd|%-23.hhd|%+23.hhd|% 23.hhd|%023.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_5_precision_and_hh_modifier;"%1.5hhd|%-1.5hhd|%+1.5hhd|% 1.5hhd|%01.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_5_precision_and_hh_modifier;"%23.5hhd|%-23.5hhd|%+23.5hhd|% 23.5hhd|%023.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_hh_modifier;"%-+hhd|%- hhd|%-0hhd|%+ hhd|%+0hhd|% 0hhd|%-+ 0hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_hh_modifier;"%-+1hhd|%- 1hhd|%-01hhd|%+ 1hhd|%+01hhd|% 01hhd|%-+ 01hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_hh_modifier;"%-+23hhd|%- 23hhd|%-023hhd|%+ 23hhd|%+023hhd|% 023hhd|%-+ 023hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_dot_precision_and_hh_modifier;"%-+.hhd|%- .hhd|%-0.hhd|%+ .hhd|%+0.hhd|% 0.hhd|%-+ 0.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_5_precision_and_hh_modifier;"%-+.5hhd|%- .5hhd|%-0.5hhd|%+ .5hhd|%+0.5hhd|% 0.5hhd|%-+ 0.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_hh_modifier;"%-+1.hhd|%- 1.hhd|%-01.hhd|%+ 1.hhd|%+01.hhd|% 01.hhd|%-+ 01.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_hh_modifier;"%-+1.5hhd|%- 1.5hhd|%-01.5hhd|%+ 1.5hhd|%+01.5hhd|% 01.5hhd|%-+ 01.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_hh_modifier;"%-+23.hhd|%- 23.hhd|%-023.hhd|%+ 23.hhd|%+023.hhd|% 023.hhd|%-+ 023.hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_hh_modifier;"%-+23.5hhd|%- 23.5hhd|%-023.5hhd|%+ 23.5hhd|%+023.5hhd|% 023.5hhd|%-+ 023.5hhd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_h_modifier;"%hd|%-hd|%+hd|% hd|%0hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_h_modifier;"%1hd|%-1hd|%+1hd|% 1hd|%01hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_h_modifier;"%23hd|%-23hd|%+23hd|% 23hd|%023hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_dot_precision_and_h_modifier;"%.hd|%-.hd|%+.hd|% .hd|%0.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_5_precision_and_h_modifier;"%.5hd|%-.5hd|%+.5hd|% .5hd|%0.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_h_modifier;"%1.hd|%-1.hd|%+1.hd|% 1.hd|%01.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_h_modifier;"%23.hd|%-23.hd|%+23.hd|% 23.hd|%023.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_5_precision_and_h_modifier;"%1.5hd|%-1.5hd|%+1.5hd|% 1.5hd|%01.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_5_precision_and_h_modifier;"%23.5hd|%-23.5hd|%+23.5hd|% 23.5hd|%023.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_h_modifier;"%-+hd|%- hd|%-0hd|%+ hd|%+0hd|% 0hd|%-+ 0hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_h_modifier;"%-+1hd|%- 1hd|%-01hd|%+ 1hd|%+01hd|% 01hd|%-+ 01hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_h_modifier;"%-+23hd|%- 23hd|%-023hd|%+ 23hd|%+023hd|% 023hd|%-+ 023hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_dot_precision_and_h_modifier;"%-+.hd|%- .hd|%-0.hd|%+ .hd|%+0.hd|% 0.hd|%-+ 0.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_5_precision_and_h_modifier;"%-+.5hd|%- .5hd|%-0.5hd|%+ .5hd|%+0.5hd|% 0.5hd|%-+ 0.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_h_modifier;"%-+1.hd|%- 1.hd|%-01.hd|%+ 1.hd|%+01.hd|% 01.hd|%-+ 01.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_h_modifier;"%-+1.5hd|%- 1.5hd|%-01.5hd|%+ 1.5hd|%+01.5hd|% 01.5hd|%-+ 01.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_h_modifier;"%-+23.hd|%- 23.hd|%-023.hd|%+ 23.hd|%+023.hd|% 023.hd|%-+ 023.hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_h_modifier;"%-+23.5hd|%- 23.5hd|%-023.5hd|%+ 23.5hd|%+023.5hd|% 023.5hd|%-+ 023.5hd", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_l_modifier;"%ld|%-ld|%+ld|% ld|%0ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_l_modifier;"%1ld|%-1ld|%+1ld|% 1ld|%01ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_l_modifier;"%23ld|%-23ld|%+23ld|% 23ld|%023ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_dot_precision_and_l_modifier;"%.ld|%-.ld|%+.ld|% .ld|%0.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_5_precision_and_l_modifier;"%.5ld|%-.5ld|%+.5ld|% .5ld|%0.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_l_modifier;"%1.ld|%-1.ld|%+1.ld|% 1.ld|%01.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_l_modifier;"%23.ld|%-23.ld|%+23.ld|% 23.ld|%023.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_5_precision_and_l_modifier;"%1.5ld|%-1.5ld|%+1.5ld|% 1.5ld|%01.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_5_precision_and_l_modifier;"%23.5ld|%-23.5ld|%+23.5ld|% 23.5ld|%023.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_l_modifier;"%-+ld|%- ld|%-0ld|%+ ld|%+0ld|% 0ld|%-+ 0ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_l_modifier;"%-+1ld|%- 1ld|%-01ld|%+ 1ld|%+01ld|% 01ld|%-+ 01ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_l_modifier;"%-+23ld|%- 23ld|%-023ld|%+ 23ld|%+023ld|% 023ld|%-+ 023ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_dot_precision_and_l_modifier;"%-+.ld|%- .ld|%-0.ld|%+ .ld|%+0.ld|% 0.ld|%-+ 0.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_5_precision_and_l_modifier;"%-+.5ld|%- .5ld|%-0.5ld|%+ .5ld|%+0.5ld|% 0.5ld|%-+ 0.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_l_modifier;"%-+1.ld|%- 1.ld|%-01.ld|%+ 1.ld|%+01.ld|% 01.ld|%-+ 01.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_l_modifier;"%-+1.5ld|%- 1.5ld|%-01.5ld|%+ 1.5ld|%+01.5ld|% 01.5ld|%-+ 01.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_l_modifier;"%-+23.ld|%- 23.ld|%-023.ld|%+ 23.ld|%+023.ld|% 023.ld|%-+ 023.ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_l_modifier;"%-+23.5ld|%- 23.5ld|%-023.5ld|%+ 23.5ld|%+023.5ld|% 023.5ld|%-+ 023.5ld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_ll_modifier;"%lld|%-lld|%+lld|% lld|%0lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_ll_modifier;"%1lld|%-1lld|%+1lld|% 1lld|%01lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_ll_modifier;"%23lld|%-23lld|%+23lld|% 23lld|%023lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_dot_precision_and_ll_modifier;"%.lld|%-.lld|%+.lld|% .lld|%0.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_5_precision_and_ll_modifier;"%.5lld|%-.5lld|%+.5lld|% .5lld|%0.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_ll_modifier;"%1.lld|%-1.lld|%+1.lld|% 1.lld|%01.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_ll_modifier;"%23.lld|%-23.lld|%+23.lld|% 23.lld|%023.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_1_width_and_5_precision_and_ll_modifier;"%1.5lld|%-1.5lld|%+1.5lld|% 1.5lld|%01.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_and_23_width_and_5_precision_and_ll_modifier;"%23.5lld|%-23.5lld|%+23.5lld|% 23.5lld|%023.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_ll_modifier;"%-+lld|%- lld|%-0lld|%+ lld|%+0lld|% 0lld|%-+ 0lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_ll_modifier;"%-+1lld|%- 1lld|%-01lld|%+ 1lld|%+01lld|% 01lld|%-+ 01lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_ll_modifier;"%-+23lld|%- 23lld|%-023lld|%+ 23lld|%+023lld|% 023lld|%-+ 023lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_dot_precision_and_ll_modifier;"%-+.lld|%- .lld|%-0.lld|%+ .lld|%+0.lld|% 0.lld|%-+ 0.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_5_precision_and_ll_modifier;"%-+.5lld|%- .5lld|%-0.5lld|%+ .5lld|%+0.5lld|% 0.5lld|%-+ 0.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_ll_modifier;"%-+1.lld|%- 1.lld|%-01.lld|%+ 1.lld|%+01.lld|% 01.lld|%-+ 01.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_ll_modifier;"%-+1.5lld|%- 1.5lld|%-01.5lld|%+ 1.5lld|%+01.5lld|% 01.5lld|%-+ 01.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_ll_modifier;"%-+23.lld|%- 23.lld|%-023.lld|%+ 23.lld|%+023.lld|% 023.lld|%-+ 023.lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_ll_modifier;"%-+23.5lld|%- 23.5lld|%-023.5lld|%+ 23.5lld|%+023.5lld|% 023.5lld|%-+ 023.5lld", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_d;long_long_min_and_various_flags;"%d|%-d|%+d|% d|%0d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width;"%1d|%-1d|%+1d|% 1d|%01d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width;"%23d|%-23d|%+23d|% 23d|%023d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_dot_precision;"%.d|%-.d|%+.d|% .d|%0.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_5_precision;"%.5d|%-.5d|%+.5d|% .5d|%0.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_dot_precision;"%1.d|%-1.d|%+1.d|% 1.d|%01.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_dot_precision;"%23.d|%-23.d|%+23.d|% 23.d|%023.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_5_precision;"%1.5d|%-1.5d|%+1.5d|% 1.5d|%01.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_5_precision;"%23.5d|%-23.5d|%+23.5d|% 23.5d|%023.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined;"%-+d|%- d|%-0d|%+ d|%+0d|% 0d|%-+ 0d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width;"%-+1d|%- 1d|%-01d|%+ 1d|%+01d|% 01d|%-+ 01d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width;"%-+23d|%- 23d|%-023d|%+ 23d|%+023d|% 023d|%-+ 023d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_dot_precision;"%-+.d|%- .d|%-0.d|%+ .d|%+0.d|% 0.d|%-+ 0.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_5_precision;"%-+.5d|%- .5d|%-0.5d|%+ .5d|%+0.5d|% 0.5d|%-+ 0.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.d|%- 1.d|%-01.d|%+ 1.d|%+01.d|% 01.d|%-+ 01.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5d|%- 1.5d|%-01.5d|%+ 1.5d|%+01.5d|% 01.5d|%-+ 01.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.d|%- 23.d|%-023.d|%+ 23.d|%+023.d|% 023.d|%-+ 023.d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5d|%- 23.5d|%-023.5d|%+ 23.5d|%+023.5d|% 023.5d|%-+ 023.5d", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_hh_modifier;"%hhd|%-hhd|%+hhd|% hhd|%0hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_hh_modifier;"%1hhd|%-1hhd|%+1hhd|% 1hhd|%01hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_hh_modifier;"%23hhd|%-23hhd|%+23hhd|% 23hhd|%023hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_dot_precision_and_hh_modifier;"%.hhd|%-.hhd|%+.hhd|% .hhd|%0.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_5_precision_and_hh_modifier;"%.5hhd|%-.5hhd|%+.5hhd|% .5hhd|%0.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_hh_modifier;"%1.hhd|%-1.hhd|%+1.hhd|% 1.hhd|%01.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_hh_modifier;"%23.hhd|%-23.hhd|%+23.hhd|% 23.hhd|%023.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_5_precision_and_hh_modifier;"%1.5hhd|%-1.5hhd|%+1.5hhd|% 1.5hhd|%01.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_5_precision_and_hh_modifier;"%23.5hhd|%-23.5hhd|%+23.5hhd|% 23.5hhd|%023.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_hh_modifier;"%-+hhd|%- hhd|%-0hhd|%+ hhd|%+0hhd|% 0hhd|%-+ 0hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_hh_modifier;"%-+1hhd|%- 1hhd|%-01hhd|%+ 1hhd|%+01hhd|% 01hhd|%-+ 01hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_hh_modifier;"%-+23hhd|%- 23hhd|%-023hhd|%+ 23hhd|%+023hhd|% 023hhd|%-+ 023hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_dot_precision_and_hh_modifier;"%-+.hhd|%- .hhd|%-0.hhd|%+ .hhd|%+0.hhd|% 0.hhd|%-+ 0.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_5_precision_and_hh_modifier;"%-+.5hhd|%- .5hhd|%-0.5hhd|%+ .5hhd|%+0.5hhd|% 0.5hhd|%-+ 0.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_hh_modifier;"%-+1.hhd|%- 1.hhd|%-01.hhd|%+ 1.hhd|%+01.hhd|% 01.hhd|%-+ 01.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_hh_modifier;"%-+1.5hhd|%- 1.5hhd|%-01.5hhd|%+ 1.5hhd|%+01.5hhd|% 01.5hhd|%-+ 01.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_hh_modifier;"%-+23.hhd|%- 23.hhd|%-023.hhd|%+ 23.hhd|%+023.hhd|% 023.hhd|%-+ 023.hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_hh_modifier;"%-+23.5hhd|%- 23.5hhd|%-023.5hhd|%+ 23.5hhd|%+023.5hhd|% 023.5hhd|%-+ 023.5hhd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_h_modifier;"%hd|%-hd|%+hd|% hd|%0hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_h_modifier;"%1hd|%-1hd|%+1hd|% 1hd|%01hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_h_modifier;"%23hd|%-23hd|%+23hd|% 23hd|%023hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_dot_precision_and_h_modifier;"%.hd|%-.hd|%+.hd|% .hd|%0.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_5_precision_and_h_modifier;"%.5hd|%-.5hd|%+.5hd|% .5hd|%0.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_h_modifier;"%1.hd|%-1.hd|%+1.hd|% 1.hd|%01.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_h_modifier;"%23.hd|%-23.hd|%+23.hd|% 23.hd|%023.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_5_precision_and_h_modifier;"%1.5hd|%-1.5hd|%+1.5hd|% 1.5hd|%01.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_5_precision_and_h_modifier;"%23.5hd|%-23.5hd|%+23.5hd|% 23.5hd|%023.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_h_modifier;"%-+hd|%- hd|%-0hd|%+ hd|%+0hd|% 0hd|%-+ 0hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_h_modifier;"%-+1hd|%- 1hd|%-01hd|%+ 1hd|%+01hd|% 01hd|%-+ 01hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_h_modifier;"%-+23hd|%- 23hd|%-023hd|%+ 23hd|%+023hd|% 023hd|%-+ 023hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_dot_precision_and_h_modifier;"%-+.hd|%- .hd|%-0.hd|%+ .hd|%+0.hd|% 0.hd|%-+ 0.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_5_precision_and_h_modifier;"%-+.5hd|%- .5hd|%-0.5hd|%+ .5hd|%+0.5hd|% 0.5hd|%-+ 0.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_h_modifier;"%-+1.hd|%- 1.hd|%-01.hd|%+ 1.hd|%+01.hd|% 01.hd|%-+ 01.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_h_modifier;"%-+1.5hd|%- 1.5hd|%-01.5hd|%+ 1.5hd|%+01.5hd|% 01.5hd|%-+ 01.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_h_modifier;"%-+23.hd|%- 23.hd|%-023.hd|%+ 23.hd|%+023.hd|% 023.hd|%-+ 023.hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_h_modifier;"%-+23.5hd|%- 23.5hd|%-023.5hd|%+ 23.5hd|%+023.5hd|% 023.5hd|%-+ 023.5hd", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_l_modifier;"%ld|%-ld|%+ld|% ld|%0ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_l_modifier;"%1ld|%-1ld|%+1ld|% 1ld|%01ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_l_modifier;"%23ld|%-23ld|%+23ld|% 23ld|%023ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_dot_precision_and_l_modifier;"%.ld|%-.ld|%+.ld|% .ld|%0.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_5_precision_and_l_modifier;"%.5ld|%-.5ld|%+.5ld|% .5ld|%0.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_l_modifier;"%1.ld|%-1.ld|%+1.ld|% 1.ld|%01.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_l_modifier;"%23.ld|%-23.ld|%+23.ld|% 23.ld|%023.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_5_precision_and_l_modifier;"%1.5ld|%-1.5ld|%+1.5ld|% 1.5ld|%01.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_5_precision_and_l_modifier;"%23.5ld|%-23.5ld|%+23.5ld|% 23.5ld|%023.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_l_modifier;"%-+ld|%- ld|%-0ld|%+ ld|%+0ld|% 0ld|%-+ 0ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_l_modifier;"%-+1ld|%- 1ld|%-01ld|%+ 1ld|%+01ld|% 01ld|%-+ 01ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_l_modifier;"%-+23ld|%- 23ld|%-023ld|%+ 23ld|%+023ld|% 023ld|%-+ 023ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_dot_precision_and_l_modifier;"%-+.ld|%- .ld|%-0.ld|%+ .ld|%+0.ld|% 0.ld|%-+ 0.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_5_precision_and_l_modifier;"%-+.5ld|%- .5ld|%-0.5ld|%+ .5ld|%+0.5ld|% 0.5ld|%-+ 0.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_l_modifier;"%-+1.ld|%- 1.ld|%-01.ld|%+ 1.ld|%+01.ld|% 01.ld|%-+ 01.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_l_modifier;"%-+1.5ld|%- 1.5ld|%-01.5ld|%+ 1.5ld|%+01.5ld|% 01.5ld|%-+ 01.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_l_modifier;"%-+23.ld|%- 23.ld|%-023.ld|%+ 23.ld|%+023.ld|% 023.ld|%-+ 023.ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_l_modifier;"%-+23.5ld|%- 23.5ld|%-023.5ld|%+ 23.5ld|%+023.5ld|% 023.5ld|%-+ 023.5ld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_ll_modifier;"%lld|%-lld|%+lld|% lld|%0lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_ll_modifier;"%1lld|%-1lld|%+1lld|% 1lld|%01lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_ll_modifier;"%23lld|%-23lld|%+23lld|% 23lld|%023lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_dot_precision_and_ll_modifier;"%.lld|%-.lld|%+.lld|% .lld|%0.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_5_precision_and_ll_modifier;"%.5lld|%-.5lld|%+.5lld|% .5lld|%0.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_ll_modifier;"%1.lld|%-1.lld|%+1.lld|% 1.lld|%01.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_ll_modifier;"%23.lld|%-23.lld|%+23.lld|% 23.lld|%023.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_1_width_and_5_precision_and_ll_modifier;"%1.5lld|%-1.5lld|%+1.5lld|% 1.5lld|%01.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_and_23_width_and_5_precision_and_ll_modifier;"%23.5lld|%-23.5lld|%+23.5lld|% 23.5lld|%023.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_ll_modifier;"%-+lld|%- lld|%-0lld|%+ lld|%+0lld|% 0lld|%-+ 0lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_ll_modifier;"%-+1lld|%- 1lld|%-01lld|%+ 1lld|%+01lld|% 01lld|%-+ 01lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_ll_modifier;"%-+23lld|%- 23lld|%-023lld|%+ 23lld|%+023lld|% 023lld|%-+ 023lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_dot_precision_and_ll_modifier;"%-+.lld|%- .lld|%-0.lld|%+ .lld|%+0.lld|% 0.lld|%-+ 0.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_5_precision_and_ll_modifier;"%-+.5lld|%- .5lld|%-0.5lld|%+ .5lld|%+0.5lld|% 0.5lld|%-+ 0.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_ll_modifier;"%-+1.lld|%- 1.lld|%-01.lld|%+ 1.lld|%+01.lld|% 01.lld|%-+ 01.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_ll_modifier;"%-+1.5lld|%- 1.5lld|%-01.5lld|%+ 1.5lld|%+01.5lld|% 01.5lld|%-+ 01.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_ll_modifier;"%-+23.lld|%- 23.lld|%-023.lld|%+ 23.lld|%+023.lld|% 023.lld|%-+ 023.lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_d;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_ll_modifier;"%-+23.5lld|%- 23.5lld|%-023.5lld|%+ 23.5lld|%+023.5lld|% 023.5lld|%-+ 023.5lld", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;zero_and_various_flags;"%i|%-i|%+i|% i|%0i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", 0, 0, 0, 0, 0, 0, 0
+conv_i;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", 0, 0, 0, 0, 0, 0, 0
+conv_i;minus_zero_and_various_flags;"%i|%-i|%+i|% i|%0i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", -0, -0, -0, -0, -0, -0, -0
+conv_i;minus_zero_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", -0, -0, -0, -0, -0, -0, -0
+conv_i;int_max_and_various_flags;"%i|%-i|%+i|% i|%0i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX
+conv_i;int_min_and_various_flags;"%i|%-i|%+i|% i|%0i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;int_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN
+conv_i;uint_max_and_various_flags;"%i|%-i|%+i|% i|%0i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_i;long_max_and_various_flags;"%i|%-i|%+i|% i|%0i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX, LONG_MAX
+conv_i;long_min_and_various_flags;"%i|%-i|%+i|% i|%0i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN, LONG_MIN
+conv_i;long_long_max_and_various_flags;"%i|%-i|%+i|% i|%0i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_hh_modifier;"%hhi|%-hhi|%+hhi|% hhi|%0hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_hh_modifier;"%1hhi|%-1hhi|%+1hhi|% 1hhi|%01hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_hh_modifier;"%23hhi|%-23hhi|%+23hhi|% 23hhi|%023hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_dot_precision_and_hh_modifier;"%.hhi|%-.hhi|%+.hhi|% .hhi|%0.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_5_precision_and_hh_modifier;"%.5hhi|%-.5hhi|%+.5hhi|% .5hhi|%0.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_hh_modifier;"%1.hhi|%-1.hhi|%+1.hhi|% 1.hhi|%01.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_hh_modifier;"%23.hhi|%-23.hhi|%+23.hhi|% 23.hhi|%023.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_5_precision_and_hh_modifier;"%1.5hhi|%-1.5hhi|%+1.5hhi|% 1.5hhi|%01.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_5_precision_and_hh_modifier;"%23.5hhi|%-23.5hhi|%+23.5hhi|% 23.5hhi|%023.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_hh_modifier;"%-+hhi|%- hhi|%-0hhi|%+ hhi|%+0hhi|% 0hhi|%-+ 0hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_hh_modifier;"%-+1hhi|%- 1hhi|%-01hhi|%+ 1hhi|%+01hhi|% 01hhi|%-+ 01hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_hh_modifier;"%-+23hhi|%- 23hhi|%-023hhi|%+ 23hhi|%+023hhi|% 023hhi|%-+ 023hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_dot_precision_and_hh_modifier;"%-+.hhi|%- .hhi|%-0.hhi|%+ .hhi|%+0.hhi|% 0.hhi|%-+ 0.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_5_precision_and_hh_modifier;"%-+.5hhi|%- .5hhi|%-0.5hhi|%+ .5hhi|%+0.5hhi|% 0.5hhi|%-+ 0.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_hh_modifier;"%-+1.hhi|%- 1.hhi|%-01.hhi|%+ 1.hhi|%+01.hhi|% 01.hhi|%-+ 01.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_hh_modifier;"%-+1.5hhi|%- 1.5hhi|%-01.5hhi|%+ 1.5hhi|%+01.5hhi|% 01.5hhi|%-+ 01.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_hh_modifier;"%-+23.hhi|%- 23.hhi|%-023.hhi|%+ 23.hhi|%+023.hhi|% 023.hhi|%-+ 023.hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_hh_modifier;"%-+23.5hhi|%- 23.5hhi|%-023.5hhi|%+ 23.5hhi|%+023.5hhi|% 023.5hhi|%-+ 023.5hhi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_h_modifier;"%hi|%-hi|%+hi|% hi|%0hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_h_modifier;"%1hi|%-1hi|%+1hi|% 1hi|%01hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_h_modifier;"%23hi|%-23hi|%+23hi|% 23hi|%023hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_dot_precision_and_h_modifier;"%.hi|%-.hi|%+.hi|% .hi|%0.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_5_precision_and_h_modifier;"%.5hi|%-.5hi|%+.5hi|% .5hi|%0.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_h_modifier;"%1.hi|%-1.hi|%+1.hi|% 1.hi|%01.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_h_modifier;"%23.hi|%-23.hi|%+23.hi|% 23.hi|%023.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_5_precision_and_h_modifier;"%1.5hi|%-1.5hi|%+1.5hi|% 1.5hi|%01.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_5_precision_and_h_modifier;"%23.5hi|%-23.5hi|%+23.5hi|% 23.5hi|%023.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_h_modifier;"%-+hi|%- hi|%-0hi|%+ hi|%+0hi|% 0hi|%-+ 0hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_h_modifier;"%-+1hi|%- 1hi|%-01hi|%+ 1hi|%+01hi|% 01hi|%-+ 01hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_h_modifier;"%-+23hi|%- 23hi|%-023hi|%+ 23hi|%+023hi|% 023hi|%-+ 023hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_dot_precision_and_h_modifier;"%-+.hi|%- .hi|%-0.hi|%+ .hi|%+0.hi|% 0.hi|%-+ 0.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_5_precision_and_h_modifier;"%-+.5hi|%- .5hi|%-0.5hi|%+ .5hi|%+0.5hi|% 0.5hi|%-+ 0.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_h_modifier;"%-+1.hi|%- 1.hi|%-01.hi|%+ 1.hi|%+01.hi|% 01.hi|%-+ 01.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_h_modifier;"%-+1.5hi|%- 1.5hi|%-01.5hi|%+ 1.5hi|%+01.5hi|% 01.5hi|%-+ 01.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_h_modifier;"%-+23.hi|%- 23.hi|%-023.hi|%+ 23.hi|%+023.hi|% 023.hi|%-+ 023.hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_h_modifier;"%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hi", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_l_modifier;"%li|%-li|%+li|% li|%0li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_l_modifier;"%1li|%-1li|%+1li|% 1li|%01li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_l_modifier;"%23li|%-23li|%+23li|% 23li|%023li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_dot_precision_and_l_modifier;"%.li|%-.li|%+.li|% .li|%0.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_5_precision_and_l_modifier;"%.5li|%-.5li|%+.5li|% .5li|%0.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_l_modifier;"%1.li|%-1.li|%+1.li|% 1.li|%01.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_l_modifier;"%23.li|%-23.li|%+23.li|% 23.li|%023.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_5_precision_and_l_modifier;"%1.5li|%-1.5li|%+1.5li|% 1.5li|%01.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_5_precision_and_l_modifier;"%23.5li|%-23.5li|%+23.5li|% 23.5li|%023.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_l_modifier;"%-+li|%- li|%-0li|%+ li|%+0li|% 0li|%-+ 0li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_l_modifier;"%-+1li|%- 1li|%-01li|%+ 1li|%+01li|% 01li|%-+ 01li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_l_modifier;"%-+23li|%- 23li|%-023li|%+ 23li|%+023li|% 023li|%-+ 023li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_dot_precision_and_l_modifier;"%-+.li|%- .li|%-0.li|%+ .li|%+0.li|% 0.li|%-+ 0.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_5_precision_and_l_modifier;"%-+.5li|%- .5li|%-0.5li|%+ .5li|%+0.5li|% 0.5li|%-+ 0.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_l_modifier;"%-+1.li|%- 1.li|%-01.li|%+ 1.li|%+01.li|% 01.li|%-+ 01.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_l_modifier;"%-+1.5li|%- 1.5li|%-01.5li|%+ 1.5li|%+01.5li|% 01.5li|%-+ 01.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_l_modifier;"%-+23.li|%- 23.li|%-023.li|%+ 23.li|%+023.li|% 023.li|%-+ 023.li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_l_modifier;"%-+23.5li|%- 23.5li|%-023.5li|%+ 23.5li|%+023.5li|% 023.5li|%-+ 023.5li", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_ll_modifier;"%lli|%-lli|%+lli|% lli|%0lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_ll_modifier;"%1lli|%-1lli|%+1lli|% 1lli|%01lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_ll_modifier;"%23lli|%-23lli|%+23lli|% 23lli|%023lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_dot_precision_and_ll_modifier;"%.lli|%-.lli|%+.lli|% .lli|%0.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_5_precision_and_ll_modifier;"%.5lli|%-.5lli|%+.5lli|% .5lli|%0.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_dot_precision_and_ll_modifier;"%1.lli|%-1.lli|%+1.lli|% 1.lli|%01.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_dot_precision_and_ll_modifier;"%23.lli|%-23.lli|%+23.lli|% 23.lli|%023.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_1_width_and_5_precision_and_ll_modifier;"%1.5lli|%-1.5lli|%+1.5lli|% 1.5lli|%01.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_and_23_width_and_5_precision_and_ll_modifier;"%23.5lli|%-23.5lli|%+23.5lli|% 23.5lli|%023.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_ll_modifier;"%-+lli|%- lli|%-0lli|%+ lli|%+0lli|% 0lli|%-+ 0lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_ll_modifier;"%-+1lli|%- 1lli|%-01lli|%+ 1lli|%+01lli|% 01lli|%-+ 01lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_ll_modifier;"%-+23lli|%- 23lli|%-023lli|%+ 23lli|%+023lli|% 023lli|%-+ 023lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_dot_precision_and_ll_modifier;"%-+.lli|%- .lli|%-0.lli|%+ .lli|%+0.lli|% 0.lli|%-+ 0.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_5_precision_and_ll_modifier;"%-+.5lli|%- .5lli|%-0.5lli|%+ .5lli|%+0.5lli|% 0.5lli|%-+ 0.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_dot_precision_and_ll_modifier;"%-+1.lli|%- 1.lli|%-01.lli|%+ 1.lli|%+01.lli|% 01.lli|%-+ 01.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_1_width_and_5_precision_and_ll_modifier;"%-+1.5lli|%- 1.5lli|%-01.5lli|%+ 1.5lli|%+01.5lli|% 01.5lli|%-+ 01.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_dot_precision_and_ll_modifier;"%-+23.lli|%- 23.lli|%-023.lli|%+ 23.lli|%+023.lli|% 023.lli|%-+ 023.lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_max_and_various_flags_combined_and_23_width_and_5_precision_and_ll_modifier;"%-+23.5lli|%- 23.5lli|%-023.5lli|%+ 23.5lli|%+023.5lli|% 023.5lli|%-+ 023.5lli", LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX, LLONG_MAX
+conv_i;long_long_min_and_various_flags;"%i|%-i|%+i|% i|%0i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width;"%1i|%-1i|%+1i|% 1i|%01i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width;"%23i|%-23i|%+23i|% 23i|%023i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_dot_precision;"%.i|%-.i|%+.i|% .i|%0.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_5_precision;"%.5i|%-.5i|%+.5i|% .5i|%0.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_dot_precision;"%1.i|%-1.i|%+1.i|% 1.i|%01.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_dot_precision;"%23.i|%-23.i|%+23.i|% 23.i|%023.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_5_precision;"%1.5i|%-1.5i|%+1.5i|% 1.5i|%01.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_5_precision;"%23.5i|%-23.5i|%+23.5i|% 23.5i|%023.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined;"%-+i|%- i|%-0i|%+ i|%+0i|% 0i|%-+ 0i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width;"%-+1i|%- 1i|%-01i|%+ 1i|%+01i|% 01i|%-+ 01i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width;"%-+23i|%- 23i|%-023i|%+ 23i|%+023i|% 023i|%-+ 023i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_dot_precision;"%-+.i|%- .i|%-0.i|%+ .i|%+0.i|% 0.i|%-+ 0.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_5_precision;"%-+.5i|%- .5i|%-0.5i|%+ .5i|%+0.5i|% 0.5i|%-+ 0.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision;"%-+1.i|%- 1.i|%-01.i|%+ 1.i|%+01.i|% 01.i|%-+ 01.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_5_precision;"%-+1.5i|%- 1.5i|%-01.5i|%+ 1.5i|%+01.5i|% 01.5i|%-+ 01.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision;"%-+23.i|%- 23.i|%-023.i|%+ 23.i|%+023.i|% 023.i|%-+ 023.i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_5_precision;"%-+23.5i|%- 23.5i|%-023.5i|%+ 23.5i|%+023.5i|% 023.5i|%-+ 023.5i", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_hh_modifier;"%hhi|%-hhi|%+hhi|% hhi|%0hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_hh_modifier;"%1hhi|%-1hhi|%+1hhi|% 1hhi|%01hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_hh_modifier;"%23hhi|%-23hhi|%+23hhi|% 23hhi|%023hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_dot_precision_and_hh_modifier;"%.hhi|%-.hhi|%+.hhi|% .hhi|%0.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_5_precision_and_hh_modifier;"%.5hhi|%-.5hhi|%+.5hhi|% .5hhi|%0.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_hh_modifier;"%1.hhi|%-1.hhi|%+1.hhi|% 1.hhi|%01.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_hh_modifier;"%23.hhi|%-23.hhi|%+23.hhi|% 23.hhi|%023.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_5_precision_and_hh_modifier;"%1.5hhi|%-1.5hhi|%+1.5hhi|% 1.5hhi|%01.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_5_precision_and_hh_modifier;"%23.5hhi|%-23.5hhi|%+23.5hhi|% 23.5hhi|%023.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_hh_modifier;"%-+hhi|%- hhi|%-0hhi|%+ hhi|%+0hhi|% 0hhi|%-+ 0hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_hh_modifier;"%-+1hhi|%- 1hhi|%-01hhi|%+ 1hhi|%+01hhi|% 01hhi|%-+ 01hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_hh_modifier;"%-+23hhi|%- 23hhi|%-023hhi|%+ 23hhi|%+023hhi|% 023hhi|%-+ 023hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_dot_precision_and_hh_modifier;"%-+.hhi|%- .hhi|%-0.hhi|%+ .hhi|%+0.hhi|% 0.hhi|%-+ 0.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_5_precision_and_hh_modifier;"%-+.5hhi|%- .5hhi|%-0.5hhi|%+ .5hhi|%+0.5hhi|% 0.5hhi|%-+ 0.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_hh_modifier;"%-+1.hhi|%- 1.hhi|%-01.hhi|%+ 1.hhi|%+01.hhi|% 01.hhi|%-+ 01.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_hh_modifier;"%-+1.5hhi|%- 1.5hhi|%-01.5hhi|%+ 1.5hhi|%+01.5hhi|% 01.5hhi|%-+ 01.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_hh_modifier;"%-+23.hhi|%- 23.hhi|%-023.hhi|%+ 23.hhi|%+023.hhi|% 023.hhi|%-+ 023.hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_hh_modifier;"%-+23.5hhi|%- 23.5hhi|%-023.5hhi|%+ 23.5hhi|%+023.5hhi|% 023.5hhi|%-+ 023.5hhi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_h_modifier;"%hi|%-hi|%+hi|% hi|%0hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_h_modifier;"%1hi|%-1hi|%+1hi|% 1hi|%01hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_h_modifier;"%23hi|%-23hi|%+23hi|% 23hi|%023hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_dot_precision_and_h_modifier;"%.hi|%-.hi|%+.hi|% .hi|%0.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_5_precision_and_h_modifier;"%.5hi|%-.5hi|%+.5hi|% .5hi|%0.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_h_modifier;"%1.hi|%-1.hi|%+1.hi|% 1.hi|%01.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_h_modifier;"%23.hi|%-23.hi|%+23.hi|% 23.hi|%023.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_5_precision_and_h_modifier;"%1.5hi|%-1.5hi|%+1.5hi|% 1.5hi|%01.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_5_precision_and_h_modifier;"%23.5hi|%-23.5hi|%+23.5hi|% 23.5hi|%023.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_h_modifier;"%-+hi|%- hi|%-0hi|%+ hi|%+0hi|% 0hi|%-+ 0hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_h_modifier;"%-+1hi|%- 1hi|%-01hi|%+ 1hi|%+01hi|% 01hi|%-+ 01hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_h_modifier;"%-+23hi|%- 23hi|%-023hi|%+ 23hi|%+023hi|% 023hi|%-+ 023hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_dot_precision_and_h_modifier;"%-+.hi|%- .hi|%-0.hi|%+ .hi|%+0.hi|% 0.hi|%-+ 0.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_5_precision_and_h_modifier;"%-+.5hi|%- .5hi|%-0.5hi|%+ .5hi|%+0.5hi|% 0.5hi|%-+ 0.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_h_modifier;"%-+1.hi|%- 1.hi|%-01.hi|%+ 1.hi|%+01.hi|% 01.hi|%-+ 01.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_h_modifier;"%-+1.5hi|%- 1.5hi|%-01.5hi|%+ 1.5hi|%+01.5hi|% 01.5hi|%-+ 01.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_h_modifier;"%-+23.hi|%- 23.hi|%-023.hi|%+ 23.hi|%+023.hi|% 023.hi|%-+ 023.hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_h_modifier;"%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hi", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_l_modifier;"%li|%-li|%+li|% li|%0li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_l_modifier;"%1li|%-1li|%+1li|% 1li|%01li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_l_modifier;"%23li|%-23li|%+23li|% 23li|%023li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_dot_precision_and_l_modifier;"%.li|%-.li|%+.li|% .li|%0.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_5_precision_and_l_modifier;"%.5li|%-.5li|%+.5li|% .5li|%0.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_l_modifier;"%1.li|%-1.li|%+1.li|% 1.li|%01.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_l_modifier;"%23.li|%-23.li|%+23.li|% 23.li|%023.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_5_precision_and_l_modifier;"%1.5li|%-1.5li|%+1.5li|% 1.5li|%01.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_5_precision_and_l_modifier;"%23.5li|%-23.5li|%+23.5li|% 23.5li|%023.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_l_modifier;"%-+li|%- li|%-0li|%+ li|%+0li|% 0li|%-+ 0li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_l_modifier;"%-+1li|%- 1li|%-01li|%+ 1li|%+01li|% 01li|%-+ 01li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_l_modifier;"%-+23li|%- 23li|%-023li|%+ 23li|%+023li|% 023li|%-+ 023li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_dot_precision_and_l_modifier;"%-+.li|%- .li|%-0.li|%+ .li|%+0.li|% 0.li|%-+ 0.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_5_precision_and_l_modifier;"%-+.5li|%- .5li|%-0.5li|%+ .5li|%+0.5li|% 0.5li|%-+ 0.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_l_modifier;"%-+1.li|%- 1.li|%-01.li|%+ 1.li|%+01.li|% 01.li|%-+ 01.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_l_modifier;"%-+1.5li|%- 1.5li|%-01.5li|%+ 1.5li|%+01.5li|% 01.5li|%-+ 01.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_l_modifier;"%-+23.li|%- 23.li|%-023.li|%+ 23.li|%+023.li|% 023.li|%-+ 023.li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_l_modifier;"%-+23.5li|%- 23.5li|%-023.5li|%+ 23.5li|%+023.5li|% 023.5li|%-+ 023.5li", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_ll_modifier;"%lli|%-lli|%+lli|% lli|%0lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_ll_modifier;"%1lli|%-1lli|%+1lli|% 1lli|%01lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_ll_modifier;"%23lli|%-23lli|%+23lli|% 23lli|%023lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_dot_precision_and_ll_modifier;"%.lli|%-.lli|%+.lli|% .lli|%0.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_5_precision_and_ll_modifier;"%.5lli|%-.5lli|%+.5lli|% .5lli|%0.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_dot_precision_and_ll_modifier;"%1.lli|%-1.lli|%+1.lli|% 1.lli|%01.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_dot_precision_and_ll_modifier;"%23.lli|%-23.lli|%+23.lli|% 23.lli|%023.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_1_width_and_5_precision_and_ll_modifier;"%1.5lli|%-1.5lli|%+1.5lli|% 1.5lli|%01.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_and_23_width_and_5_precision_and_ll_modifier;"%23.5lli|%-23.5lli|%+23.5lli|% 23.5lli|%023.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_ll_modifier;"%-+lli|%- lli|%-0lli|%+ lli|%+0lli|% 0lli|%-+ 0lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_ll_modifier;"%-+1lli|%- 1lli|%-01lli|%+ 1lli|%+01lli|% 01lli|%-+ 01lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_ll_modifier;"%-+23lli|%- 23lli|%-023lli|%+ 23lli|%+023lli|% 023lli|%-+ 023lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_dot_precision_and_ll_modifier;"%-+.lli|%- .lli|%-0.lli|%+ .lli|%+0.lli|% 0.lli|%-+ 0.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_5_precision_and_ll_modifier;"%-+.5lli|%- .5lli|%-0.5lli|%+ .5lli|%+0.5lli|% 0.5lli|%-+ 0.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_dot_precision_and_ll_modifier;"%-+1.lli|%- 1.lli|%-01.lli|%+ 1.lli|%+01.lli|% 01.lli|%-+ 01.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_1_width_and_5_precision_and_ll_modifier;"%-+1.5lli|%- 1.5lli|%-01.5lli|%+ 1.5lli|%+01.5lli|% 01.5lli|%-+ 01.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_dot_precision_and_ll_modifier;"%-+23.lli|%- 23.lli|%-023.lli|%+ 23.lli|%+023.lli|% 023.lli|%-+ 023.lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_i;long_long_min_and_various_flags_combined_and_23_width_and_5_precision_and_ll_modifier;"%-+23.5lli|%- 23.5lli|%-023.5lli|%+ 23.5lli|%+023.5lli|% 023.5lli|%-+ 023.5lli", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN
+conv_u;zero_and_various_flags;"%u|%-u|%0u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_1_width;"%1u|%-1u|%01u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_23_width;"%23u|%-23u|%023u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_dot_precision;"%.u|%-.u|%0.u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_5_precision;"%.5u|%-.5u|%0.5u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_1_width_and_dot_precision;"%1.u|%-1.u|%01.u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_23_width_and_dot_precision;"%23.u|%-23.u|%023.u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_1_width_and_5_precision;"%1.5u|%-1.5u|%01.5u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_and_23_width_and_5_precision;"%23.5u|%-23.5u|%023.5u", 0U, 0U, 0U
+conv_u;zero_and_various_flags_combined;"%-0u", 0U
+conv_u;zero_and_various_flags_combined_and_1_width;"%-01u", 0U
+conv_u;zero_and_various_flags_combined_and_23_width;"%-023u", 0U
+conv_u;zero_and_various_flags_combined_and_dot_precision;"%-0.u", 0U
+conv_u;zero_and_various_flags_combined_and_5_precision;"%-0.5u", 0U
+conv_u;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-01.u", 0U
+conv_u;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-01.5u", 0U
+conv_u;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-023.u", 0U
+conv_u;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-023.5u", 0U
+conv_u;uint_max_and_various_flags;"%u|%-u|%0u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_1_width;"%1u|%-1u|%01u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_23_width;"%23u|%-23u|%023u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_dot_precision;"%.u|%-.u|%0.u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_5_precision;"%.5u|%-.5u|%0.5u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.u|%-1.u|%01.u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.u|%-23.u|%023.u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5u|%-1.5u|%01.5u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5u|%-23.5u|%023.5u", UINT_MAX, UINT_MAX, UINT_MAX
+conv_u;uint_max_and_various_flags_combined;"%-0u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_1_width;"%-01u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_23_width;"%-023u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_dot_precision;"%-0.u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_5_precision;"%-0.5u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-01.u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-01.5u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-023.u", UINT_MAX
+conv_u;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-023.5u", UINT_MAX
+conv_u;ulong_max_and_various_flags;"%u|%-u|%0u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_1_width;"%1u|%-1u|%01u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_23_width;"%23u|%-23u|%023u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_dot_precision;"%.u|%-.u|%0.u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_5_precision;"%.5u|%-.5u|%0.5u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_1_width_and_dot_precision;"%1.u|%-1.u|%01.u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_23_width_and_dot_precision;"%23.u|%-23.u|%023.u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_1_width_and_5_precision;"%1.5u|%-1.5u|%01.5u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_and_23_width_and_5_precision;"%23.5u|%-23.5u|%023.5u", ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined;"%-0u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_1_width;"%-01u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_23_width;"%-023u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_dot_precision;"%-0.u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_5_precision;"%-0.5u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-01.u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-01.5u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-023.u", ULONG_MAX
+conv_u;ulong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-023.5u", ULONG_MAX
+conv_u;ullong_max_and_various_flags;"%u|%-u|%0u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width;"%1u|%-1u|%01u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width;"%23u|%-23u|%023u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_dot_precision;"%.u|%-.u|%0.u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_5_precision;"%.5u|%-.5u|%0.5u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_dot_precision;"%1.u|%-1.u|%01.u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_dot_precision;"%23.u|%-23.u|%023.u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_5_precision;"%1.5u|%-1.5u|%01.5u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_5_precision;"%23.5u|%-23.5u|%023.5u", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined;"%-0u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width;"%-01u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width;"%-023u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_dot_precision;"%-0.u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_5_precision;"%-0.5u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-01.u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-01.5u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-023.u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-023.5u", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_hh_modifier_hh_modifier;"%hhu|%-hhu|%0hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_hh_modifier;"%1hhu|%-1hhu|%01hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_hh_modifier;"%23hhu|%-23hhu|%023hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_dot_precision_hh_modifier;"%.hhu|%-.hhu|%0.hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_5_precision_hh_modifier;"%.5hhu|%-.5hhu|%0.5hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_dot_precision_hh_modifier;"%1.hhu|%-1.hhu|%01.hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_dot_precision_hh_modifier;"%23.hhu|%-23.hhu|%023.hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_5_precision_hh_modifier;"%1.5hhu|%-1.5hhu|%01.5hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_5_precision_hh_modifier;"%23.5hhu|%-23.5hhu|%023.5hhu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_hh_modifier;"%-0hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_hh_modifier;"%-01hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_hh_modifier;"%-023hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_dot_precision_hh_modifier;"%-0.hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_5_precision_hh_modifier;"%-0.5hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_hh_modifier;"%-01.hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_hh_modifier;"%-01.5hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_hh_modifier;"%-023.hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_hh_modifier;"%-023.5hhu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_h;"%hu|%-hu|%0hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_h_modifier;"%1hu|%-1hu|%01hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_h_modifier;"%23hu|%-23hu|%023hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_dot_precision_h_modifier;"%.hu|%-.hu|%0.hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_5_precision_h_modifier;"%.5hu|%-.5hu|%0.5hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_dot_precision_h_modifier;"%1.hu|%-1.hu|%01.hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_dot_precision_h_modifier;"%23.hu|%-23.hu|%023.hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_5_precision_h_modifier;"%1.5hu|%-1.5hu|%01.5hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_5_precision_h_modifier;"%23.5hu|%-23.5hu|%023.5hu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_h_modifier;"%-0hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_h_modifier;"%-01hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_h_modifier;"%-023hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_dot_precision_h_modifier;"%-0.hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_5_precision_h_modifier;"%-0.5hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_h_modifier;"%-01.hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_h_modifier;"%-01.5hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_h_modifier;"%-023.hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_h_modifier;"%-023.5hu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_l_modifier;"%lu|%-lu|%0lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_l_modifier;"%1lu|%-1lu|%01lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_l_modifier;"%23lu|%-23lu|%023lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_dot_precision_l_modifier;"%.lu|%-.lu|%0.lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_5_precision_l_modifier;"%.5lu|%-.5lu|%0.5lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_dot_precision_l_modifier;"%1.lu|%-1.lu|%01.lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_dot_precision_l_modifier;"%23.lu|%-23.lu|%023.lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_5_precision_l_modifier;"%1.5lu|%-1.5lu|%01.5lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_5_precision_l_modifier;"%23.5lu|%-23.5lu|%023.5lu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_l_modifier;"%-0lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_l_modifier;"%-01lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_l_modifier;"%-023lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_dot_precision_l_modifier;"%-0.lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_5_precision_l_modifier;"%-0.5lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_l_modifier;"%-01.lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_l_modifier;"%-01.5lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_l_modifier;"%-023.lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_l_modifier;"%-023.5lu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_ll_modifier;"%llu|%-llu|%0llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_ll_modifier;"%1llu|%-1llu|%01llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_ll_modifier;"%23llu|%-23llu|%023llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_dot_precision_ll_modifier;"%.llu|%-.llu|%0.llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_5_precision_ll_modifier;"%.5llu|%-.5llu|%0.5llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_dot_precision_ll_modifier;"%1.llu|%-1.llu|%01.llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_dot_precision_ll_modifier;"%23.llu|%-23.llu|%023.llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_1_width_and_5_precision_ll_modifier;"%1.5llu|%-1.5llu|%01.5llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_and_23_width_and_5_precision_ll_modifier;"%23.5llu|%-23.5llu|%023.5llu", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_ll_modifier;"%-0llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_ll_modifier;"%-01llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_ll_modifier;"%-023llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_dot_precision_ll_modifier;"%-0.llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_5_precision_ll_modifier;"%-0.5llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_ll_modifier;"%-01.llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_ll_modifier;"%-01.5llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_ll_modifier;"%-023.llu", ULLONG_MAX
+conv_u;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_ll_modifier;"%-023.5llu", ULLONG_MAX
+conv_o;zero_and_various_flags;"%o|%-o|%#o|%0o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_1_width;"%1o|%-1o|%#o|%01o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_23_width;"%23o|%-23o|%#o|%023o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_dot_precision;"%.o|%-.o|%#.o|%0.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_5_precision;"%.5o|%-.5o|%#.5o|%0.5o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_1_width_and_dot_precision;"%1.o|%-1.o|%#1.o|%01.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_23_width_and_dot_precision;"%23.o|%-23.o|%#23.o|%023.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_1_width_and_5_precision;"%1.5o|%-1.5o|%#1.5o|%01.5o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_and_23_width_and_5_precision;"%23.5o|%-23.5o|%#23.5o|%023.5o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined;"%-#o|%-0o|%#0o|%-#0o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_1_width;"%-#1o|%-01o|%#01o|%-#01o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_23_width;"%-#23o|%-023o|%#023o|%-#023o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_dot_precision;"%-#.o|%-0.o|%#0.o|%-#0.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_5_precision;"%-#.5o|%-0.5o|%#0.5o|%-#0.5o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.o|%-01.o|%#01.o|%-#01.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5o|%-01.5o|%#01.5o|%-#01.5o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.o|%-023.o|%#023.o|%-#023.o", 0U, 0U, 0U, 0U
+conv_o;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5o|%-023.5o|%#023.5o|%-#023.5o", 0U, 0U, 0U, 0U
+conv_o;uint_max_and_various_flags;"%o|%-o|%#o|%0o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_1_width;"%1o|%-1o|%#o|%01o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_23_width;"%23o|%-23o|%#o|%023o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_dot_precision;"%.o|%-.o|%#.o|%0.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_5_precision;"%.5o|%-.5o|%#.5o|%0.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.o|%-1.o|%#1.o|%01.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.o|%-23.o|%#23.o|%023.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5o|%-1.5o|%#1.5o|%01.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5o|%-23.5o|%#23.5o|%023.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined;"%-#o|%-0o|%#0o|%-#0o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_1_width;"%-#1o|%-01o|%#01o|%-#01o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_23_width;"%-#23o|%-023o|%#023o|%-#023o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_dot_precision;"%-#.o|%-0.o|%#0.o|%-#0.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_5_precision;"%-#.5o|%-0.5o|%#0.5o|%-#0.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.o|%-01.o|%#01.o|%-#01.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5o|%-01.5o|%#01.5o|%-#01.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.o|%-023.o|%#023.o|%-#023.o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5o|%-023.5o|%#023.5o|%-#023.5o", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_o;ulong_max_and_various_flags;"%o|%-o|%#o|%0o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_1_width;"%1o|%-1o|%#o|%01o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_23_width;"%23o|%-23o|%#o|%023o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_dot_precision;"%.o|%-.o|%#.o|%0.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_5_precision;"%.5o|%-.5o|%#.5o|%0.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_1_width_and_dot_precision;"%1.o|%-1.o|%#1.o|%01.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_23_width_and_dot_precision;"%23.o|%-23.o|%#23.o|%023.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_1_width_and_5_precision;"%1.5o|%-1.5o|%#1.5o|%01.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_and_23_width_and_5_precision;"%23.5o|%-23.5o|%#23.5o|%023.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined;"%-#o|%-0o|%#0o|%-#0o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_1_width;"%-#1o|%-01o|%#01o|%-#01o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_23_width;"%-#23o|%-023o|%#023o|%-#023o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_dot_precision;"%-#.o|%-0.o|%#0.o|%-#0.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_5_precision;"%-#.5o|%-0.5o|%#0.5o|%-#0.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.o|%-01.o|%#01.o|%-#01.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5o|%-01.5o|%#01.5o|%-#01.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.o|%-023.o|%#023.o|%-#023.o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ulong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5o|%-023.5o|%#023.5o|%-#023.5o", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_o;ullong_max_and_various_flags;"%o|%-o|%#o|%0o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width;"%1o|%-1o|%#o|%01o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width;"%23o|%-23o|%#o|%023o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_dot_precision;"%.o|%-.o|%#.o|%0.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_5_precision;"%.5o|%-.5o|%#.5o|%0.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_dot_precision;"%1.o|%-1.o|%#1.o|%01.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_dot_precision;"%23.o|%-23.o|%#23.o|%023.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_5_precision;"%1.5o|%-1.5o|%#1.5o|%01.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_5_precision;"%23.5o|%-23.5o|%#23.5o|%023.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined;"%-#o|%-0o|%#0o|%-#0o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width;"%-#1o|%-01o|%#01o|%-#01o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width;"%-#23o|%-023o|%#023o|%-#023o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_dot_precision;"%-#.o|%-0.o|%#0.o|%-#0.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_5_precision;"%-#.5o|%-0.5o|%#0.5o|%-#0.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.o|%-01.o|%#01.o|%-#01.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5o|%-01.5o|%#01.5o|%-#01.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.o|%-023.o|%#023.o|%-#023.o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5o|%-023.5o|%#023.5o|%-#023.5o", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_hh_modifier;"%hho|%-hho|%#hho|%0hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_hh_modifier;"%1hho|%-1hho|%#hho|%01hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_hh_modifier;"%23hho|%-23hho|%#hho|%023hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_dot_precision_hh_modifier;"%.hho|%-.hho|%#.hho|%0.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_5_precision_hh_modifier;"%.5hho|%-.5hho|%#.5hho|%0.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_dot_precision_hh_modifier;"%1.hho|%-1.hho|%#1.hho|%01.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_dot_precision_hh_modifier;"%23.hho|%-23.hho|%#23.hho|%023.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_5_precision_hh_modifier;"%1.5hho|%-1.5hho|%#1.5hho|%01.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_5_precision_hh_modifier;"%23.5hho|%-23.5hho|%#23.5hho|%023.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_hh_modifier;"%-#hho|%-0hho|%#0hho|%-#0hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_hh_modifier;"%-#1hho|%-01hho|%#01hho|%-#01hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_hh_modifier;"%-#23hho|%-023hho|%#023hho|%-#023hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_dot_precision_hh_modifier;"%-#.hho|%-0.hho|%#0.hho|%-#0.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_5_precision_hh_modifier;"%-#.5hho|%-0.5hho|%#0.5hho|%-#0.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_hh_modifier;"%-#1.hho|%-01.hho|%#01.hho|%-#01.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_hh_modifier;"%-#1.5hho|%-01.5hho|%#01.5hho|%-#01.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_hh_modifier;"%-#23.hho|%-023.hho|%#023.hho|%-#023.hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_hh_modifier;"%-#23.5hho|%-023.5hho|%#023.5hho|%-#023.5hho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_h_modifier;"%ho|%-ho|%#ho|%0ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_h_modifier;"%1ho|%-1ho|%#ho|%01ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_h_modifier;"%23ho|%-23ho|%#ho|%023ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_dot_precision_h_modifier;"%.ho|%-.ho|%#.ho|%0.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_5_precision_h_modifier;"%.5ho|%-.5ho|%#.5ho|%0.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_dot_precision_h_modifier;"%1.ho|%-1.ho|%#1.ho|%01.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_dot_precision_h_modifier;"%23.ho|%-23.ho|%#23.ho|%023.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_5_precision_h_modifier;"%1.5ho|%-1.5ho|%#1.5ho|%01.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_5_precision_h_modifier;"%23.5ho|%-23.5ho|%#23.5ho|%023.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_h_modifier;"%-#ho|%-0ho|%#0ho|%-#0ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_h_modifier;"%-#1ho|%-01ho|%#01ho|%-#01ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_h_modifier;"%-#23ho|%-023ho|%#023ho|%-#023ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_dot_precision_h_modifier;"%-#.ho|%-0.ho|%#0.ho|%-#0.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_5_precision_h_modifier;"%-#.5ho|%-0.5ho|%#0.5ho|%-#0.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_h_modifier;"%-#1.ho|%-01.ho|%#01.ho|%-#01.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_h_modifier;"%-#1.5ho|%-01.5ho|%#01.5ho|%-#01.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_h_modifier;"%-#23.ho|%-023.ho|%#023.ho|%-#023.ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_h_modifier;"%-#23.5ho|%-023.5ho|%#023.5ho|%-#023.5ho", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_l_modifier;"%lo|%-lo|%#lo|%0lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_l_modifier;"%1lo|%-1lo|%#lo|%01lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_l_modifier;"%23lo|%-23lo|%#lo|%023lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_dot_precision_l_modifier;"%.lo|%-.lo|%#.lo|%0.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_5_precision_l_modifier;"%.5lo|%-.5lo|%#.5lo|%0.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_dot_precision_l_modifier;"%1.lo|%-1.lo|%#1.lo|%01.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_dot_precision_l_modifier;"%23.lo|%-23.lo|%#23.lo|%023.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_5_precision_l_modifier;"%1.5lo|%-1.5lo|%#1.5lo|%01.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_5_precision_l_modifier;"%23.5lo|%-23.5lo|%#23.5lo|%023.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_l_modifier;"%-#lo|%-0lo|%#0lo|%-#0lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_l_modifier;"%-#1lo|%-01lo|%#01lo|%-#01lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_l_modifier;"%-#23lo|%-023lo|%#023lo|%-#023lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_dot_precision_l_modifier;"%-#.lo|%-0.lo|%#0.lo|%-#0.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_5_precision_l_modifier;"%-#.5lo|%-0.5lo|%#0.5lo|%-#0.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_l_modifier;"%-#1.lo|%-01.lo|%#01.lo|%-#01.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_l_modifier;"%-#1.5lo|%-01.5lo|%#01.5lo|%-#01.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_l_modifier;"%-#23.lo|%-023.lo|%#023.lo|%-#023.lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_l_modifier;"%-#23.5lo|%-023.5lo|%#023.5lo|%-#023.5lo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_ll_modifier;"%llo|%-llo|%#llo|%0llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_ll_modifier;"%1llo|%-1llo|%#llo|%01llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_ll_modifier;"%23llo|%-23llo|%#llo|%023llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_dot_precision_ll_modifier;"%.llo|%-.llo|%#.llo|%0.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_5_precision_ll_modifier;"%.5llo|%-.5llo|%#.5llo|%0.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_dot_precision_ll_modifier;"%1.llo|%-1.llo|%#1.llo|%01.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_dot_precision_ll_modifier;"%23.llo|%-23.llo|%#23.llo|%023.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_1_width_and_5_precision_ll_modifier;"%1.5llo|%-1.5llo|%#1.5llo|%01.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_and_23_width_and_5_precision_ll_modifier;"%23.5llo|%-23.5llo|%#23.5llo|%023.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_ll_modifier;"%-#llo|%-0llo|%#0llo|%-#0llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_ll_modifier;"%-#1llo|%-01llo|%#01llo|%-#01llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_ll_modifier;"%-#23llo|%-023llo|%#023llo|%-#023llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_dot_precision_ll_modifier;"%-#.llo|%-0.llo|%#0.llo|%-#0.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_5_precision_ll_modifier;"%-#.5llo|%-0.5llo|%#0.5llo|%-#0.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_ll_modifier;"%-#1.llo|%-01.llo|%#01.llo|%-#01.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_ll_modifier;"%-#1.5llo|%-01.5llo|%#01.5llo|%-#01.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_ll_modifier;"%-#23.llo|%-023.llo|%#023.llo|%-#023.llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_o;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_ll_modifier;"%-#23.5llo|%-023.5llo|%#023.5llo|%-#023.5llo", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;zero_and_various_flags;"%x|%-x|%#x|%0x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_1_width;"%1x|%-1x|%#x|%01x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_23_width;"%23x|%-23x|%#x|%023x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_dot_precision;"%.x|%-.x|%#.x|%0.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_5_precision;"%.5x|%-.5x|%#.5x|%0.5x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_1_width_and_dot_precision;"%1.x|%-1.x|%#1.x|%01.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_23_width_and_dot_precision;"%23.x|%-23.x|%#23.x|%023.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_1_width_and_5_precision;"%1.5x|%-1.5x|%#1.5x|%01.5x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_and_23_width_and_5_precision;"%23.5x|%-23.5x|%#23.5x|%023.5x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined;"%-#x|%-0x|%#0x|%-#0x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_1_width;"%-#1x|%-01x|%#01x|%-#01x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_23_width;"%-#23x|%-023x|%#023x|%-#023x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_dot_precision;"%-#.x|%-0.x|%#0.x|%-#0.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_5_precision;"%-#.5x|%-0.5x|%#0.5x|%-#0.5x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.x|%-01.x|%#01.x|%-#01.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5x|%-01.5x|%#01.5x|%-#01.5x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.x|%-023.x|%#023.x|%-#023.x", 0U, 0U, 0U, 0U
+conv_x;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5x|%-023.5x|%#023.5x|%-#023.5x", 0U, 0U, 0U, 0U
+conv_x;uint_max_and_various_flags;"%x|%-x|%#x|%0x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_1_width;"%1x|%-1x|%#x|%01x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_23_width;"%23x|%-23x|%#x|%023x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_dot_precision;"%.x|%-.x|%#.x|%0.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_5_precision;"%.5x|%-.5x|%#.5x|%0.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.x|%-1.x|%#1.x|%01.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.x|%-23.x|%#23.x|%023.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5x|%-1.5x|%#1.5x|%01.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5x|%-23.5x|%#23.5x|%023.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined;"%-#x|%-0x|%#0x|%-#0x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_1_width;"%-#1x|%-01x|%#01x|%-#01x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_23_width;"%-#23x|%-023x|%#023x|%-#023x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_dot_precision;"%-#.x|%-0.x|%#0.x|%-#0.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_5_precision;"%-#.5x|%-0.5x|%#0.5x|%-#0.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.x|%-01.x|%#01.x|%-#01.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5x|%-01.5x|%#01.5x|%-#01.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.x|%-023.x|%#023.x|%-#023.x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5x|%-023.5x|%#023.5x|%-#023.5x", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_x;ulong_max_and_various_flags;"%x|%-x|%#x|%0x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_1_width;"%1x|%-1x|%#x|%01x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_23_width;"%23x|%-23x|%#x|%023x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_dot_precision;"%.x|%-.x|%#.x|%0.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_5_precision;"%.5x|%-.5x|%#.5x|%0.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_1_width_and_dot_precision;"%1.x|%-1.x|%#1.x|%01.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_23_width_and_dot_precision;"%23.x|%-23.x|%#23.x|%023.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_1_width_and_5_precision;"%1.5x|%-1.5x|%#1.5x|%01.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_and_23_width_and_5_precision;"%23.5x|%-23.5x|%#23.5x|%023.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined;"%-#x|%-0x|%#0x|%-#0x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_1_width;"%-#1x|%-01x|%#01x|%-#01x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_23_width;"%-#23x|%-023x|%#023x|%-#023x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_dot_precision;"%-#.x|%-0.x|%#0.x|%-#0.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_5_precision;"%-#.5x|%-0.5x|%#0.5x|%-#0.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.x|%-01.x|%#01.x|%-#01.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5x|%-01.5x|%#01.5x|%-#01.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.x|%-023.x|%#023.x|%-#023.x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ulong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5x|%-023.5x|%#023.5x|%-#023.5x", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_x;ullong_max_and_various_flags;"%x|%-x|%#x|%0x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width;"%1x|%-1x|%#x|%01x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width;"%23x|%-23x|%#x|%023x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_dot_precision;"%.x|%-.x|%#.x|%0.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_5_precision;"%.5x|%-.5x|%#.5x|%0.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_dot_precision;"%1.x|%-1.x|%#1.x|%01.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_dot_precision;"%23.x|%-23.x|%#23.x|%023.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_5_precision;"%1.5x|%-1.5x|%#1.5x|%01.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_5_precision;"%23.5x|%-23.5x|%#23.5x|%023.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined;"%-#x|%-0x|%#0x|%-#0x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width;"%-#1x|%-01x|%#01x|%-#01x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width;"%-#23x|%-023x|%#023x|%-#023x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_dot_precision;"%-#.x|%-0.x|%#0.x|%-#0.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_5_precision;"%-#.5x|%-0.5x|%#0.5x|%-#0.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.x|%-01.x|%#01.x|%-#01.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5x|%-01.5x|%#01.5x|%-#01.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.x|%-023.x|%#023.x|%-#023.x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5x|%-023.5x|%#023.5x|%-#023.5x", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_hh_modifier;"%hhx|%-hhx|%#hhx|%0hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_hh_modifier;"%1hhx|%-1hhx|%#hhx|%01hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_hh_modifier;"%23hhx|%-23hhx|%#hhx|%023hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_dot_precision_hh_modifier;"%.hhx|%-.hhx|%#.hhx|%0.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_5_precision_hh_modifier;"%.5hhx|%-.5hhx|%#.5hhx|%0.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_hh_modifier;"%1.hhx|%-1.hhx|%#1.hhx|%01.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_hh_modifier;"%23.hhx|%-23.hhx|%#23.hhx|%023.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_5_precision_hh_modifier;"%1.5hhx|%-1.5hhx|%#1.5hhx|%01.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_5_precision_hh_modifier;"%23.5hhx|%-23.5hhx|%#23.5hhx|%023.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_hh_modifier;"%-#hhx|%-0hhx|%#0hhx|%-#0hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_hh_modifier;"%-#1hhx|%-01hhx|%#01hhx|%-#01hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_hh_modifier;"%-#23hhx|%-023hhx|%#023hhx|%-#023hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_dot_precision_hh_modifier;"%-#.hhx|%-0.hhx|%#0.hhx|%-#0.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_5_precision_hh_modifier;"%-#.5hhx|%-0.5hhx|%#0.5hhx|%-#0.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_hh_modifier;"%-#1.hhx|%-01.hhx|%#01.hhx|%-#01.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_hh_modifier;"%-#1.5hhx|%-01.5hhx|%#01.5hhx|%-#01.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_hh_modifier;"%-#23.hhx|%-023.hhx|%#023.hhx|%-#023.hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_hh_modifier;"%-#23.5hhx|%-023.5hhx|%#023.5hhx|%-#023.5hhx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_h_modifier;"%hx|%-hx|%#hx|%0hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_h_modifier;"%1hx|%-1hx|%#hx|%01hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_h_modifier;"%23hx|%-23hx|%#hx|%023hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_dot_precision_h_modifier;"%.hx|%-.hx|%#.hx|%0.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_5_precision_h_modifier;"%.5hx|%-.5hx|%#.5hx|%0.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_h_modifier;"%1.hx|%-1.hx|%#1.hx|%01.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_h_modifier;"%23.hx|%-23.hx|%#23.hx|%023.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_5_precision_h_modifier;"%1.5hx|%-1.5hx|%#1.5hx|%01.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_5_precision_h_modifier;"%23.5hx|%-23.5hx|%#23.5hx|%023.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_h_modifier;"%-#hx|%-0hx|%#0hx|%-#0hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_h_modifier;"%-#1hx|%-01hx|%#01hx|%-#01hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_h_modifier;"%-#23hx|%-023hx|%#023hx|%-#023hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_dot_precision_h_modifier;"%-#.hx|%-0.hx|%#0.hx|%-#0.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_5_precision_h_modifier;"%-#.5hx|%-0.5hx|%#0.5hx|%-#0.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_h_modifier;"%-#1.hx|%-01.hx|%#01.hx|%-#01.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_h_modifier;"%-#1.5hx|%-01.5hx|%#01.5hx|%-#01.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_h_modifier;"%-#23.hx|%-023.hx|%#023.hx|%-#023.hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_h_modifier;"%-#23.5hx|%-023.5hx|%#023.5hx|%-#023.5hx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_l_modifier;"%lx|%-lx|%#lx|%0lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_l_modifier;"%1lx|%-1lx|%#lx|%01lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_l_modifier;"%23lx|%-23lx|%#lx|%023lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_dot_precision_l_modifier;"%.lx|%-.lx|%#.lx|%0.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_5_precision_l_modifier;"%.5lx|%-.5lx|%#.5lx|%0.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_l_modifier;"%1.lx|%-1.lx|%#1.lx|%01.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_l_modifier;"%23.lx|%-23.lx|%#23.lx|%023.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_5_precision_l_modifier;"%1.5lx|%-1.5lx|%#1.5lx|%01.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_5_precision_l_modifier;"%23.5lx|%-23.5lx|%#23.5lx|%023.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_l_modifier;"%-#lx|%-0lx|%#0lx|%-#0lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_l_modifier;"%-#1lx|%-01lx|%#01lx|%-#01lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_l_modifier;"%-#23lx|%-023lx|%#023lx|%-#023lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_dot_precision_l_modifier;"%-#.lx|%-0.lx|%#0.lx|%-#0.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_5_precision_l_modifier;"%-#.5lx|%-0.5lx|%#0.5lx|%-#0.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_l_modifier;"%-#1.lx|%-01.lx|%#01.lx|%-#01.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_l_modifier;"%-#1.5lx|%-01.5lx|%#01.5lx|%-#01.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_l_modifier;"%-#23.lx|%-023.lx|%#023.lx|%-#023.lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_l_modifier;"%-#23.5lx|%-023.5lx|%#023.5lx|%-#023.5lx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_ll_modifier;"%llx|%-llx|%#llx|%0llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_ll_modifier;"%1llx|%-1llx|%#llx|%01llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_ll_modifier;"%23llx|%-23llx|%#llx|%023llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_dot_precision_ll_modifier;"%.llx|%-.llx|%#.llx|%0.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_5_precision_ll_modifier;"%.5llx|%-.5llx|%#.5llx|%0.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_ll_modifier;"%1.llx|%-1.llx|%#1.llx|%01.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_ll_modifier;"%23.llx|%-23.llx|%#23.llx|%023.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_1_width_and_5_precision_ll_modifier;"%1.5llx|%-1.5llx|%#1.5llx|%01.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_and_23_width_and_5_precision_ll_modifier;"%23.5llx|%-23.5llx|%#23.5llx|%023.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_ll_modifier;"%-#llx|%-0llx|%#0llx|%-#0llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_ll_modifier;"%-#1llx|%-01llx|%#01llx|%-#01llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_ll_modifier;"%-#23llx|%-023llx|%#023llx|%-#023llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_dot_precision_ll_modifier;"%-#.llx|%-0.llx|%#0.llx|%-#0.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_5_precision_ll_modifier;"%-#.5llx|%-0.5llx|%#0.5llx|%-#0.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_ll_modifier;"%-#1.llx|%-01.llx|%#01.llx|%-#01.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_ll_modifier;"%-#1.5llx|%-01.5llx|%#01.5llx|%-#01.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_ll_modifier;"%-#23.llx|%-023.llx|%#023.llx|%-#023.llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_ll_modifier;"%-#23.5llx|%-023.5llx|%#023.5llx|%-#023.5llx", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;zero_and_various_flags;"%X|%-X|%#X|%0X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_1_width;"%1X|%-1X|%#X|%01X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_23_width;"%23X|%-23X|%#X|%023X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_dot_precision;"%.X|%-.X|%#.X|%0.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_5_precision;"%.5X|%-.5X|%#.5X|%0.5X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_1_width_and_dot_precision;"%1.X|%-1.X|%#1.X|%01.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_23_width_and_dot_precision;"%23.X|%-23.X|%#23.X|%023.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_1_width_and_5_precision;"%1.5X|%-1.5X|%#1.5X|%01.5X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_and_23_width_and_5_precision;"%23.5X|%-23.5X|%#23.5X|%023.5X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined;"%-#X|%-0X|%#0X|%-#0X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_1_width;"%-#1X|%-01X|%#01X|%-#01X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_23_width;"%-#23X|%-023X|%#023X|%-#023X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_dot_precision;"%-#.X|%-0.X|%#0.X|%-#0.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_5_precision;"%-#.5X|%-0.5X|%#0.5X|%-#0.5X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.X|%-01.X|%#01.X|%-#01.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5X|%-01.5X|%#01.5X|%-#01.5X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.X|%-023.X|%#023.X|%-#023.X", 0U, 0U, 0U, 0U
+conv_cap_x;zero_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5X|%-023.5X|%#023.5X|%-#023.5X", 0U, 0U, 0U, 0U
+conv_cap_x;uint_max_and_various_flags;"%X|%-X|%#X|%0X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_1_width;"%1X|%-1X|%#X|%01X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_23_width;"%23X|%-23X|%#X|%023X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_dot_precision;"%.X|%-.X|%#.X|%0.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_5_precision;"%.5X|%-.5X|%#.5X|%0.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_1_width_and_dot_precision;"%1.X|%-1.X|%#1.X|%01.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_23_width_and_dot_precision;"%23.X|%-23.X|%#23.X|%023.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_1_width_and_5_precision;"%1.5X|%-1.5X|%#1.5X|%01.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_and_23_width_and_5_precision;"%23.5X|%-23.5X|%#23.5X|%023.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined;"%-#X|%-0X|%#0X|%-#0X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_1_width;"%-#1X|%-01X|%#01X|%-#01X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_23_width;"%-#23X|%-023X|%#023X|%-#023X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_dot_precision;"%-#.X|%-0.X|%#0.X|%-#0.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_5_precision;"%-#.5X|%-0.5X|%#0.5X|%-#0.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.X|%-01.X|%#01.X|%-#01.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5X|%-01.5X|%#01.5X|%-#01.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.X|%-023.X|%#023.X|%-#023.X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;uint_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5X|%-023.5X|%#023.5X|%-#023.5X", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX
+conv_cap_x;ulong_max_and_various_flags;"%X|%-X|%#X|%0X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_1_width;"%1X|%-1X|%#X|%01X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_23_width;"%23X|%-23X|%#X|%023X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_dot_precision;"%.X|%-.X|%#.X|%0.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_5_precision;"%.5X|%-.5X|%#.5X|%0.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_1_width_and_dot_precision;"%1.X|%-1.X|%#1.X|%01.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_23_width_and_dot_precision;"%23.X|%-23.X|%#23.X|%023.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_1_width_and_5_precision;"%1.5X|%-1.5X|%#1.5X|%01.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_and_23_width_and_5_precision;"%23.5X|%-23.5X|%#23.5X|%023.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined;"%-#X|%-0X|%#0X|%-#0X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_1_width;"%-#1X|%-01X|%#01X|%-#01X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_23_width;"%-#23X|%-023X|%#023X|%-#023X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_dot_precision;"%-#.X|%-0.X|%#0.X|%-#0.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_5_precision;"%-#.5X|%-0.5X|%#0.5X|%-#0.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.X|%-01.X|%#01.X|%-#01.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5X|%-01.5X|%#01.5X|%-#01.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.X|%-023.X|%#023.X|%-#023.X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ulong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5X|%-023.5X|%#023.5X|%-#023.5X", ULONG_MAX, ULONG_MAX, ULONG_MAX, ULONG_MAX
+conv_cap_x;ullong_max_and_various_flags;"%X|%-X|%#X|%0X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width;"%1X|%-1X|%#X|%01X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width;"%23X|%-23X|%#X|%023X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_dot_precision;"%.X|%-.X|%#.X|%0.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_5_precision;"%.5X|%-.5X|%#.5X|%0.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_dot_precision;"%1.X|%-1.X|%#1.X|%01.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_dot_precision;"%23.X|%-23.X|%#23.X|%023.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_5_precision;"%1.5X|%-1.5X|%#1.5X|%01.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_5_precision;"%23.5X|%-23.5X|%#23.5X|%023.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined;"%-#X|%-0X|%#0X|%-#0X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width;"%-#1X|%-01X|%#01X|%-#01X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width;"%-#23X|%-023X|%#023X|%-#023X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_dot_precision;"%-#.X|%-0.X|%#0.X|%-#0.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_5_precision;"%-#.5X|%-0.5X|%#0.5X|%-#0.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision;"%-#1.X|%-01.X|%#01.X|%-#01.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision;"%-#1.5X|%-01.5X|%#01.5X|%-#01.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision;"%-#23.X|%-023.X|%#023.X|%-#023.X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision;"%-#23.5X|%-023.5X|%#023.5X|%-#023.5X", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_hh_modifier;"%hhX|%-hhX|%#hhX|%0hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_hh_modifier;"%1hhX|%-1hhX|%#hhX|%01hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_hh_modifier;"%23hhX|%-23hhX|%#hhX|%023hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_dot_precision_hh_modifier;"%.hhX|%-.hhX|%#.hhX|%0.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_5_precision_hh_modifier;"%.5hhX|%-.5hhX|%#.5hhX|%0.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_hh_modifier;"%1.hhX|%-1.hhX|%#1.hhX|%01.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_hh_modifier;"%23.hhX|%-23.hhX|%#23.hhX|%023.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_5_precision_hh_modifier;"%1.5hhX|%-1.5hhX|%#1.5hhX|%01.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_5_precision_hh_modifier;"%23.5hhX|%-23.5hhX|%#23.5hhX|%023.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_hh_modifier;"%-#hhX|%-0hhX|%#0hhX|%-#0hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_hh_modifier;"%-#1hhX|%-01hhX|%#01hhX|%-#01hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_hh_modifier;"%-#23hhX|%-023hhX|%#023hhX|%-#023hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_dot_precision_hh_modifier;"%-#.hhX|%-0.hhX|%#0.hhX|%-#0.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_5_precision_hh_modifier;"%-#.5hhX|%-0.5hhX|%#0.5hhX|%-#0.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_hh_modifier;"%-#1.hhX|%-01.hhX|%#01.hhX|%-#01.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_hh_modifier;"%-#1.5hhX|%-01.5hhX|%#01.5hhX|%-#01.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_hh_modifier;"%-#23.hhX|%-023.hhX|%#023.hhX|%-#023.hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_hh_modifier;"%-#23.5hhX|%-023.5hhX|%#023.5hhX|%-#023.5hhX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_h_modifier;"%hX|%-hX|%#hX|%0hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_h_modifier;"%1hX|%-1hX|%#hX|%01hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_h_modifier;"%23hX|%-23hX|%#hX|%023hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_dot_precision_h_modifier;"%.hX|%-.hX|%#.hX|%0.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_5_precision_h_modifier;"%.5hX|%-.5hX|%#.5hX|%0.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_h_modifier;"%1.hX|%-1.hX|%#1.hX|%01.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_h_modifier;"%23.hX|%-23.hX|%#23.hX|%023.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_5_precision_h_modifier;"%1.5hX|%-1.5hX|%#1.5hX|%01.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_5_precision_h_modifier;"%23.5hX|%-23.5hX|%#23.5hX|%023.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_h_modifier;"%-#hX|%-0hX|%#0hX|%-#0hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_h_modifier;"%-#1hX|%-01hX|%#01hX|%-#01hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_h_modifier;"%-#23hX|%-023hX|%#023hX|%-#023hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_dot_precision_h_modifier;"%-#.hX|%-0.hX|%#0.hX|%-#0.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_5_precision_h_modifier;"%-#.5hX|%-0.5hX|%#0.5hX|%-#0.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_h_modifier;"%-#1.hX|%-01.hX|%#01.hX|%-#01.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_h_modifier;"%-#1.5hX|%-01.5hX|%#01.5hX|%-#01.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_h_modifier;"%-#23.hX|%-023.hX|%#023.hX|%-#023.hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_h_modifier;"%-#23.5hX|%-023.5hX|%#023.5hX|%-#023.5hX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_l_modifier;"%lX|%-lX|%#lX|%0lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_l_modifier;"%1lX|%-1lX|%#lX|%01lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_l_modifier;"%23lX|%-23lX|%#lX|%023lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_dot_precision_l_modifier;"%.lX|%-.lX|%#.lX|%0.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_5_precision_l_modifier;"%.5lX|%-.5lX|%#.5lX|%0.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_l_modifier;"%1.lX|%-1.lX|%#1.lX|%01.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_l_modifier;"%23.lX|%-23.lX|%#23.lX|%023.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_5_precision_l_modifier;"%1.5lX|%-1.5lX|%#1.5lX|%01.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_5_precision_l_modifier;"%23.5lX|%-23.5lX|%#23.5lX|%023.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_l_modifier;"%-#lX|%-0lX|%#0lX|%-#0lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_l_modifier;"%-#1lX|%-01lX|%#01lX|%-#01lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_l_modifier;"%-#23lX|%-023lX|%#023lX|%-#023lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_dot_precision_l_modifier;"%-#.lX|%-0.lX|%#0.lX|%-#0.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_5_precision_l_modifier;"%-#.5lX|%-0.5lX|%#0.5lX|%-#0.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_l_modifier;"%-#1.lX|%-01.lX|%#01.lX|%-#01.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_l_modifier;"%-#1.5lX|%-01.5lX|%#01.5lX|%-#01.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_l_modifier;"%-#23.lX|%-023.lX|%#023.lX|%-#023.lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_l_modifier;"%-#23.5lX|%-023.5lX|%#023.5lX|%-#023.5lX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_ll_modifier;"%llX|%-llX|%#llX|%0llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_ll_modifier;"%1llX|%-1llX|%#llX|%01llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_ll_modifier;"%23llX|%-23llX|%#llX|%023llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_dot_precision_ll_modifier;"%.llX|%-.llX|%#.llX|%0.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_5_precision_ll_modifier;"%.5llX|%-.5llX|%#.5llX|%0.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_dot_precision_ll_modifier;"%1.llX|%-1.llX|%#1.llX|%01.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_dot_precision_ll_modifier;"%23.llX|%-23.llX|%#23.llX|%023.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_1_width_and_5_precision_ll_modifier;"%1.5llX|%-1.5llX|%#1.5llX|%01.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_and_23_width_and_5_precision_ll_modifier;"%23.5llX|%-23.5llX|%#23.5llX|%023.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_ll_modifier;"%-#llX|%-0llX|%#0llX|%-#0llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_ll_modifier;"%-#1llX|%-01llX|%#01llX|%-#01llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_ll_modifier;"%-#23llX|%-023llX|%#023llX|%-#023llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_dot_precision_ll_modifier;"%-#.llX|%-0.llX|%#0.llX|%-#0.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_5_precision_ll_modifier;"%-#.5llX|%-0.5llX|%#0.5llX|%-#0.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_dot_precision_ll_modifier;"%-#1.llX|%-01.llX|%#01.llX|%-#01.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_1_width_and_5_precision_ll_modifier;"%-#1.5llX|%-01.5llX|%#01.5llX|%-#01.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_dot_precision_ll_modifier;"%-#23.llX|%-023.llX|%#023.llX|%-#023.llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
+conv_cap_x;ullong_max_and_various_flags_combined_and_23_width_and_5_precision_ll_modifier;"%-#23.5llX|%-023.5llX|%#023.5llX|%-#023.5llX", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX
 conv_c;non_printable_ascii_char_nul;"%c", 0
 conv_c;char_null_and_4_width;"%4c", 0
 conv_c;char_null_and_minus_flag_and_4_width;"%-4c", 0
@@ -298,6 +1301,15 @@ conv_f;double_various_flags_and_5_width_and_8_precision;"%5.8f|%-5.8f|%+5.8f|% 5
 conv_f;double_various_flags_and_15_width_and_8_precision;"%15.8f|%-15.8f|%+15.8f|% 15.8f|%#15.8f|%015.8f", 42., 42., 42., 42., 42., 42.
 conv_f;double_various_flags_combined_with_minus;"%-+8.14f|%- 8.14f|%-#8.14f|%-08.14f|%-+#8.14f|%-+ #08.14f", 42., 42., 42., 42., 42., 42.
 conv_f;double_various_flags_combined_with_plus;"%+8.14f|%+ 8.14f|%+-8.14f|%+#8.14f|%+08.14f|%+ -#08.14f", 42., 42., 42., 42., 42., 42.
+conv_f;double_various_flags_l_length_modifier;"%lf|%-lf|%+lf|% lf|%#lf|%0lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_5_width_l_length_modifier;"%5lf|%-5lf|%+5lf|% 5lf|%#5lf|%05lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_1_width_l_length_modifier;"%1lf|%-1lf|%+1lf|% 1lf|%#1lf|%01lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_dot_precision_l_length_modifier;"%.lf|%-.lf|%+.lf|% .lf|%#.lf|%0.lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_8_precision_l_length_modifier;"%.8lf|%-.8lf|%+.8lf|% .8lf|%#.8lf|%0.8lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_5_width_and_8_precision_l_length_modifier;"%5.8lf|%-5.8lf|%+5.8lf|% 5.8lf|%#5.8lf|%05.8lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_and_15_width_and_8_precision_l_length_modifier;"%15.8lf|%-15.8lf|%+15.8lf|% 15.8lf|%#15.8lf|%015.8lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_combined_with_minus_l_length_modifier;"%-+8.14lf|%- 8.14lf|%-#8.14lf|%-08.14lf|%-+#8.14lf|%-+ #08.14lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
+conv_f;double_various_flags_combined_with_plus_l_length_modifier;"%+8.14lf|%+ 8.14lf|%+-8.14lf|%+#8.14lf|%+08.14lf|%+ -#08.14lf", 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849, 38546.5849
 conv_f;negative_double_various_flags;"%f|%-f|%+f|% f|%#f|%0f", -42., -42., -42., -42., -42., -42.
 conv_f;negative_double_various_flags_and_5_width;"%5f|%-5f|%+5f|% 5f|%#5f|%05f", -42., -42., -42., -42., -42., -42.
 conv_f;negative_double_various_flags_and_1_width;"%1f|%-1f|%+1f|% 1f|%#1f|%01f", -42., -42., -42., -42., -42., -42.
