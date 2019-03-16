@@ -9,4 +9,5 @@ tests/file_paths
 *.sw*
 trace.txt
 main.h
-
+assets
+libftprintf.so

@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/16 11:35:53 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/16 21:22:25 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,14 @@ LIBUNIT = 				$(LIBUNIT_PATH)/libunit.a
 LIBUNIT_INC_PATH =      $(LIBUNIT_PATH)/includes
 LIBUNIT_FLAGS =         -L$(LIBUNIT_PATH) -lunit
 
+ASSETS_DIR =            assets
+TMP_DIR_FTPRINTF = 		$(ASSETS_DIR)/tmp
 LIBFTPRINTF_PATH =      ../../ft_printf
-LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/libftprintf.a
+LIBFTPRINTF_NAME =      libftprintf.a
+LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/$(LIBFTPRINTF_NAME)
+LIBFTPRINTF_SO_PATH =   .
+LIBFTPRINTF_SO_NAME =   libftprintf.so
+LIBFTPRINTF_SO =         $(LIBFTPRINTF_SO_PATH)/$(LIBFTPRINTF_SO_NAME)
 LIBFTPRINTF_INC_PATH =  $(LIBFTPRINTF_PATH)/includes 
 LIBFTPRINTF_FLAGS =     -L$(LIBFTPRINTF_PATH) -lftprintf
 LIBS =                  $(LIBFTPRINTF) $(LIBUNIT)
@@ -70,7 +76,7 @@ OBJ_TREE =              $(shell find $(OBJ_PATH) -type d -print 2> /dev/null)
 # ----- RULES -----
 
 .PHONY: all
-all: $(NAME)
+all: $(NAME) libftprintf
 
 .PRECIOUS: $(OBJ_PATH)%/. $(OBJ_PATH)/.
 $(OBJ_PATH)/. $(OBJ_PATH)%/.: 
@@ -95,7 +101,19 @@ $(LIBS) libs:
 
 $(NAME): $(OBJ) $(LIBS) | libs
 	$(ECHO) "Compiling executable file $(WARN_COLOR)$(NAME)$(NC)..."
-	$(QUIET) $(CC) -o $@ $(CPPFLAGS) $(LIBFTPRINTF_FLAGS) $(LIBUNIT_FLAGS) $^
+	$(QUIET) $(CC) -o $@ $(CPPFLAGS) $(LIBFTPRINTF_SO) $(LIBUNIT_FLAGS) $^
+
+.PHONY: libftprintf
+libftprintf:
+	$(QUIET) mkdir -p $(ASSETS_DIR)
+	$(QUIET) make -C $(LIBFTPRINTF_PATH)
+	$(QUIET) cp $(LIBFTPRINTF) $(ASSETS_DIR)
+	$(QUIET) rm -rf $(TMP_DIR_FTPRINTF)
+	$(QUIET) mkdir -p $(TMP_DIR_FTPRINTF)
+	$(ECHO) "Creating $(LIBFTPRINTF_SO_NAME)..."
+	$(QUIET) cd $(TMP_DIR_FTPRINTF) && ar -x ../$(LIBFTPRINTF_NAME) \
+		&& $(CC) -shared -fPIC *.o -o $(LIBFTPRINTF_SO_NAME) \
+		&& cp $(LIBFTPRINTF_SO_NAME) ../..
 
 .PHONY: test
 test: all
