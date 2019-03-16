@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/16 21:22:25 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/16 23:05:44 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,12 @@ test: all
 	@echo "--------------"
 	@echo "Starting tests...\n"
 	@./$(NAME)
+	@fail=`grep -e '\[KO\]' -e '\[SEGV\]' -e '\[BUSE\]' -e '\[SIGA\]'\
+			trace.txt | wc -l | bc`; \
+		if [ $$fail -gt 0 ]; \
+			then echo "$(ERR_COLOR)/!\ $$fail test(s) failed /!\\ $(NC)\\n"; \
+			else echo "$(OK_COLOR)All tests passed, good job!$(NC)\\n"; \
+			fi
 
 .PHONY: clean
 clean:
@@ -151,4 +157,3 @@ re: fclean all
 
 .PRECIOUS: $(OBJ_PATH)/%.d
 -include $(DEP)
-
