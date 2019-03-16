@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/15 18:00:55 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/16 11:35:53 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OK_COLOR =              \x1b[32;01m
 ERR_COLOR =             \x1b[31;01m
 WARN_COLOR =            \x1b[34;01m
 QUIET :=                @
-ECHO :=                 @true
+ECHO :=                 @echo
 ifneq ($(QUIET),@)
 ECHO :=                 @true
 endif
@@ -72,13 +72,9 @@ OBJ_TREE =              $(shell find $(OBJ_PATH) -type d -print 2> /dev/null)
 .PHONY: all
 all: $(NAME)
 
-.PHONY: dbg
-dbg:
-	echo $(SRC)
-
 .PRECIOUS: $(OBJ_PATH)%/. $(OBJ_PATH)/.
 $(OBJ_PATH)/. $(OBJ_PATH)%/.: 
-#	$(ECHO) "Making directory $@..."
+	@true $(ECHO) "Making directory $@..."
 	$(QUIET) mkdir -p $@
 
 $(OBJ_PATH)/%.d: ;
@@ -86,7 +82,7 @@ $(OBJ_PATH)/%.d: ;
 .SECONDEXPANSION:
 
 $(OBJ): $(OBJ_PATH)/%.o: %.c $(OBJ_PATH)/%.d | $$(@D)/.
-	$(ECHO) "Compiling $(WARN_COLOR)$<$(NC)..."
+	@true $(ECHO) "Compiling $(WARN_COLOR)$<$(NC)..."
 	$(QUIET) $(COMPILE.c) $< -o $@ 
 	$(QUIET) $(POSTCOMPILE)
 

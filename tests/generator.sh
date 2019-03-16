@@ -258,6 +258,7 @@ clean_tests(){
 }
 
 launch_tests(){
+	echo "Compiling all the tests... This might take up to 1 minute."
 	make test
 }
 
