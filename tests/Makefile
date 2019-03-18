@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/16 23:05:44 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/18 16:35:18 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ $(OBJ_PATH)/%.d: ;
 .SECONDEXPANSION:
 
 $(OBJ): $(OBJ_PATH)/%.o: %.c $(OBJ_PATH)/%.d | $$(@D)/.
-	@true $(ECHO) "Compiling $(WARN_COLOR)$<$(NC)..."
+	$(ECHO) "Compiling $(WARN_COLOR)$<$(NC)..."
 	$(QUIET) $(COMPILE.c) $< -o $@ 
 	$(QUIET) $(POSTCOMPILE)
 
