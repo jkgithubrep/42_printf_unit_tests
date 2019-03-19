@@ -1,6 +1,7 @@
 .obj
 *.dSYM*
 conv_*
+wildcards
 no_type
 invalid
 backup
