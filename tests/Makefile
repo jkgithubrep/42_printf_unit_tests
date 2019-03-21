@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/18 16:35:18 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/21 11:48:14 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ LIBUNIT_FLAGS =         -L$(LIBUNIT_PATH) -lunit
 
 ASSETS_DIR =            assets
 TMP_DIR_FTPRINTF = 		$(ASSETS_DIR)/tmp
-LIBFTPRINTF_PATH =      ../../ft_printf
+LIBFTPRINTF_PATH =      /Users/jkettani/goinfre/jgehin
 LIBFTPRINTF_NAME =      libftprintf.a
 LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/$(LIBFTPRINTF_NAME)
 LIBFTPRINTF_SO_PATH =   .
