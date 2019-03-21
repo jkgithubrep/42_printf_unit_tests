@@ -229,7 +229,7 @@ generate_tests(){
 		fi
 		tests=`grep -w $fct ${TESTS_FILE} | cut -d';' -f2`
 		nb_existing_tests=`ls $fct | grep .c$ | grep -v 000_ | wc -l | bc`
-		if [ "$nb_existing_tests" -eq 0 ]; then
+		if [ "$nb_existing_tests" -eq 0 ] || $CREATE; then
 			local index=1
 		else
 			local index=`ls $fct | grep .c$ | cut -c -3 | tail -1`
@@ -367,15 +367,12 @@ if [ "$TEST_LIST_ERRORS" != "" ]; then
 	exit
 fi
 
-if $CREATE; then
+if $CREATE || $CLEAN; then
 	make fclean
+	clean_tests $TEST_LIST
 fi
 
 if $CREATE || $UPDATE; then
 	generate_tests $TESTS_LIST
 	launch_tests
-fi
-
-if $CLEAN; then
-	clean_tests $TESTS_LIST
 fi
