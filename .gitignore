@@ -1,15 +1,8 @@
 .obj
 *.dSYM*
-conv_*
-wildcards
-no_type
-invalid
+*.sw*
 backup
 tests/tests
-tests/file_paths
-*.sw*
 trace.txt
-main.h
 assets
 libftprintf.so
-mix

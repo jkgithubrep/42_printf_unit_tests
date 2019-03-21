@@ -249,7 +249,7 @@ generate_tests(){
 			test_added=`cat ${MAKEFILE_FILE} | grep -w ${fct}/....${test_fct} | wc -l | bc`
 			if [ "$test_added" -eq 0 ]; then
 				if $no_makefile && [ $test_exist -ne 0 ]; then
-					index_pref=`ls $fct | grep ${test_fct}.c | cut -c -3`
+					index_pref=`ls $fct | grep -w ....${test_fct}\.c | cut -c -3`
 				fi
 				save_file_path "$fct" "${index_pref}_${test_fct}"
 			fi
@@ -267,7 +267,7 @@ generate_tests(){
 clean_tests(){
 #	echo "Removing ${BLUE}$BAK_FOLDER${NC}..."
 	rm -rf $BAK_FOLDER
-	remove_all $@
+	remove_all "$@"
 #	echo "Removing ${BLUE}${MAKEFILE_FILE}${NC}"
 	rm -f ${MAKEFILE_FILE}
 	rm -f ${INCLUDES_PATH}/main.h
@@ -369,7 +369,7 @@ fi
 
 if $CREATE || $CLEAN; then
 	make fclean
-	clean_tests $TEST_LIST
+	clean_tests $TESTS_LIST
 fi
 
 if $CREATE || $UPDATE; then
