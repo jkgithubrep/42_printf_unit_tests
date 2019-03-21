@@ -190,21 +190,28 @@ is_test_list_ok(){
 	done
 }
 
+# Remove the file given in argument and rename the temporary version with the
+# name of the deleted file.
+
+update_file(){
+	if [ "$#" -e1 1 ]; then
+		print_err "Wrong number of arguments"
+	else
+		rm -rf "$1"
+		mv "$1_tmp" "$1"
+	fi
+}
+
 generate_tests(){
 	local no_makefile=false
-	if $ALL; then
-		local fcts=`cat $TESTS_FILE | cut -d';' -f1 | uniq`
-	else
-		local fcts="$@"
-	fi
+	local fcts="$@"
 	if $CREATE || [ ! -f ${MAKEFILE_FILE} ]; then
 		no_makefile=true
 		printf "" > ${MAKEFILE_FILE}
 		cp ${TMPL_MAIN} ./$INCLUDES_PATH/main.h
 	else
 		sed '$ s/$/ \\/' ${MAKEFILE_FILE} > ${MAKEFILE_FILE}_tmp
-		rm -rf ${MAKEFILE_FILE}
-		mv ${MAKEFILE_FILE}_tmp ${MAKEFILE_FILE}
+		update_file ${MAKEFILE_FILE}
 	fi
 	for fct in $fcts
 	do
@@ -296,15 +303,18 @@ parse_args(){
 }
 
 display_usage(){
-	printf "Usage: ./generator.sh [action] [all | functions]\n"
-	printf "> Actions:\n"
-	printf "%s\n" "    - create                  Create tests."
-	printf "%s\n" "    - update                  Update tests (add new ones)."
-	printf "%s\n" "    - clean                   Clean tests."
-	printf "> Functions:\n"
-	printf "%s\n" "    - all                     All tests are affected."
-	printf "%s\n" "    - functions               Only named functions after action keyword are affected."
+	printf "Usage: ./generator.sh [action] [functions]\n"
+	printf "   > actions:\n"
+	printf "   %s\n" "    - create                  Create tests."
+	printf "   %s\n" "    - update                  Update tests (add new ones)."
+	printf "   %s\n" "    - clean                   Clean tests."
+	printf "   > functions:\n"
+	printf "   %s\n" "    - all                     All tests are affected."
+	printf "   %s\n" "    - mandatory               All mandatory tests (cspdiouxXf) are affected."
+	printf "   %s\n" "    - functions               Only named functions after action keyword are affected."
 }
+
+# Checks that the names of the tests are all unique.
 
 check_test_file(){
 	nb_duplicates=`cat $TESTS_FILE | cut -d';' -f-2 | uniq -d | wc -l | bc`
@@ -333,8 +343,10 @@ if $ERR; then
 	exit
 fi
 
-if $MANDATORY; then
-	TESTS_LIST="no_type conv_d conv_i conv_u conv_o conv_x conv_cap_x conv_c conv_s conv_p conv_f"
+if $ALL; then
+	TESTS_LIST=`cat $TESTS_FILE | cut -d';' -f1 | uniq`
+elif $MANDATORY; then
+	TESTS_LIST="no_type conv_d conv_i conv_u conv_o conv_x conv_cap_x conv_c conv_s conv_p conv_f mix"
 fi
 
 check_test_file
@@ -346,12 +358,7 @@ if [ "$TEST_LIST_ERRORS" != "" ]; then
 	exit
 fi
 
-if $UPDATE; then
-	make fclean
-fi
-
 if $CREATE || $UPDATE; then
-	make fclean
 	generate_tests $TESTS_LIST
 	launch_tests
 fi

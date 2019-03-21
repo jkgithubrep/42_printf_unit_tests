@@ -1963,3 +1963,5 @@ wildcards;int_max_and_34_asterisk_34_and_zero_asterisk_prec_type_d_various_flags
 invalid;percent_signs;"%|%%|%%%|%%%%"
 invalid;percent_and_wrong_type;"% |% h|% hZ"
 invalid;percent_and_flags_and_percent;"%%-%|%%+%|%% %|%%#%"
+mix;various_mix_simple;"abcd%%efg%dgh%u%i%c%s%f", -42, 42u, -56, 'z', "this is a string followed by a float: ", 2.33456
+mix;various_mix_with_flags;"abcd%%efg%-23.10dgh%42.4u%+2.10i%-22c%.23s%.32f", -42, 42u, -56, 'z', "this is a string followed by a float: ", 2.33456

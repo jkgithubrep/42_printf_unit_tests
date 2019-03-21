@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/21 11:48:14 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/21 15:35:46 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,6 @@ SRC_PATH =              .
 INCLUDE_PATH =          includes
 OBJ_PATH =              .obj
 
-LIBFT_PATH =            ../../ft_printf/srcs/libft
-LIBFT_INC_PATH =        $(LIBFT_PATH)/includes
-
 LIBUNIT_PATH =          ../framework
 LIBUNIT = 				$(LIBUNIT_PATH)/libunit.a
 LIBUNIT_INC_PATH =      $(LIBUNIT_PATH)/includes
@@ -45,18 +42,16 @@ LIBUNIT_FLAGS =         -L$(LIBUNIT_PATH) -lunit
 
 ASSETS_DIR =            assets
 TMP_DIR_FTPRINTF = 		$(ASSETS_DIR)/tmp
-LIBFTPRINTF_PATH =      /Users/jkettani/goinfre/jgehin
+LIBFTPRINTF_PATH =      /Users/jkettani/goinfre/jkettani_test
 LIBFTPRINTF_NAME =      libftprintf.a
 LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/$(LIBFTPRINTF_NAME)
 LIBFTPRINTF_SO_PATH =   .
 LIBFTPRINTF_SO_NAME =   libftprintf.so
 LIBFTPRINTF_SO =         $(LIBFTPRINTF_SO_PATH)/$(LIBFTPRINTF_SO_NAME)
-LIBFTPRINTF_INC_PATH =  $(LIBFTPRINTF_PATH)/includes 
 LIBFTPRINTF_FLAGS =     -L$(LIBFTPRINTF_PATH) -lftprintf
 LIBS =                  $(LIBFTPRINTF) $(LIBUNIT)
 LIBS_PATH =             $(LIBFTPRINTF_PATH) $(LIBUNIT_PATH)
-CPPFLAGS =              -I$(INCLUDE_PATH) -I$(LIBFTPRINTF_INC_PATH) \
-				        -I$(LIBUNIT_INC_PATH) -I$(LIBFT_INC_PATH)
+CPPFLAGS =              -I$(INCLUDE_PATH) -I$(LIBUNIT_INC_PATH)
 COMPILE.c =             $(CC) $(CFLAGS) $(CPPFLAGS) $(DEPFLAGS) -c
 DEPFLAGS =              -MT $@ -MMD -MP -MF $(OBJ_PATH)/$*.Td
 POSTCOMPILE =           @mv -f $(OBJ_PATH)/$*.Td $(OBJ_PATH)/$*.d && touch $@
