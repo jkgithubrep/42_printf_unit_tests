@@ -54,7 +54,7 @@ save_folder(){
 }
 
 create_folder(){
-#	echo "Making ${BLUE}$1${NC} folder..."
+	echo "Making ${BLUE}$1${NC} folder..."
 	mkdir $1
 	folder_exists $1
 	if [ "$?" -eq 1 ]; then
@@ -112,7 +112,7 @@ load_test(){
 
 add_template_to_folder(){
 	local fct_name=$1
-#	echo "Adding 000_launcher.c template to ${BLUE}$fct_name${NC} folder..."
+	echo "Adding 000_launcher.c template to ${BLUE}$fct_name${NC} folder..."
 	cp $TMPL_LAUNCHER $fct_name/000_launcher.c
 }
 
@@ -122,7 +122,7 @@ create_test(){
 	local args="$3"
 	local index="$4"
 
-#	echo "Creating test file ${BLUE}${index}_${test_fct}.c${NC} in ${BLUE}${fct_name}${NC} folder..."
+	echo "Creating test file ${BLUE}${index}_${test_fct}.c${NC} in ${BLUE}${fct_name}${NC} folder..."
 	cp ${TMPL_TEST} ${fct_name}/${index}_${test_fct}.c
 	sed -e "s/TMPL_FCT_NAME/${fct_name}/" -e "s/TMPL_TEST_FCT_NAME/${test_fct}/" -e "s/TMPL_ARGS/${args}/" ${fct_name}/${index}_${test_fct}.c > ${fct_name}/${index}_${test_fct}_tmp.c
 	rm -f ${fct_name}/${index}_${test_fct}.c
@@ -194,7 +194,7 @@ is_test_list_ok(){
 # name of the deleted file.
 
 update_file(){
-	if [ "$#" -e1 1 ]; then
+	if [ "$#" -ne 1 ]; then
 		print_err "Wrong number of arguments"
 	else
 		rm -rf "$1"
@@ -221,47 +221,56 @@ generate_tests(){
 		if [ ! -f ${fct}/000_launcher.c ] || $CREATE; then
 			add_template_to_folder $fct
 			replace_fct_name $fct
+		fi
+		launcher_added=`cat ${MAKEFILE_FILE} | grep ${fct}/000_launcher | wc -l | bc`
+		if [ "$launcher_added" -eq 0 ]; then
 			save_file_path "$fct" "000_launcher"
 			add_fct_in_main "$fct"
 		fi
 		tests=`grep -w $fct ${TESTS_FILE} | cut -d';' -f2`
-		local index=1
+		nb_existing_tests=`ls $fct | grep .c$ | grep -v 000_ | wc -l | bc`
+		if [ "$nb_existing_tests" -eq 0 ]; then
+			local index=1
+		else
+			local index=`ls $fct | grep .c$ | cut -c -3 | tail -1`
+		fi
 		for test_fct in $tests
 		do
 			local index_pref=`printf %03d $index`
-			if [ ! -f ${fct}/${index_pref}_${test_fct}.c ] || $CREATE; then
+			test_exist=`ls $fct | grep .c$ | cut -c 5- | grep ${test_fct}.c | wc -l | bc`
+			if  [ $test_exist -eq 0 ] || $CREATE; then
 				test_name=`grep -w $fct ${TESTS_FILE} | grep -w $test_fct |  cut -d';' -f3`	
 				create_test "$fct" "$test_fct" "$test_name" "$index_pref"
-				add_prototypes "$fct" "$test_fct"
 				load_test "$fct" "$test_fct" "$test_name"
-				save_file_path "$fct" "${index_pref}_${test_fct}"
+				add_prototypes "$fct" "$test_fct"
 			else
-				echo "${BLUE}${index_pref}_${test_fct}.c${NC} already exists."
+				echo "${BLUE}${test_fct}.c${NC} already exists."
+			fi
+			test_added=`cat ${MAKEFILE_FILE} | grep -w ${fct}/....${test_fct} | wc -l | bc`
+			if [ "$test_added" -eq 0 ]; then
+				if $no_makefile && [ $test_exist -ne 0 ]; then
+					index_pref=`ls $fct | grep ${test_fct}.c | cut -c -3`
+				fi
+				save_file_path "$fct" "${index_pref}_${test_fct}"
 			fi
 			((index++))
 		done
 	done
 	if $CREATE || $no_makefile; then
 		sed -e "1s/^/SRC_NAME += /" ${MAKEFILE_FILE} > ${MAKEFILE_FILE}_tmp
-		rm -rf ${MAKEFILE_FILE}
-		mv ${MAKEFILE_FILE}_tmp ${MAKEFILE_FILE}
+		update_file ${MAKEFILE_FILE}
 	fi	
 	sed "$ s/ \\\//" ${MAKEFILE_FILE} > ${MAKEFILE_FILE}_tmp
-	rm -rf ${MAKEFILE_FILE}
-	mv ${MAKEFILE_FILE}_tmp ${MAKEFILE_FILE}
+	update_file ${MAKEFILE_FILE}
 }
 
 clean_tests(){
-	if $ALL; then
-		local fcts=`cat $TESTS_FILE | cut -d';' -f1 | sort | uniq`
-	else
-		local fcts="$@"
-	fi
 #	echo "Removing ${BLUE}$BAK_FOLDER${NC}..."
 	rm -rf $BAK_FOLDER
-	remove_all $fcts
+	remove_all $@
 #	echo "Removing ${BLUE}${MAKEFILE_FILE}${NC}"
 	rm -f ${MAKEFILE_FILE}
+	rm -f ${INCLUDES_PATH}/main.h
 }
 
 launch_tests(){
@@ -356,6 +365,10 @@ if [ "$TEST_LIST_ERRORS" != "" ]; then
 	echo "The following tests could not be found in ${BLUE}${TESTS_FILE}${NC}:"
 	echo $TEST_LIST_ERRORS
 	exit
+fi
+
+if $CREATE; then
+	make fclean
 fi
 
 if $CREATE || $UPDATE; then

@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/21 15:35:46 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/21 18:57:56 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ LIBUNIT_FLAGS =         -L$(LIBUNIT_PATH) -lunit
 
 ASSETS_DIR =            assets
 TMP_DIR_FTPRINTF = 		$(ASSETS_DIR)/tmp
-LIBFTPRINTF_PATH =      /Users/jkettani/goinfre/jkettani_test
+LIBFTPRINTF_PATH =      ../../ft_printf
 LIBFTPRINTF_NAME =      libftprintf.a
 LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/$(LIBFTPRINTF_NAME)
 LIBFTPRINTF_SO_PATH =   .
@@ -62,7 +62,7 @@ SRC_NAME =              srcs/main srcs/tests
 SRC =                   $(addprefix $(SRC_PATH)/, $(addsuffix .c, $(SRC_NAME)))
 OBJ =                   $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 DEP =                   $(addprefix $(OBJ_PATH)/, $(SRC:.c=.d))
-OBJ_TREE =              $(shell find $(OBJ_PATH) -type d -print 2> /dev/null)
+#OBJ_TREE =              $(shell find $(OBJ_PATH) -type d -print 2> /dev/null)
 
 
 .SUFFIXES:
@@ -125,11 +125,11 @@ test: all
 .PHONY: clean
 clean:
 	$(ECHO) "Cleaning object files..."
-	$(QUIET) $(RM) $(OBJ)
+	$(QUIET) $(RM) -rf $(OBJ_PATH)
 	$(ECHO) "Cleaning dependency files..."
 	$(QUIET) $(RM) $(DEP)
-	$(ECHO) "Cleaning obj tree..."
-	$(QUIET) echo $(OBJ_TREE) | xargs $(RMDIR) 2> /dev/null || true
+#	$(ECHO) "Cleaning obj tree..."
+#	$(QUIET) echo $(OBJ_TREE) | xargs $(RMDIR) 2> /dev/null || true
 	@if [ -d $(OBJ_PATH) ]; \
 		then echo "$(ERR_COLOR)-> Could not clean obj directory.$(NC)"; \
 		else echo "$(OK_COLOR)-> Obj directory succesfully cleaned.$(NC)"; fi
