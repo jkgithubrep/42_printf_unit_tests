@@ -237,7 +237,7 @@ generate_tests(){
 		for test_fct in $tests
 		do
 			local index_pref=`printf %03d $index`
-			test_exist=`ls $fct | grep .c$ | cut -c 5- | grep ${test_fct}.c | wc -l | bc`
+			test_exist=`ls $fct | grep .c$ | cut -c 5- | grep -w ${test_fct}\.c | wc -l | bc`
 			if  [ $test_exist -eq 0 ] || $CREATE; then
 				test_name=`grep -w $fct ${TESTS_FILE} | grep -w $test_fct |  cut -d';' -f3`	
 				create_test "$fct" "$test_fct" "$test_name" "$index_pref"
