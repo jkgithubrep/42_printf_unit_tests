@@ -27,7 +27,7 @@ The repository contains three main folders:
 
 ### Basic usage
 1) `cd tests`
-2) Change the path to your ft_printf project at the top of the Makefile
+2) Change the path to your ft_printf project at the top of the Makefile 
 ![Makefile](images/makefile_libftprintf_path.png)
 3) `make test`
 
