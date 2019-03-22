@@ -27,11 +27,48 @@ The repository contains three main folders:
 
 ### Basic usage
 1) `cd tests`
-2) Change the path to your ft_printf project at the top of the Makefile  
+2) Change the path to your ft_printf project at the top of the Makefile
 ![Makefile](images/makefile_libftprintf_path.png)
 3) `make test`
 
 ### Advanced usage
+
+All the tests are stored in the _**tests.txt**_ file in the *tests* folder with the following format:
+`type;name_of_the_test;arguments`  
+Each line should correspond to a specific test, whose file will be automatically created.
+
+Example:  
+```
+conv_d;random_int;"%d", 42
+conv_d;random_int_with_various_flags;"%+24.5d|%-24.5d|%+024.5d", 42, 42, 42
+mix;basic_mix;"char: %c, double: %f, string: %s", 't', 0.1, "this is a string"
+...
+```
+
+To generate the test, use the _**./generator.sh**_ script as described below: 
+```
+Usage: ./generator.sh [action] [functions]
+   > actions:
+       - create                  Create tests.
+       - update                  Update tests (add new ones).
+       - clean                   Clean tests.
+   > functions:
+       - all                     All tests are affected.
+       - mandatory               All mandatory tests (cspdiouxXf) are affected.
+       - functions               Only named functions after action keyword are affected.
+```
+Example:
+- ` ./generator.sh create conv_d conv_f`  will create all the tests for the `conv_d`  and `conv_f` types.
+- `./generator.sh create all` will create all the tests for all the types in the *tests.txt* file.
+- `./generator.sh create mandatory` will create all the mandatory tests (mandatory part of the *ft_printf* project).
+
+You can also update a specific type by using the `update` keyword instead of `create` if you added more tests.  
+
+The `clean` keyword will save the folder containing the tests in a backup folder and then remove it.
+
+## Issues
+
+If you encounter any issue, you can contact me on slack (jkettani) or by email: jkettani@student.42.fr
 
 
 ## Author
@@ -41,3 +78,5 @@ by **jkettani**
 ## License
 
 This project is licensed under the **GNU General Public License v3.0**.
+
+
