@@ -31,6 +31,12 @@ The repository contains three main folders:
 ![Makefile](images/makefile_libftprintf_path.png)
 3) `make test`
 
+Output:  
+![Test output](images/printf_unit_test.png)
+
+Each time you launch the tests a _**trace.txt**_ file containing the output of the tests is automatically created, so that you can compare the output of your ft_printf with the one of the stdio library.  
+![Trace](images/trace.png)
+
 ### Advanced usage
 
 All the tests are stored in the _**tests.txt**_ file in the *tests* folder with the following format:
@@ -74,9 +80,3 @@ If you encounter any issue, you can contact me on slack (jkettani) or by email: 
 ## Author
 
 by **jkettani**
-
-## License
-
-This project is licensed under the **GNU General Public License v3.0**.
-
-
