@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/22 12:39:31 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/22 13:53:01 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ DEP =                   $(addprefix $(OBJ_PATH)/, $(SRC:.c=.d))
 # ----- RULES -----
 
 .PHONY: all
-all: $(NAME) libftprintf
+all: $(NAME)
 
 .PRECIOUS: $(OBJ_PATH)%/. $(OBJ_PATH)/.
 $(OBJ_PATH)/. $(OBJ_PATH)%/.: 
@@ -97,7 +97,7 @@ $(LIBS) libs:
 	$(ECHO) "Updating $(WARN_COLOR)libftprintf$(NC) library if necessary..."
 	$(QUIET) make -C $(LIBFTPRINTF_PATH)
 
-$(NAME): $(OBJ) $(LIBS) | libs
+$(NAME): $(OBJ) $(LIBS) | libs libftprintf
 	$(ECHO) "Compiling executable file $(WARN_COLOR)$(NAME)$(NC)..."
 	$(QUIET) $(CC) -o $@ $(CPPFLAGS) $(LIBFTPRINTF_SO) $(LIBUNIT_FLAGS) $^
 
@@ -141,6 +141,8 @@ clean:
 fclean: clean
 	$(ECHO) "Cleaning $(WARN_COLOR)$(NAME)$(NC)..."
 	$(QUIET) $(RM) $(NAME)
+	$(ECHO) "Cleaning $(WARN_COLOR)$(LIBFTPRINTF_SO)$(NC)..."
+	$(QUIET) $(RM) $(LIBFTPRINTF_SO)
 	@if [ -f $(NAME) ]; \
 		then echo "$(ERR_COLOR)-> Could not clean executable file.$(NC)";\
 		else echo "$(OK_COLOR)-> Executable file succesfully cleaned.$(NC)"; fi

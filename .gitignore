@@ -6,3 +6,4 @@ tests/tests
 trace.txt
 assets
 libftprintf.so
+libunit.a
