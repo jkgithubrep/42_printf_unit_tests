@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libunit.h                                          :+:      :+:    :+:   */
+/*   frmk_libunit.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 14:47:30 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/18 18:11:48 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:40:27 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:41:19 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H
+#ifndef FRMK_LIBUNIT_H
+# define FRMK_LIBUNIT_H
 
 # include <signal.h>
 # include <errno.h>

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_test.c                                        :+:      :+:    :+:   */
+/*   frmk_load_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 14:59:57 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/03 15:36:41 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:37:56 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:48:51 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** Includes:
-**   - libunit.h: t_unit_test
-**   - error.h: user defined errors (EUSIG, ENULL)
+**   - frmk_libunit.h: t_unit_test
+**   - frmk_error.h: user defined errors (EUSIG, ENULL)
 **   - stdlib.h: malloc
 **   - errno.h: errno
 */
 
-#include "libunit.h"
-#include "error.h"
+#include "frmk_libunit.h"
+#include "frmk_error.h"
 #include <stdlib.h>
 #include <errno.h>
 

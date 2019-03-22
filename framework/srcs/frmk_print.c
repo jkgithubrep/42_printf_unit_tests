@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   frmk_print.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:04:12 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/18 18:11:49 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:38:10 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:46:38 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** Includes:
-**   - libunit.h: t_unit_test, t_stats, color macros, 
-**   - error.h: user defined errors (EUSIG, ENULL);
+**   - frmk_libunit.h: t_unit_test, t_stats, color macros, 
+**   - frmk_error.h: user defined errors (EUSIG, ENULL);
 **   - stdio.h: dprintf
 **   - signal.h: signal macros
 **   - string.h: strsignal
 */
 
-#include "libunit.h"
-#include "error.h"
+#include "frmk_libunit.h"
+#include "frmk_error.h"
 #include <signal.h>
 #include <stdio.h>
 #include <string.h>

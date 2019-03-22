@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   frmk_stdout_utils.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/27 22:23:48 by jkettani          #+#    #+#             */
-/*   Updated: 2019/01/25 11:12:21 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:41:51 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:41:59 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef FRMK_STDOUT_UTILS_H
+# define FRMK_STDOUT_UTILS_H
 
-/*
-** ERROR CODES
-** Error codes in errno.h goes from 1 to 131.
-** So we start at 200 for our own error codes:
-** > ENULL: null pointer in function
-** > EUSIG: undefined signal catched
-*/
-# define ENULL 200
-# define EUSIG 201
+int			get_fd(const char *path, t_output_mode output_mode,
+					t_open_mode open_mode);
+int			pipe_stdout(int *pfd, int *save_out);
+int			reconnect_stdout(int *save_out);
+int			read_pipe(char **str, int *ret, int *pfd, int *save_out);
 
 #endif

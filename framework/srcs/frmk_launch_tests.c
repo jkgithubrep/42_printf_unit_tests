@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   launch_tests.c                                     :+:      :+:    :+:   */
+/*   frmk_launch_tests.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 18:42:36 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/04 10:16:59 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:37:45 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:44:56 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** Includes:
-**   - libunit.h: t_unit_test, t_stats, TIMEOUT
-**   - print.h: print functions
-**   - error.h: user defined errors (EUSIG, ENULL)
+**   - frmk_libunit.h: t_unit_test, t_stats, TIMEOUT
+**   - frmk_print.h: print functions
+**   - frmk_error.h: user defined errors (EUSIG, ENULL)
 **   - unistd.h: fork, alarm
 **   - stdlib.h: free
 **   - sys/wait.h: wait
 **   - errno.h: errno
 */
 
-#include "libunit.h"
-#include "print.h"
-#include "error.h"
+#include "frmk_libunit.h"
+#include "frmk_print.h"
+#include "frmk_error.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>

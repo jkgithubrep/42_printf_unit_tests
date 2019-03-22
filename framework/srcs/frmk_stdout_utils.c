@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stdout_utils.c                                     :+:      :+:    :+:   */
+/*   frmk_stdout_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 13:54:57 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/04 11:16:40 by jkettani         ###   ########.fr       */
+/*   Updated: 2019/03/22 16:47:34 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** Includes:
-**   - libunit.h: t_output_mode, t_open_mode, BUF_SIZE
-**   - error.h: ENULL macro
+**   - frmk_libunit.h: t_output_mode, t_open_mode, BUF_SIZE
+**   - frmk_error.h: ENULL macro
 **   - fcntl.h: open function
 **   - unistd.h: STDOUT_FILENO, pipe, close, dup, dup2
 **   - stdlib.h: malloc
@@ -21,9 +21,9 @@
 **   - stdio.h: fflush
 */
 
-#include "libunit.h"
-#include "error.h"
-#include "utils.h"
+#include "frmk_libunit.h"
+#include "frmk_error.h"
+#include "frmk_utils.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>

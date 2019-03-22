@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   frmk_print.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:27:01 by jkettani          #+#    #+#             */
-/*   Updated: 2019/03/02 16:57:07 by jkettani         ###   ########.fr       */
+/*   Created: 2019/03/22 16:41:34 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/22 16:50:16 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
-# define PRINT_H
+#ifndef FRMK_PRINT_H
+# define FRMK_PRINT_H
 
-# include "libunit.h"
+# include "frmk_libunit.h"
 
 int			get_fd(const char *path, t_output_mode output_mode,
 					t_open_mode open_mode);
