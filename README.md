@@ -31,10 +31,12 @@ The repository contains three main folders:
 ![Makefile](images/makefile_libftprintf_path.png)
 3) `make test`
 
-Output:  
+*> Output:*  
+
 ![Test output](images/printf_unit_test.png)
 
 Each time you launch the tests a _**trace.txt**_ file containing the output of the tests is automatically created, so that you can compare the output of your ft_printf with the one of the stdio library.  
+
 ![Trace](images/trace.png)
 
 ### Advanced usage
