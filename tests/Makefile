@@ -6,9 +6,13 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/21 18:57:56 by jkettani         ###   ########.fr        #
+#    Updated: 2019/03/22 12:39:31 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# ----- LIBFTPRINTF PATH -----
+#
+LIBFTPRINTF_PATH =      ../../ft_printf
 
 # ----- VARIABLES -----
 
@@ -42,7 +46,6 @@ LIBUNIT_FLAGS =         -L$(LIBUNIT_PATH) -lunit
 
 ASSETS_DIR =            assets
 TMP_DIR_FTPRINTF = 		$(ASSETS_DIR)/tmp
-LIBFTPRINTF_PATH =      ../../ft_printf
 LIBFTPRINTF_NAME =      libftprintf.a
 LIBFTPRINTF =           $(LIBFTPRINTF_PATH)/$(LIBFTPRINTF_NAME)
 LIBFTPRINTF_SO_PATH =   .
