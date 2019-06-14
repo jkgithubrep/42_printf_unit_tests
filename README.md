@@ -60,7 +60,7 @@ Usage: ./generator.sh [action] [type]
        - create                  Create tests.
        - update                  Update tests (add new ones).
        - clean                   Clean tests.
-   > types:
+   > type:
        - all                     All tests are affected.
        - mandatory               All mandatory tests (cspdiouxXf) are affected.
        - types                   Only named types after action keyword are affected.
