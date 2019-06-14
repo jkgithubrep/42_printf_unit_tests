@@ -312,15 +312,19 @@ parse_args(){
 }
 
 display_usage(){
-	printf "Usage: ./generator.sh [action] [functions]\n"
+	printf "Usage: ./generator.sh [action] [type]\n"
 	printf "   > actions:\n"
 	printf "   %s\n" "    - create                  Create tests."
 	printf "   %s\n" "    - update                  Update tests (add new ones)."
 	printf "   %s\n" "    - clean                   Clean tests."
-	printf "   > functions:\n"
+	printf "   > type:\n"
 	printf "   %s\n" "    - all                     All tests are affected."
 	printf "   %s\n" "    - mandatory               All mandatory tests (cspdiouxXf) are affected."
-	printf "   %s\n" "    - functions               Only named functions after action keyword are affected."
+	printf "   %s\n" "    - types                   Only named types after action keyword are affected."
+	printf "Examples:\n" 
+	printf " 1) %s\n" "./generator.sh create all > create all the tests for all the types"
+	printf " 2) %s\n" "./generator.sh create mandatory > create all the tests for the mandatory types"
+	printf " 3) %s\n" "./generator.sh create mix no_type conv_d > create the tests for the types mix, no_type and conv_d"
 }
 
 # Checks that the names of the tests are all unique.

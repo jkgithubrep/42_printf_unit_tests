@@ -55,15 +55,15 @@ mix;basic_mix;"char: %c, double: %f, string: %s", 't', 0.1, "this is a string"
 
 To generate the test, use the _**./generator.sh**_ script as described below: 
 ```
-Usage: ./generator.sh [action] [functions]
+Usage: ./generator.sh [action] [type]
    > actions:
        - create                  Create tests.
        - update                  Update tests (add new ones).
        - clean                   Clean tests.
-   > functions:
+   > types:
        - all                     All tests are affected.
        - mandatory               All mandatory tests (cspdiouxXf) are affected.
-       - functions               Only named functions after action keyword are affected.
+       - types                   Only named types after action keyword are affected.
 ```
 Example:
 - ` ./generator.sh create conv_d conv_f`  will create all the tests for the `conv_d`  and `conv_f` types.
